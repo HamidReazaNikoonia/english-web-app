@@ -38,6 +38,8 @@ Route::get('/admin/{k}', 'AdminController@index');
 Route::get('/contact', 'ContactController@index');
 Route::post('/contact', 'ContactController@store');
 
+Route::post('hamid/upload' ,'UploadController@store')->name('upload');
+
 
 Route::get('/blog', 'BlogController@index');
 

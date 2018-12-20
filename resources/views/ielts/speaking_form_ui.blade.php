@@ -136,10 +136,17 @@ header .content h3 {
 
 
 				<div class="d-flex justify-content-center">
-					<form action="/file-upload"
-      				class="dropzone"
-      				id="my-awesome-dropzone">
-      					<input type="file" name="file" />
+					<form
+					id="upload_"
+					method="POST"
+					 action="{{ route('upload') }}"
+					 enctype="multipart/form-data"
+      				
+      				>
+      				@csrf
+      					<input type="submit" name="">
+      					<input type="file" name="file">
+      					
       				</form>
 
 
@@ -278,7 +285,42 @@ header .content h3 {
 
 		<script>
 			$(document).ready(function() {
+				
+
 				//PARALLAX
+				//
+				
+				$.ajaxSetup({
+    				headers: {
+        				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    				}
+				}); 
+				
+
+				$('#upload_').submit(function(event) {
+    			event.preventDefault();
+    			var formData = new FormData($("#upload_")[0]);
+    			console.log(formData);
+    $.ajax({
+        url: '{{ route("upload") }}',
+        type: 'POST',              
+        data: formData,
+  		processData: false,
+  		contentType: false,
+        success: function(result)
+        {
+            console.log('success');
+            console.log(result);
+        },
+        error: function(data)
+        {
+            console.log(data);
+        }
+    });
+
+});
+				
+			
 
 $(window).scroll(function(){
   parallax();
