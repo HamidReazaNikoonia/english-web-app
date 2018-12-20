@@ -1,0 +1,249 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+html, body, .container_ {
+	height: 100%;
+}
+
+body {
+	background: #3b3f45;
+	color: #fff;
+	font-weight: 400;
+	font-size: 1em;
+	font-family: 'Raleway', Arial, sans-serif;
+	overflow: hidden;
+	overflow-y: scroll;
+	min-height: 590px;
+}
+
+a {
+	color: rgba(0,0,0,0.3);
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover, a:focus {
+	color: #fff;
+}
+
+/* Top Navigation Style */
+.codrops-top {
+	margin-top: 1em;
+}
+
+.codrops-top a {
+	font-size: 0.69em;
+	padding: 0 0.25em;
+	display: inline-block;
+	text-decoration: none;
+	font-size: 1.2em;
+}
+
+.codrops-icon:before {
+	margin: 0 4px;
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-family: 'codropsicons';
+	line-height: 1;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+.codrops-icon-drop:before {
+	content: "\e001";
+}
+
+.codrops-icon-prev:before {
+	content: "\e004";
+}
+
+.codrops-icon-info:before {
+	content: "\e003";
+}
+
+.codrops-icon span {
+	display: none;
+	position: absolute;
+	font-size: 0.85em;
+	padding: 0.5em 0 0 0.25em;
+	font-weight: 700;
+}
+
+.codrops-icon:hover span {
+	display: block;
+	color: #6a7b7e;
+}
+
+/* Related demos */
+.related {
+	font-weight: 700;
+	text-align: center;
+	padding: 5em 0;
+	display: none;
+	background: #fff;
+	color: rgba(0,0,0,0.3);
+}
+
+.overview .related {
+	display: block;
+}
+
+.related > a {
+	border: 3px solid black;
+	border-color: initial;
+	display: inline-block;
+	text-align: center;
+	margin: 20px 10px;
+	padding: 25px;
+}
+
+.related > a:hover,
+.related > a:focus {
+	color: rgba(0,0,0,0.5);
+}
+
+.related a img {
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.related a:hover img,
+.related a:active img {
+	opacity: 1;
+}
+
+.related a h3 {
+	margin: 0;
+	padding: 0.5em 0 0.3em;
+	max-width: 300px;
+	text-align: left;
+}
+
+
+.card {
+	padding:40px 50px;
+	margin-left: 30px;
+	text-align: left;
+	border-radius: 2rem;
+	max-width: 40%;
+	font-family: Poppins;
+	background-color: #5D88D8BC;
+
+}
+
+.card > h3 	{
+	color:white;
+	text-align: center;
+	padding-bottom: 20px;
+	font-family: sans-serif;
+	font-size: 2rem;
+}
+
+.card > h4 {
+	font-family: Poppins;
+	font-weight: normal;
+}
+
+
+.second-section  {
+  
+  
+}
+
+.perspective {
+  width: 100%;
+  perspective: 1000px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.card {
+  width: 50vw;
+  height: 413px;
+  margin: auto;
+  box-shadow: 0 70px 63px -60px #494848;
+  transform-style: preserve-3d;
+  transition: transform .05s linear;
+}
+.card .thumb {
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+}
+.card .thumb:after {
+  background: inherit;
+  content: '';
+  display: block;
+  position: absolute;
+  left: -60px;
+  top: 40px;
+  width: 100%;
+  height: 108%;
+  z-index: -1;
+  filter: blur(55px);
+}
+.card h2 {
+  position: absolute;
+  top: 0;
+  left: -60px;
+  font-size: 40px;
+  font-weight: 100;
+  transform: translateZ(80px);
+}
+.card span {
+  position: absolute;
+  bottom: 40px;
+  right: -280px;
+  font-size: 37px;
+  font-weight: 600;
+  transform: translateZ(35px);
+}
+
+.dribbble {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+}
+.dribbble > a {
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ec4989;
+}
+
+.sec_2 {
+	text-align: center;
+	color: black;
+	font-family: sans-serif;
+	font-weight: bolder;
+	font-size: 3.5rem;
+}
+
+
+
+/*img {
+  margin: auto;
+  display: block;
+  border-radius: 15px;
+}*/

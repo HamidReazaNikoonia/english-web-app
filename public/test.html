@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<style type="text/css">
+
+	* {
+		padding: 0;
+		margin: 0;
+	}
+
+	body {
+		overflow-x:hidden; 
+	}
+		#some-container {
+			width:100vw;
+			height:2600px;
+		}
+
+		.bool {
+			width:300px;
+			position: fixed;
+			opacity:1;
+			height: 200px;
+			background-color: yellow;
+		}
+
+		#paper0 {
+			width:30vw;
+			height:70vh;
+			background-color: gray;
+			position: fixed;
+		}
+
+		#banner {
+			width:100%;
+			height:100vh;
+			background-color: #353330;
+			position: fixed;
+			top:0;
+			z-index: 99;
+			overflow: hidden;
+			left:0;
+		}
+
+		#banner h1 {
+			color: white;
+			vertical-align: middle;
+			top: 20%;
+			position: absolute;
+			animation: kir 16s infinite;
+		}
+
+		@keyframes kir {
+
+			0% {
+				top: 20%;
+			}
+
+			50% {
+				top:0;
+			}
+
+			100% {
+				top:20%;
+			}
+
+		}
+
+		#paper_0 {
+			width:30vw;
+			position: fixed;
+			height:80vh;
+			top:15%;
+			left:35%;
+			background-color: white;
+			box-shadow: 1px 2px 19px black;
+		}
+
+		.console {
+			width:100%;
+			background-color: red;
+			height: 400px;
+		}
+
+		.paper_gray {
+			width:30vw;
+			position: relative;
+			height:80vh;
+			top:15vh;
+			left:35%;
+			background-color: #353330;
+			box-shadow: 1px 2px 19px black;
+		}
+	</style>
+	
+</head>
+<body>
+
+<div id="some-container">
+<!-- 
+	<div class="bool"></div>
+	<div id="paper0"></div> -->
+
+	<div id="banner">
+		<h1 style="text-align: center;"> kire khar</h1>
+		<div class="paper_gray"></div>
+	</div>
+
+	<div id="paper_0"></div>
+	
+</div>
+
+<div class="console"></div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+<script type="text/javascript">
+
+
+
+	// var tl = new TimelineLite( {paused: true} );
+	// var tl_1 = new TimelineLite( {paused: true} );
+
+	/* var win_width = $(window).width();
+	
+	$(document).on("scroll" , function() {
+		 win_width = $(window).width();
+	});
+
+	
+	
+
+	tl.from($('.bool'),3, {width:win_width/3,x:"50%",yPercent:90,backgroundColor:'red',opacity:0});
+	tl_1.from($('#paper0') , 4 , {rotation:90,scale:0.5} )
+
+	
+
+$(window).scroll( function(){
+  var st = $(this).scrollTop();
+  var ht = $( '#some-container' ).height();
+   if( st < ht && st > 0 ){
+   		console.log(st/ht);
+        windowScroll = st/ht;
+        tl.progress( windowScroll );
+        tl_1.progress( windowScroll );
+    }
+});
+
+*/
+
+
+
+document.addEventListener("DOMContentLoaded", function(){
+                
+  //needed to get scrollTop position on IE9-
+  var documentElement = document.documentElement;
+  
+  //Heder height
+  var targetPosY = 2100;
+  
+  /*
+      A couple of notes here 
+      1)   For such a thing, normally I would just use a TimelineMax. It is amazingly flexible and is tend for just this kind of animations. 
+           The idea of this pen is to make things fast and simple as possible;
+      2)   Actually, I can pass string to TweenLite.to("element ID", time, {...}); but I prefer to pass DOM Element
+      3)   If you add your own TweenLite's and style it, actually can get pritty nice results
+  */
+  var tweens = [
+     // TweenMax.to( document.querySelector(".bool"), 3, {scale:1.2, x:700, paused:true}),
+     // TweenMax.to( document.querySelector("#paper0"), 4, { scale:1.6, x:300, alpha: 0.5, paused:true})
+     TweenMax.to( document.querySelector("#banner"), 4, { height:0, paused:true})
+  ];
+                
+  window.onscroll = function (event) {
+    ( !! window.requestAnimationFrame) ? requestAnimationFrame(onScroll) : onScroll();
+  }
+                 
+  function onScroll(){
+        
+      //have to restrict it into range, because on OSX it can get negative values
+      //http://bassta.bg/2013/05/restrict-a-number-to-a-range/
+        var top =  Math.max(Math.min(window.pageYOffset || documentElement.scrollTop, targetPosY), 0); 
+        if(top <= targetPosY){
+            var progress = (top / targetPosY);
+            Array.prototype.forEach.call(tweens, function(tween){
+            	console.log(progress);
+                tween.progress(progress);
+              });
+        }
+  }
+                                    
+});//end on DOMContentLoaded
+
+
+</script>
+</body>
+</html>
