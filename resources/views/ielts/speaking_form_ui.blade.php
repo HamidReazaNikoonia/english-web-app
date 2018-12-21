@@ -48,8 +48,10 @@ header .content h1 {
   font-size: 5.7em;
   padding:20px;
   border-radius: 30px;
-  background-color: yellow;
+  background-color: #e194a0;
   font-weight: bolder;
+  color: white;
+  box-shadow: 0px 2px 10px #0000002e;
 }
 header .content h3 {
   font-size: 2.5em;
@@ -105,27 +107,33 @@ header .content h3 {
 </header>
 
 <div class="layout"></div>
+
+
+
+
 			
 
-			<div class="d-flex flex-column pt-5" style="height:900px;padding-top:100px">
-					<h2 class="sec_2 wow bounceInTop pt-5 mt-5">just in 2 step</h2>
+			<div class="d-flex flex-column pt-5" style="height:1200px;padding-top:100px">
+					<h2 class="sec_2  mt-5"">  Just In 
+						<samp
+						style="display:inline-block;text-align:center;color:black;font-size: 110px;background-color:#13193c;border-radius:280px;width:170px;height:170px;padding-top: 20px;box-shadow: 6px 6px 5px gray;color:tomato">2</samp> Step </h2>
 				<div class="d-flex flex-row pt-5 mt-5 second-section justify-content-start">
-					 <div class="top wow bounceInRight">
+					 <div class="top ">
             			<div class="perspective">
                 		<div class="card">
-                    		<div class="thumb" style="background-image: url(https://images.unsplash.com/photo-1478358161113-b0e11994a36b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a11da19e81415e5a81029aade9df7774&auto=format&fit=crop&w=668&q=80)"></div>
-                    		<h2>Virtual Reality</h2>
-                    		<span>Dreaming with your eyes open!</span>
+                    		<div class="thumb" ></div>
+                    		<h2>Send Your Information</h2>
+                    		<span style="text-align: center;">Just with &nbsp;&nbsp;&nbsp;2 Clicks</span>
                 		</div>
             			</div>
         			</div>
 
-        			<div class="top wow bounceInRight" data-wow-delay="1s">
+        			<div class="top " >
             			<div class="perspective">
                 		<div class="card">
-                    		<div class="thumb" style="background-image: url(https://images.unsplash.com/photo-1478358161113-b0e11994a36b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a11da19e81415e5a81029aade9df7774&auto=format&fit=crop&w=668&q=80)"></div>
-                    		<h2>Virtual Reality</h2>
-                    		<span>Dreaming with your eyes open!</span>
+                    		<div class="thumb" ></div>
+                    		<h2> Get Your Result </h2>
+                    		<span style="left:40px;"> <i style="color:white;font-size: 5rem">100%</i> Correct</span>
                 		</div>
             			</div>
         			</div>
@@ -153,6 +161,15 @@ header .content h3 {
 
 				</div>
 
+			</div>
+
+			<div class="d-flex">
+				<div class="arrow">
+			<ul>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
 			</div>
 		</div>
 
