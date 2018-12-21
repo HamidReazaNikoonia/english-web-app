@@ -16,6 +16,12 @@
 
 html, body, .container_ {
 	height: 100%;
+
+}
+
+.container_ {
+	display:none;
+	visibility: hidden;
 }
 
 body {

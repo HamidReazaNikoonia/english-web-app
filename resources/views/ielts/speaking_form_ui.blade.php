@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<title>Fullscreen Form Interface</title>
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<meta name="description" content="Fullscreen Form Interface: A distraction-free form concept with fancy animations" />
 		<meta name="keywords" content="fullscreen form, css animations, distraction-free, web design" />
 		<meta name="author" content="Codrops" />
@@ -162,7 +163,7 @@ header .content h3 {
 
 
 
-		<div class="container_" style="display:none;visibility: hidden;"	>
+		<div class="container_" 	>
 
 			<div class="fs-form-wrap" id="fs-form-wrap">
 				<div class="fs-title">
@@ -285,6 +286,17 @@ header .content h3 {
 
 		<script>
 			$(document).ready(function() {
+
+				window.uploaded_file = '';
+
+
+				function removeUploadLayout() {
+					$('body').removeClass('bg-white');
+					$('.container-fluid').css('display','none');
+					$('.container_').css('display', 'block');
+					$('.container_').css('visibility', 'visible');
+
+				}
 				
 
 				//PARALLAX
@@ -295,11 +307,70 @@ header .content h3 {
         				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     				}
 				}); 
+
+
+				$('#myform').submit(function(e) {
+					e.preventDefault();
+					var user_name ,
+					user_family ,
+					email,
+					mobile,
+					telegram,
+					send_via,
+					details,
+					input;
+
+					user_name = $("input[name=user_name]").val();
+					user_family = $("input[name=user_family]").val();
+					email= $("input[name=email]").val();
+					mobile = $("input[name=mobile]").val();
+					// telegram = $("input[name=telegram]").val();
+					telegram = null;
+					send_via = $("input[name=send_via]").val();
+					details = $("textarea[name=details]").val();
+					input = window.uploaded_file;
+
+
+
+
+					console.log(input);
+
+					 $.ajax({
+        url: '{{ url("service/i/speaking") }}',
+        type: 'POST',
+        
+  		             
+        data: {
+        	user_name : user_name,
+        	user_family : user_family,
+        	email  : email,
+        	mobile : mobile,
+        	telegram : telegram,
+        	send_via: send_via,
+        	details: details,
+        	input : input
+        },
+        success: function(result)
+        {
+            console.log('success');
+             alert('done ');
+             window.uploaded_file = '';
+             console.log(result);
+        },
+        error: function(data)
+        {
+            console.log(data);
+        }
+    });
+
+
+				});
 				
 
 				$('#upload_').submit(function(event) {
     			event.preventDefault();
     			var formData = new FormData($("#upload_")[0]);
+    			
     			console.log(formData);
     $.ajax({
         url: '{{ route("upload") }}',
@@ -310,7 +381,8 @@ header .content h3 {
         success: function(result)
         {
             console.log('success');
-            console.log(result);
+             window.uploaded_file = result;
+             removeUploadLayout();
         },
         error: function(data)
         {
@@ -340,7 +412,7 @@ function parallax(){
 var o = $(".card");
 $(".top").on("mousemove", function (t) {
     var e = -($(window).innerWidth() / 2 - t.pageX) / 50,
-        n = ($(window).innerHeight() / 2 - t.pageY) / 50;
+        n = ($(window).innerHeight() / 2 - t.pageY) / 90;
     o.attr("style", "transform: rotateY(" + e + "deg) rotateX(" + n + "deg);-webkit-transform: rotateY(" + e + "deg) rotateX(" + n + "deg);-moz-transform: rotateY(" + e + "deg) rotateX(" + n + "deg)")
 })
 

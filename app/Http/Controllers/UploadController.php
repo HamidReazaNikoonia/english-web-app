@@ -26,8 +26,8 @@ class UploadController extends Controller
     	// $path = $rq->file('file')->store('uplaod');
     
 
-        
-    return $path;
+       return asset('storage/avatarsooo/'. $filename) ;
+    // return $path;
 } else {
 	return "no";
 }

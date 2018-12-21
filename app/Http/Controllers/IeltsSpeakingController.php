@@ -13,6 +13,8 @@ class IeltsSpeakingController extends Controller
 
     public function store( Request $request) {
 
+      
+
       $request->validate([
         'user_name' => 'required',
         'user_family' => 'required',
@@ -42,6 +44,7 @@ class IeltsSpeakingController extends Controller
       $instanse->status = 0; // ثبت موفق
       $instanse->kind = 'speaking';
       $instanse->type = 'ielts';
+
 
 
       $instanse->save();
