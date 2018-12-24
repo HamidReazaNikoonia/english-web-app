@@ -9,6 +9,7 @@ class UploadController extends Controller
 {
     public function store(Request $rq) {
 
+
 	
 	if ($rq->hasFile('file')) {
 
@@ -19,7 +20,7 @@ class UploadController extends Controller
     		'avatarsooo', $filename
 		);
 
-		Storage::put('avatars/1', $uploadedFile);
+		Storage::put('user_result/1', $uploadedFile);
 
 		
     	

@@ -37,6 +37,7 @@ Route::get('/admin','AdminController@home');
 Route::get('/admin/product/{id}' , 'AdminController@show_product');
 
 
+
 Route::get('/contact', 'ContactController@index');
 Route::post('/contact', 'ContactController@store');
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<title> all informtion </title>
 	
 	<style type="text/css">
@@ -175,6 +176,12 @@
 tbody tr  {
 	text-align: center;
 }
+
+/*.submit_btn , input[type="submit"]{
+	display: none;
+}*/
+
+
 	</style>
 
 </head>
@@ -496,7 +503,13 @@ tbody tr  {
                             <td class="no">13</td>
                             <td class="text-left">Result</td>
                             <td class="unit">
-                            	<a  href="{{ $n->input }}"> upload</a>
+                            	<form id="upload_">
+                            		<div style='height: 0px;width:0px; overflow:hidden;'>
+                            			<input id="upfile" name="file" type="file" value="upload"/>
+                            		</div>
+                            		<div id="uploadHandler" class="btn btn-primary"> Upload Result </div>
+                            		<input class="btn btn-secondary submit_btn" type="submit" name=" Send File">
+                            	</form>
                             </td>
                         </tr>
                     </tbody>
@@ -606,6 +619,25 @@ tbody tr  {
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin.js') }}"></script>
     <script type="text/javascript">
+
+    	$.ajaxSetup({
+    				headers: {
+        				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    				}
+				}); 
+
+
+    	window.uploaded_file = '';
+
+    	function show_submit() {
+    		
+    	}
+
+
+		$('#uploadHandler').click(function(e) {
+			document.getElementById("upfile").click();
+		})
+
     	 $('#printInvoice').click(function(){
             Popup($('.invoice')[0].outerHTML);
             function Popup(data) 
@@ -614,6 +646,36 @@ tbody tr  {
                 return true;
             }
         });
+
+    	 				$('#upload_').submit(function(event) {
+    					event.preventDefault();
+    					var formData = new FormData($("#upload_")[0]);
+    			
+		    			console.log(formData);
+						    $.ajax({
+						        url: '{{ route("upload") }}',
+						        type: 'POST',              
+						        data: formData,
+						  		processData: false,
+						  		contentType: false,
+						        success: function(result)
+						        {
+						            console.log('success');
+						             window.uploaded_file = result;
+						             console.log(result);
+						             if(result == 'no') {
+						             	alert("please Insert File");
+						             }
+						             show_submit();
+						        },
+						        error: function(data)
+						        {
+						            console.log(data);
+						            alert("some thing wrong , please try again");
+						        }
+						    });
+
+						});
     </script>
 
   </body>

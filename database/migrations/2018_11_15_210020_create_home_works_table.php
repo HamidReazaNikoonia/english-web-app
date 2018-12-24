@@ -15,16 +15,17 @@ class CreateHomeWorksTable extends Migration
     {
         Schema::create('home_works', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('user_name');
-            $table->string('user_family');
-            $table->string('email');
+            $table->string('user_name')->nullable();
+            $table->string('user_family')->nullable();
+            $table->string('email')->nullable();
             $table->string('telegram')->nullable();
-            $table->string('mobile');
-            $table->string('send_via');
+            $table->string('mobile')->nullable();
+            $table->string('send_via')->nullable();
             $table->string('details')->nullable();
-            $table->string('type');
-            $table->string('kind');
+            $table->string('type')->nullable();
+            $table->string('kind')->nullable();
             $table->string('input')->nullable();
+            $table->string('result_input')->nullable();
             $table->boolean('visited');
             $table->string('invoice_id')->nullable();
             $table->float('price')->nullable();
