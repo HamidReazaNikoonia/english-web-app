@@ -33,6 +33,8 @@ Route::get('/service/t/speaking', 'TofelSpeakingController@index');
 Route::post('/service/t/speaking', 'TofelSpeakingController@store');
 
 Route::get('/admin/{k}', 'AdminController@index');
+Route::get('/admin','AdminController@home');
+Route::get('/admin/product/{id}' , 'AdminController@show_product');
 
 
 Route::get('/contact', 'ContactController@index');

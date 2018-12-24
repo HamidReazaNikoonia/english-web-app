@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Home_work;
+use App\Contact;
 
 class AdminController extends Controller
 {
@@ -39,5 +40,28 @@ class AdminController extends Controller
 
       return view('admin.show_home_work' , compact('home_work'));
 
+    }
+
+
+
+    public function home() {
+      $home_work = Home_work::all();
+      $contact = Contact::all()->count();
+      return view('admin.index' , compact(['home_work','contact']));
+    }
+
+
+    public function show_product($id) {
+
+      $n = Home_work::find($id);
+
+      // seen
+      $n->visited = 1;
+
+      return view('admin.show_product' , compact('n'));
+
+      $n->save();
+
+      return $id;
     }
 }

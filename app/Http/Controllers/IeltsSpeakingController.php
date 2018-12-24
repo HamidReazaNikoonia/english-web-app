@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Home_work;
+use App\Price;
 
 class IeltsSpeakingController extends Controller
 {
@@ -44,6 +45,28 @@ class IeltsSpeakingController extends Controller
       $instanse->status = 0; // ثبت موفق
       $instanse->kind = 'speaking';
       $instanse->type = 'ielts';
+
+      // $price = Price::where('kind' , '=' , 'speaking')
+      //     ->where('type' , '=' , 'ielts');
+
+      $instanse->price = 1000;
+
+      $random_id = (rand(1, 1000));
+
+
+      $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+      // generate a pin based on 2 * 7 digits + a random character
+      $pin = mt_rand(1000000, 9999999)
+        . mt_rand(1000000, 9999999)
+        . $characters[rand(0, strlen($characters) - 1)];
+
+      // shuffle the result
+      $string = str_shuffle($pin);
+
+      $invoice_id ="{$random_id} - {$string}";
+
+      $instanse->invoice_id = $invoice_id;
 
 
 

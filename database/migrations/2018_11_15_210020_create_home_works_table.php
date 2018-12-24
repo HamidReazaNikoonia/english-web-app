@@ -24,8 +24,10 @@ class CreateHomeWorksTable extends Migration
             $table->string('details')->nullable();
             $table->string('type');
             $table->string('kind');
-            $table->string('input')->nullable();;
+            $table->string('input')->nullable();
             $table->boolean('visited');
+            $table->string('invoice_id')->nullable();
+            $table->float('price')->nullable();
             $table->string('status');
             $table->boolean('payment_status');
             $table->boolean('checked_result');
