@@ -29,8 +29,8 @@ class CreateHomeWorksTable extends Migration
             $table->string('invoice_id')->nullable();
             $table->float('price')->nullable();
             $table->string('status');
-            $table->boolean('user_upload_successfull');
-            $table->boolean('upload_user_result');
+            $table->boolean('user_upload_successfull')->nullable();
+            $table->boolean('upload_user_result')->nullable();
             $table->boolean('payment_status');
             $table->boolean('checked_result');
             $table->boolean('call_to_user');
