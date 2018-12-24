@@ -58,10 +58,15 @@ class AdminController extends Controller
       // seen
       $n->visited = 1;
 
-      return view('admin.show_product' , compact('n'));
+      
 
       $n->save();
 
-      return $id;
+      return view('admin.show_product' , compact('n'));
     }
 }
+
+
+
+
+

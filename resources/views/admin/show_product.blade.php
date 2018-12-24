@@ -172,10 +172,11 @@
     }
 }
 
-tbody tr > td {
+tbody tr  {
 	text-align: center;
-	</style>
 }
+	</style>
+
 </head>
 <body >
 
@@ -379,7 +380,7 @@ tbody tr > td {
                         </div>
                     </div>
                     <div class="col invoice-details">
-                        <h1 class="invoice-id">INVOICE {{ $n->id }}</h1>
+                        <h1 class="invoice-id">INVOICE {{ $n->invoice_id }}</h1>
                         <div class="date">Date of Invoice: {{ $n->created_at }}</div>
                         <div class="date">Last Update: {{ $n->updated_at }}</div>
                     </div>
@@ -466,31 +467,76 @@ tbody tr > td {
                                                   <tr>
                             <td class="no">12</td>
                             <td class="text-left">Price</td>
-                            <td class="unit"></td>
+                            <td class="unit">{{ $n->price }} Rial</td>
+                        </tr>
+
+                          <tr>
+                            <td class="no">13</td>
+                            <td class="text-left">File</td>
+                            <td class="unit"> <?php
+
+
+
+                            	$file = $n->input;
+                            	$file_len = strlen($file);
+                            	if( $file_len !== 0 ) {
+                            		echo "<a download href=".$file."> download</a>";
+                            	} else {
+                            		echo "File Not Uploaded";
+                            		echo " - ";
+                            		echo "<a href=''> call To User </a>";
+                            	}
+
+
+                            ?>
+                            	
+                            </td>
+                        </tr>
+                          <tr>
+                            <td class="no">13</td>
+                            <td class="text-left">Result</td>
+                            <td class="unit">
+                            	<a  href="{{ $n->input }}"> upload</a>
+                            </td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
                             <td colspan="2"></td>
                             <td colspan="2">SUBTOTAL</td>
-                            <td>$5,200.00</td>
+                            <td>{{ $n->price }} Rial</td>
                         </tr>
                         <tr>
                             <td colspan="2"></td>
-                            <td colspan="2">TAX 25%</td>
-                            <td>$1,300.00</td>
+                            <td colspan="2">TAX 16%</td>
+                            <?php                            	
+                            		
+                            	//The VAT rate / percentage.
+								$vat = 16;
+ 
+								//The price, excluding VAT.
+								$priceExcludingVat = $n->price;
+ 
+								//Calculate how much VAT needs to be paid.
+								$vatToPay = ($priceExcludingVat / 100) * $vat;
+ 
+								//The total price, including VAT.
+								$totalPrice = $priceExcludingVat + $vatToPay;
+
+                            ?>
+                            <td> {{ $priceExcludingVat }} Rial</td>
                         </tr>
                         <tr>
                             <td colspan="2"></td>
                             <td colspan="2">GRAND TOTAL</td>
-                            <td>$6,500.00</td>
+                            <td>{{ $totalPrice }} Rial</td>
                         </tr>
                     </tfoot>
                 </table>
-                <div class="thanks">Thank you!</div>
+                <div class="thanks"></div>
                 <div class="notices">
-                    <div>NOTICE:</div>
-                    <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+                    <div>User Details:</div>
+                    <div class="notice">{{ $n->details }}</div>
                 </div>
             </main>
             <footer>
@@ -549,6 +595,7 @@ tbody tr > td {
 
     <script src="{{ asset('js/jquery.min.js') }}"></script>
 	<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 
     <!-- Bootstrap core JavaScript-->
     <!--<script src="vendor/jquery/jquery.min.js"></script>

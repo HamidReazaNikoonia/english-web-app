@@ -46,15 +46,16 @@ class IeltsSpeakingController extends Controller
       $instanse->kind = 'speaking';
       $instanse->type = 'ielts';
 
-      // $price = Price::where('kind' , '=' , 'speaking')
-      //     ->where('type' , '=' , 'ielts');
+       $price_ = Price::where('kind','speaking')
+           ->where('type','ielts')->first();
 
-      $instanse->price = 1000;
+
+      $instanse->price = $price_->price;
 
       $random_id = (rand(1, 1000));
 
 
-      $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      $characters = 'ABCDE';
 
       // generate a pin based on 2 * 7 digits + a random character
       $pin = mt_rand(1000000, 9999999)
@@ -67,6 +68,8 @@ class IeltsSpeakingController extends Controller
       $invoice_id ="{$random_id} - {$string}";
 
       $instanse->invoice_id = $invoice_id;
+
+      
 
 
 
