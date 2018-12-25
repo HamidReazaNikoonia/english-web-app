@@ -4,8 +4,51 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "60708e6b8695874db437290cd0d23e37",
+    "content-hash": "27583415bf02af0338c46050279c4de0",
     "packages": [
+        {
+            "name": "babenkoivan/telegram-notifications",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/babenkoivan/telegram-notifications.git",
+                "reference": "020884bba90986c34a2a2fb0b65acf178fcb0906"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/babenkoivan/telegram-notifications/zipball/020884bba90986c34a2a2fb0b65acf178fcb0906",
+                "reference": "020884bba90986c34a2a2fb0b65acf178fcb0906",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TelegramNotifications\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Babenko Ivan",
+                    "email": "babenko.i.a@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Telegram notifications for Laravel",
+            "homepage": "https://github.com/babenkoivan/telegram-notifications",
+            "keywords": [
+                "laravel",
+                "notification",
+                "telegram"
+            ],
+            "time": "2018-07-09T18:59:33+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
