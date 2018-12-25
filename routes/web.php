@@ -32,11 +32,12 @@ Route::post('/service/t/writing', 'TofelWritingController@store');
 Route::get('/service/t/speaking', 'TofelSpeakingController@index');
 Route::post('/service/t/speaking', 'TofelSpeakingController@store');
 
-Route::get('/admin/{k}', 'AdminController@index');
+// Route::get('/admin/{k}', 'AdminController@index');
 Route::get('/admin','AdminController@home');
 Route::get('/admin/product/{id}' , 'AdminController@show_product');
-
-
+Route::post('/admin/upload-result' , 'AdminController@upload_result')->name('update_form_result_file');
+Route::post('/admin/send-result' , 'AdminController@send_result')->name('send_result_to_user');
+Route::get('admin/send-sms' , 'AdminController@send_sms')->name('send_sms');
 
 Route::get('/contact', 'ContactController@index');
 Route::post('/contact', 'ContactController@store');

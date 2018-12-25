@@ -5,6 +5,11 @@
 	<title> all informtion </title>
 	
 	<style type="text/css">
+
+
+		body {
+
+		}
 		
 
 		#invoice{
@@ -12,9 +17,9 @@
 }
 
 	.invoice {
-    position: relative;
+    
     background-color: #FFF;
-    min-height: 680px;
+    /*min-height: 680px;*/
     padding: 15px
 }
 
@@ -52,7 +57,8 @@
 
 .invoice .invoice-details .invoice-id {
     margin-top: 0;
-    color: #3989c6
+    color: #3989c6;
+    font-size: 1rem;
 }
 
 .invoice main {
@@ -112,7 +118,8 @@
 }
 
 .invoice table .unit {
-    background: #ddd
+    background: #ddd;
+    text-align:center;
 }
 
 .invoice table .total {
@@ -173,8 +180,9 @@
     }
 }
 
-tbody tr  {
+tbody tr td  {
 	text-align: center;
+	
 }
 
 /*.submit_btn , input[type="submit"]{
@@ -185,7 +193,7 @@ tbody tr  {
 	</style>
 
 </head>
-<body >
+<body style="overflow-x: scroll; ">
 
 
 	
@@ -364,12 +372,12 @@ tbody tr  {
                     <div class="col company-details">
                         <h2 class="name">
                             <a target="_blank" href="https://lobianijs.com">
-                            Arboshiki
+                            ------------
                             </a>
                         </h2>
-                        <div>455 Foggy Heights, AZ 85004, US</div>
-                        <div>(123) 456-789</div>
-                        <div>company@example.com</div>
+                        <div>--------</div>
+                        <div>---------</div>
+                        <div>--------</div>
                     </div>
                 </div>
             </header>
@@ -386,8 +394,8 @@ tbody tr  {
                         	<a href="tel:{{ $n->mobile }}">{{ $n->mobile }}</a>
                         </div>
                     </div>
-                    <div class="col invoice-details">
-                        <h1 class="invoice-id">INVOICE {{ $n->invoice_id }}</h1>
+                    <div class="col invoice-details" style="text-align: left;">
+                        <h1 class="invoice-id">INVOICE : {{ $n->invoice_id }}</h1>
                         <div class="date">Date of Invoice: {{ $n->created_at }}</div>
                         <div class="date">Last Update: {{ $n->updated_at }}</div>
                     </div>
@@ -510,6 +518,14 @@ tbody tr  {
                             		<div id="uploadHandler" class="btn btn-primary"> Upload Result </div>
                             		<input class="btn btn-secondary submit_btn" type="submit" name=" Send File">
                             	</form>
+								<?php
+			if(strlen($n->result_input) !== 0) {
+
+					echo "<a class='btn btn-info mr-3 mt-2' href='$n->result_input'  download>";
+					echo " View Last File</a>";
+
+                            	}
+								?>
                             </td>
                         </tr>
                     </tbody>
@@ -550,6 +566,19 @@ tbody tr  {
                 <div class="notices">
                     <div>User Details:</div>
                     <div class="notice">{{ $n->details }}</div>
+                </div>
+
+                <div class="pt-5 mt-3">
+                	<div class="jumbotron">
+                		<div id="sned_user" class="text-center btn btn-info w-100">Send Result To User</div>
+                		<?php
+
+                			if($n->call_to_user == 1) {
+                				echo "<span style='text-align:right;color:red'><i> sended before </i></span>";
+                			}
+
+                		?>
+                	</div>
                 </div>
             </main>
             <footer>
@@ -629,9 +658,59 @@ tbody tr  {
 
     	window.uploaded_file = '';
 
-    	function show_submit() {
-    		
+    	function update_data(url) {
+    		var data = {
+    			url:url,
+    			id:{{$n->id}}
+    		}
+    		 $.ajax({
+    		 	url: '{{ route("update_form_result_file") }}',
+				type: 'POST',              
+				data: data,
+				success: function (data) {
+					console.log(data);
+					document.location.reload(true)
+
+				},
+				error: function(err) {
+					console.log(err);
+				}
+
+    		 })
     	}
+
+
+    	$("#sned_user").click(function() {
+
+    		var id_ = {
+    			id: {{ $n->id }}
+    		}
+
+    		  $.ajax({
+		        url: '{{ route("send_result_to_user") }}',
+		        type: 'POST',              
+		        data: id_,
+		        success: function(result)
+		        {
+		            console.log('success');
+		             console.log(result);
+
+		             // please upload result first
+		             if(result == "01") {
+		             	alert("Please Upload Result First");
+		             	return false;
+		             }
+
+		             alert(result);
+		             
+		        },
+		        error: function(data)
+		        {
+		            console.log(data);
+		            alert("some thing wrong , please try again");
+		        }
+		    });
+    	});
 
 
 		$('#uploadHandler').click(function(e) {
@@ -665,8 +744,11 @@ tbody tr  {
 						             console.log(result);
 						             if(result == 'no') {
 						             	alert("please Insert File");
+						             } else {
+						             	update_data(result);
+						             	window.location.refresh;
 						             }
-						             show_submit();
+						             
 						        },
 						        error: function(data)
 						        {
