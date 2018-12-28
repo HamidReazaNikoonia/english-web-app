@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    
+    
 
-    <title>SB Admin - Dashboard</title>
+    <title>SB Admin - Blank Page</title>
 
     <!-- Bootstrap core CSS-->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
@@ -92,7 +92,7 @@
 
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="index.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
@@ -111,7 +111,7 @@
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">Other Pages:</h6>
             <a class="dropdown-item" href="404.html">404 Page</a>
-            <a class="dropdown-item" href="blank.html">Blank Page</a>
+            <a class="dropdown-item active" href="blank.html">Blank Page</a>
           </div>
         </li>
         <li class="nav-item">
@@ -120,9 +120,9 @@
             <span>Charts</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('books-list') }}">
+          <a class="nav-link" href="tables.html">
             <i class="fas fa-fw fa-table"></i>
-            <span>Books</span></a>
+            <span>Tables</span></a>
         </li>
       </ul>
 
@@ -133,104 +133,20 @@
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="#">Dashboard</a>
+              <a href="{{ url('/admin') }}">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Overview</li>
+            <li class="breadcrumb-item active">Book List</li>
           </ol>
 
-          <!-- Icon Cards-->
-          <div class="row">
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-primary o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                    <i class="fas fa-fw fa-comments"></i>
-                  </div>
-                  <div class="mr-5">{{ $contact }} New Messages!</div>
-                </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-warning o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                    <i class="fas fa-fw fa-list"></i>
-                  </div>
-                  <?php
-                    $home_work_count = 0;
-                    foreach ($home_work as $value) {
-                      if(!$value->visited) {
-                        $home_work_count++;
-                      }
-                    }
+          <!-- Page Content -->
+          <h1>Book Lists</h1>
+          <hr>
+          <p></p>
 
-                  ?>
-                  <div class="mr-5">{{ $home_work_count }} New Document!</div>
-                </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-success o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                    <i class="fas fa-fw fa-shopping-cart"></i>
-                  </div>
-                  <div class="mr-5">123 New Orders!</div>
-                </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-danger o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                    <i class="fas fa-fw fa-life-ring"></i>
-                  </div>
-                  <div class="mr-5">13 New Tickets!</div>
-                </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Area Chart Example-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fas fa-chart-area"></i>
-              Area Chart Example</div>
-            <div class="card-body">
-              <canvas id="myAreaChart" width="100%" height="30"></canvas>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-
-          <!-- DataTables Example -->
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Data Table Example</div>
+              All books</div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -255,25 +171,7 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                    @forEach($home_work as  $v)
-                      
-                      <tr {{ $v->visited ? "" : "class=new" }} >
-                        
-                      <td>
-                        <a style="z-index:999999" href="admin/product/{{ $v->id }}">
-                          {{ $v->user_name }}
-                        </a>
-                      </td>
-                      <td>{{ $v->user_family }}</td>
-                      <td>{{ $v->mobile }}</td>
-                      <td>{{ $v->type }} / {{ $v->kind }}</td>
-                      <td>{{ $v->created_at }}</td>
-                      <td>{{ $v->visited ? "seen" : "NEW" }}</td>
-                      
-                        
-                    </tr>
                   
-                    @endforEach
                     <tr>
                       <td>Finn Camacho</td>
                       <td>Support Engineer</td>
@@ -428,17 +326,8 @@
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('js/jquery.easing.min.js')}}"></script>
 
-    <!-- Page level plugin JavaScript-->
-    <script src="{{ asset('js/Chart.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('js/dataTables.bootstrap4.js') }}"></script>
-
     <!-- Custom scripts for all pages-->
-    <script src="{{ asset('js/sb-admin.js') }}"></script>
-
-    <!-- Demo scripts for this page-->
-    <script src="{{ asset('js/datatables-demo.js') }}"></script>
-    <script src="{{ asset('js/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('js/sb-admin.js') }}"></script> 
 
   </body>
 

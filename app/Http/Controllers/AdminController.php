@@ -131,11 +131,18 @@ class AdminController extends Controller
 
         if(true) {
           $Object->call_to_user = 1;
+          $mobile = $Object->mobile;
+          $type = 'send_result';
           $Object->save();
+          $n = $this->send_sms($mobile,$type);
         }
 
-
-        return "done";
+        $m = json_decode($n);
+        if($m->IsSuccessful) {
+          return "message successfully sent";
+        } else {
+          return "please try again";
+        }
 
 
 
@@ -145,7 +152,7 @@ class AdminController extends Controller
     }
 
 
-    public function send_sms($mobile_no = "09122526777" , $type = "send_result") {
+    public function send_sms($mobile_no,$type) {
 
       $message_ = "test ";
 
