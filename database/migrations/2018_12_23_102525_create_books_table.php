@@ -28,6 +28,7 @@ class CreateBooksTable extends Migration
             $table->string('cover_image')->nullable();
             $table->string('back_image')->nullable();
             $table->string('images')->nullable();
+            $table->string('book_file')->nullable();
             $table->timestamps();
         });
     }

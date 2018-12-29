@@ -6,10 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    
+    <meta name="description" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="author" content="">
 
-    <title>SB Admin - Blank Page</title>
+    <title>Add Book</title>
 
     <!-- Bootstrap core CSS-->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
@@ -29,7 +30,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
+      <a class="navbar-brand mr-1" href="index.html">Mansoreh</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -133,66 +134,104 @@
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="{{ url('/admin') }}">Dashboard</a>
+              <a href="index.html">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Book List</li>
+            <li class="breadcrumb-item active">Add Book</li>
           </ol>
 
           <!-- Page Content -->
-          <h1>Book Lists</h1>
+          <h1>Save Information For Book</h1>
           <hr>
-          <p></p>
 
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fas fa-table"></i>
-              All books</div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Short Details</th>
-                      <th>Author</th>
-                      <th>Price</th>
-                      <th>File</th>
-                      <th>Date</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Name</th>
-                      <th>Short Details</th>
-                      <th>Author</th>
-                      <th>Price</th>
-                      <th>File</th>
-                      <th>Date</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
+          @if ($errors->any())
+           <div class="jumbotron">
+              <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+            </div>
+           </div>
+          @endif
+          
+          <form action="{{ route('save_book') }}" method="POST">
 
-                    @foreach($books as $book)
-                      <tr>
-                        
-                        <td>{{ $book->name }}</td>
-                        <td>{{ $book->short_details }}</td>
-                        <td>{{ $book->author }}</td>
-                        <td>{{ $book->price }}</td>
-                        <td>{{ $book->book_file }}</td>
-                        <td>{{ $book->created_at }}</td>
-                      </tr>
-                    @endforeach
-                  
-                   
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="card-footer small text-muted">
-              <a href="{{ url('/admin   ') }}">refresh data</a>
-            </div>
+              @csrf
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Name </label>
+            <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+           <small id="emailHelp" class="form-text text-muted">this name used for name of book</small>
           </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">short Details</label>
+            <textarea name="short_details" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <small id="emailHelp" class="form-text text-muted">maximum word 50</small>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea2">Details</label>
+            <textarea name="details" class="form-control" id="exampleFormControlTextarea2" rows="6"></textarea>
+            <small id="emailHelp" class="form-text text-muted">maximum word 150</small>
+          </div>
+
+           <div class="form-group">
+            <label for="exampleFormControlTextarea3">demo page NO 1</label>
+            <textarea name="details_1" class="form-control" id="exampleFormControlTextarea3" rows="10"></textarea>
+            <small id="emailHelp" class="form-text text-muted">optional</small>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea4">demo page NO 2</label>
+            <textarea name="details_2" class="form-control" id="exampleFormControlTextarea4" rows="10"></textarea>
+            <small id="emailHelp" class="form-text text-muted">optional</small>
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea5">demo page NO 3</label>
+            <textarea name="details_3" class="form-control" id="exampleFormControlTextarea5" rows="10"></textarea>
+            <small id="emailHelp" class="form-text text-muted">optional</small>
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleInputEmail2">price</label>
+            <input type="number" name="price" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter price">
+           <small id="emailHelp" class="form-text text-muted">Rial</small>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail3">author</label>
+            <input type="text" name="author" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" placeholder="Enter author">
+          </div>
+
+
+         
+
+
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">category</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="category">
+              <option value="ielts">IELTS</option>
+              <option value="tofel">TOFEL</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Upload Book</label>
+            <input type="file" name="book_file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+
+
+          <div class="form-group">
+            <input type="submit"  value="submit">
+          </div>
+
+      </form>
 
         </div>
         <!-- /.container-fluid -->
@@ -237,8 +276,9 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
+     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    
 
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('js/jquery.easing.min.js')}}"></script>
