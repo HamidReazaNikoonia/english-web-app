@@ -42,6 +42,7 @@ Route::get('/admin/send-sms' , 'AdminController@send_sms')->name('send_sms');
 Route::get('/admin/books/index' ,  'BookController@list')->name('books-list');
 Route::get('/admin/books/store' , 'BookController@store')->name('books-store-form');
 Route::post('/admin/books/store' , 'BookController@save_book')->name('save_book');
+Route::get('/admin/books/edit/{id}' , 'BookController@edit_form')->name('edit_form');
 
 Route::get('/contact', 'ContactController@index');
 Route::post('/contact', 'ContactController@store');

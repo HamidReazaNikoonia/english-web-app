@@ -145,8 +145,20 @@
 
           <div class="card mb-3">
             <div class="card-header">
-              <i class="fas fa-table"></i>
-              All books</div>
+              <div class="d-flex justify-content-between flex-xm-column">
+                <div>
+                    <i class="fas fa-table"></i>
+                    All books
+                </div>
+
+                <div>
+                  <a href="{{ route('books-store-form') }}">
+                    <i class="fas fa-plus-square"></i>
+                    Create New Book
+                  </a>
+                </div>
+              </div>
+            </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -158,6 +170,8 @@
                       <th>Price</th>
                       <th>File</th>
                       <th>Date</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -168,6 +182,8 @@
                       <th>Price</th>
                       <th>File</th>
                       <th>Date</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -179,8 +195,20 @@
                         <td>{{ $book->short_details }}</td>
                         <td>{{ $book->author }}</td>
                         <td>{{ $book->price }}</td>
-                        <td>{{ $book->book_file }}</td>
+                        <td>
+                          <a href="{{ $book->book_file }}" download > Downlod  </a>
+                        </td>
                         <td>{{ $book->created_at }}</td>
+                        <td class="text-center"> 
+                          <a href="{{ route('edit_form', $book->id) }}" style="color:gray">
+                            <i class="fa fa-edit "></i>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="" style="color:red;opacity: 0.7">
+                             <i class="fa fa-trash-alt "></i>
+                          </a>
+                        </td>
                       </tr>
                     @endforeach
                   

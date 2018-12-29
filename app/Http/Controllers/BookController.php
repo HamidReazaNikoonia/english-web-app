@@ -26,6 +26,8 @@ class BookController extends Controller
 
     public function save_book(Request $req) {
 
+
+
     	
     		// validate form 
     		
@@ -53,20 +55,24 @@ class BookController extends Controller
 
 
     	if($req->hasFile('book_file')) {
-    		return "true";
+
+    		$uploadedFile = $req->file('book_file');
+	    	$filename = $uploadedFile->getClientOriginalName();
+	    	$path = $req->file('book_file')->storeAs(
+	    		'books', $filename
+			);
+
+			Storage::put("books/1{$filename}", $uploadedFile);
+    		
     	} else {
-    		return "false";
+    		
+    		return redirect()->
+    		route('books-store-form')->
+    		with('status', 'File Not Upload , PLease Try Again');
     	}
 
 
-    	$uploadedFile = $req->file('book_file');
-    	return $req->hasFile('book_file');
-    	$filename = $uploadedFile->getClientOriginalName();
-    	$path = $req->file('book_file')->storeAs(
-    		'books/', $filename
-		);
-
-		Storage::put($path, $uploadedFile);
+    	
 
 		$file_path_in_storage = asset('storage/books/'. $filename);
 
@@ -82,4 +88,18 @@ class BookController extends Controller
 
 
     }
+
+
+
+    public function edit_form($id) {
+    	$book = Book::find($id);
+    	if(empty($book) OR !$book) {
+    		return redirect()->route('books-list')->with('status', 'This Book Not Exist !');
+    	}
+
+    	return view('admin.book_edit' , compact('book'));
+    }
+
+
+
 }

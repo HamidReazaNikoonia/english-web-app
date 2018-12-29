@@ -140,7 +140,7 @@
           </ol>
 
           <!-- Page Content -->
-          <h1 class="ml-5" style="font-family: monospace;">Save Information For Book</h1>
+          <h1 class="ml-5" style="font-family: monospace;">Edit Information For ( <span style="color:gray"> {{ $book->name }} </span> ) Book</h1>
           
           <hr>
           
@@ -164,57 +164,67 @@
            </div>
           @endif
           
-          <form enctype="multipart/form-data" action="{{ route('save_book') }}" method="POST">
+          <form class="mx-5" enctype="multipart/form-data" action="{{ route('save_book') }}" method="POST">
 
               @csrf
 
           <div class="form-group">
             <label for="exampleInputEmail1">Name </label>
-            <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+            <input value="{{ $book->name }}" type="text" name="name" class="form-control mx-1" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
            <small id="emailHelp" class="form-text text-muted">this name used for name of book</small>
           </div>
 
           <div class="form-group">
             <label for="exampleFormControlTextarea1">short Details</label>
-            <textarea name="short_details" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea  name="short_details" class="form-control" id="exampleFormControlTextarea1" rows="3">
+              {{ trim($book->short_details) }}
+            </textarea>
             <small id="emailHelp" class="form-text text-muted">maximum word 50</small>
           </div>
 
           <div class="form-group">
             <label for="exampleFormControlTextarea2">Details</label>
-            <textarea name="details" class="form-control" id="exampleFormControlTextarea2" rows="6"></textarea>
+            <textarea name="details" class="form-control" id="exampleFormControlTextarea2" rows="6">
+              {{ trim($book->details) }}
+            </textarea>
             <small id="emailHelp" class="form-text text-muted">maximum word 150</small>
           </div>
 
            <div class="form-group">
             <label for="exampleFormControlTextarea3">demo page NO 1</label>
-            <textarea name="details_1" class="form-control" id="exampleFormControlTextarea3" rows="10"></textarea>
+            <textarea name="details_1" class="form-control" id="exampleFormControlTextarea3" rows="10">
+              {{ trim($book->details_1) }}
+            </textarea>
             <small id="emailHelp" class="form-text text-muted">optional</small>
           </div>
 
           <div class="form-group">
             <label for="exampleFormControlTextarea4">demo page NO 2</label>
-            <textarea name="details_2" class="form-control" id="exampleFormControlTextarea4" rows="10"></textarea>
+            <textarea name="details_2" class="form-control" id="exampleFormControlTextarea4" rows="10">
+              {{ trim($book->details_2) }}
+            </textarea>
             <small id="emailHelp" class="form-text text-muted">optional</small>
           </div>
 
 
           <div class="form-group">
             <label for="exampleFormControlTextarea5">demo page NO 3</label>
-            <textarea name="details_3" class="form-control" id="exampleFormControlTextarea5" rows="10"></textarea>
+            <textarea name="details_3" class="form-control" id="exampleFormControlTextarea5" rows="10">
+              {{ trim($book->details_3) }}
+            </textarea>
             <small id="emailHelp" class="form-text text-muted">optional</small>
           </div>
 
 
           <div class="form-group">
             <label for="exampleInputEmail2">price</label>
-            <input type="number" name="price" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter price">
+            <input value="{{ $book->price }}" type="number" name="price" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter price">
            <small id="emailHelp" class="form-text text-muted">Rial</small>
           </div>
 
           <div class="form-group">
             <label for="exampleInputEmail3">author</label>
-            <input type="text" name="author" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" placeholder="Enter author">
+            <input value="{{ trim($book->author) }}" type="text" name="author" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" placeholder="Enter author">
           </div>
 
 
@@ -224,20 +234,22 @@
           <div class="form-group">
             <label for="exampleFormControlSelect1">category</label>
             <select class="form-control" id="exampleFormControlSelect1" name="category">
-              <option value="ielts">IELTS</option>
-              <option value="tofel">TOFEL</option>
+              <option value="ielts" @if($book->category=== 'ielts') selected='selected' @endif >IELTS</option>
+              <option value="tofel" @if($book->category=== 'tofel') selected='selected' @endif >TOFEL</option>
             </select>
           </div>
 
 
           <div class="form-group">
-            <label for="exampleFormControlFile1">Upload Book</label>
+            <label for="exampleFormControlFile1">Upload New Book</label>
             <input type="file" name="book_file" class="form-control-file" id="exampleFormControlFile1">
+            <small class="form-text text-muted ">if you want add new book insted </small>
+            <a  class="ml-3 pt-5" href="{{ $book->book_file }}" download> Last File Uploaded </a>
           </div>
 
 
-          <div class="form-group">
-            <input type="submit"  value="submit">
+          <div class="form-group text-center">
+            <input class="btn btn-primary w-50 m-5" type="submit"  value="submit">
           </div>
 
       </form>

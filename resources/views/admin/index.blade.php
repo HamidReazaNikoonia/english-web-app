@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Dashboard</title>
+    <title>Mansoreh - Dashboard</title>
 
     <!-- Bootstrap core CSS-->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
@@ -119,10 +119,21 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('books-list') }}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Books</span></a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            <i class="fas fa-fw fa-book-open"></i>
+            <span>Books</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <h6 class="dropdown-header">Books Setting:</h6>
+            <a class="dropdown-item" href="{{ route('books-list') }}" >Show All Books</a>
+            <a class="dropdown-item" href="{{ route('books-store-form') }}" >Add New Book</a>
+            <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">Other Pages:</h6>
+            <a class="dropdown-item" href="404.html">404 Page</a>
+            <a class="dropdown-item" href="blank.html">Blank Page</a>
+          </div>
         </li>
       </ul>
 
