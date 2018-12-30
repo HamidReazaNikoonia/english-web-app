@@ -213,6 +213,12 @@
           </div>
 
           <div class="form-group">
+            <label for="exampleInputEmail12">Cover Image</label>
+            <input type="file" name="cover-image" class="btn btn-primary form-control" id="exampleInputEmail12" aria-describedby="emailHelp" placeholder="Enter price">
+           <small id="emailHelp" class="form-text text-muted">Image Must In 300 * 400</small>
+          </div>
+
+          <div class="form-group">
             <label for="exampleInputEmail3">author</label>
             <input type="text" name="author" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" placeholder="Enter author">
           </div>

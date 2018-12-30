@@ -140,6 +140,10 @@ body {
 			</header>
 			<div class="main">
 				<ul id="bk-list" class="bk-list clearfix">
+					
+
+					@foreach($books as $book)
+
 					<li>
 						<div class="bk-book book-1 bk-bookdefault">
 							<div class="bk-front">
@@ -148,24 +152,49 @@ body {
 								</div>
 							</div>
 							<div class="bk-page">
+								
+								@if(!empty($book->details_1))
+
 								<div class="bk-content bk-content-current">
-									<p>Red snapper Kafue pike fangtooth humums slipmouth, salmon cutlassfish; swallower European perch mola mola sunfish, threadfin bream. Billfish hog sucker trout-perch lenok orbicular velvetfish. Delta smelt striped bass, medusafish dragon goby starry flounder cuchia round whitefish northern anchovy spadefish merluccid hake cat shark Black pickerel. Pacific cod.</p>
+									<p>{{ $book->details_1 }}</p>
 								</div>
+
+								@endif
+
+								@if(!empty($book->details_2))
+
+								<div class="bk-content">
+									<p>{{ $book->details_2 }}</p>
+								</div>
+
+								@endif
+
+								@if(!empty($book->details_3))
+
+								<div class="bk-content">
+									<p>{{ $book->details_3 }}</p>
+								</div>
+
+								@endif
+
+
 								<div class="bk-content">
 									<p>Whale catfish leatherjacket deep sea anglerfish grenadier sawfish pompano dolphinfish carp large-eye bream, squeaker amago. Sandroller; rough scad, tiger shovelnose catfish snubnose parasitic eel? Black bass soldierfish duckbill--Rattail Atlantic saury Blind shark California halibut; false trevally warty angler!</p>
 								</div>
+
+
 								<div class="bk-content">
 									<p>Trahira giant wels cutlassfish snapper koi blackchin mummichog mustard eel rock bass whiff murray cod. Bigmouth buffalo ling cod giant wels, sauger pink salmon. Clingfish luderick treefish flatfish Cherubfish oldwife Indian mul gizzard shad hagfish zebra danio. Butterfly ray lizardfish ponyfish muskellunge Long-finned sand diver mullet swordfish limia ghost carp filefish.</p>
 								</div>
 							</div>
 							<div class="bk-back">
-								<p>In this nightmare vision of cats in revolt, fifteen-year-old Alex and his friends set out on a diabolical orgy of robbery, rape, torture and murder. Alex is jailed for his teenage delinquency and the State tries to reform him - but at what cost?</p>
+								<p>{{ $book->short_details }}</p>
 							</div>
 							<div class="bk-right"></div>
 							<div class="bk-left">
 								<h2>
-									<span>Anthony Burghiss</span>
-									<span>A Catwork Orange</span>
+									<span>{{ $book->name }}</span>
+									<span>{{ $book->author }}</span>
 								</h2>
 							</div>
 							<div class="bk-top"></div>
@@ -175,12 +204,16 @@ body {
 							<button class="bk-bookback">Flip</button>
 							<button class="bk-bookview">View inside</button>
 							<h3>
-								<span>Anthony Burghiss</span>
-								<span>A Catwork Orange</span>
+								<span>{{ $book->author }}</span>
+								<span>{{ $book->name }}</span>
 							</h3>
-							<p>Social prophecy? Black comedy? Study of freewill? A Clockwork Orange is all of these. It is also a dazzling experiment in language, as Burghiss creates a new language - 'meow', the cat slang of a not-too-distant future.</p>
+							<p>{{ $book->short_details }}</p>
 						</div>
 					</li>
+
+
+					@endforeach
+
 					<li>
 						<div class="bk-book book-2 bk-bookdefault">
 							<div class="bk-front">

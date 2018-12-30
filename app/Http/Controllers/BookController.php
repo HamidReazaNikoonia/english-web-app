@@ -10,7 +10,8 @@ use App\Book;
 class BookController extends Controller
 {
     public function index() {
-    	return view('book.index');
+    	$books = Book::all();
+    	return view('book.index', compact('books'));
     }
 
     public function list() {
@@ -37,11 +38,13 @@ class BookController extends Controller
     		'short_details' => 'required|max:700',
     		'price' => 'required|numeric',
     		'category' => 'required',
-    		'book_file' => 'file'
+    		'book_file' => 'file',
+    		'cover-image' => 'file'
 
     	]);
 
     	$Obj = new Book;
+        $image_path_in_storage = '';
 
     	$Obj->name = $req->name;
     	$Obj->short_details = $req->short_details;
@@ -54,15 +57,35 @@ class BookController extends Controller
     	$Obj->details_3 = $req->details_3;
 
 
+    	if($req->hasFile('cover-image')) {
+    		$uplodedImage = $req->file('cover-image');
+    		$imageName = $uplodedImage->getClientOriginalName();
+    		// $path_image = $req->file('cover-image')->storeAs(
+    		// 	 'public_html/books_cover_images' ,$imageName
+    		// );
+
+    		// Storage::disk('ftp')->put("public_html/books_cover_images/" , $uplodedImage);
+         
+            $path_img = Storage::putFileAs('cover_images', $uplodedImage, $imageName);
+
+    		// $image_path_in_storage = 'http://www.my-panel-333.ir/books_cover_images/'. $imageName;
+                $image_path_in_storage = $path_img;
+    	}
+
+
     	if($req->hasFile('book_file')) {
 
     		$uploadedFile = $req->file('book_file');
 	    	$filename = $uploadedFile->getClientOriginalName();
-	    	$path = $req->file('book_file')->storeAs(
-	    		'books', $filename
-			);
+	   //           	$path = $req->file('book_file')->storeAs(
+    //               		'public_html/books', $filename
+			 // );
 
-			Storage::put("books/1{$filename}", $uploadedFile);
+			// Storage::disk('ftp')->put("public_html/books/", $uploadedFile);
+      
+            $path_file = Storage::putFileAs('books_us', $uploadedFile, $filename);
+
+			$file_path_in_storage = $path_file;
     		
     	} else {
     		
@@ -74,9 +97,15 @@ class BookController extends Controller
 
     	
 
-		$file_path_in_storage = asset('storage/books/'. $filename);
+		if($file_path_in_storage && $file_path_in_storage !== null) {
+			$Obj->book_file = $file_path_in_storage;	
+		}
 
-		$Obj->book_file = $file_path_in_storage;
+		if($image_path_in_storage !== 'undefined' && $image_path_in_storage !== null) {
+			$Obj->cover_image = $image_path_in_storage;
+		}
+
+		
 
 
     	$Obj->save();
