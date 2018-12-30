@@ -66,7 +66,7 @@ class BookController extends Controller
 
     		// Storage::disk('ftp')->put("public_html/books_cover_images/" , $uplodedImage);
          
-            $path_img = Storage::putFileAs('cover_images', $uplodedImage, $imageName);
+            $path_img = Storage::putFileAs('public_html/cover_images', $uplodedImage, $imageName);
 
     		// $image_path_in_storage = 'http://www.my-panel-333.ir/books_cover_images/'. $imageName;
                 $image_path_in_storage = $path_img;
@@ -83,7 +83,7 @@ class BookController extends Controller
 
 			// Storage::disk('ftp')->put("public_html/books/", $uploadedFile);
       
-            $path_file = Storage::putFileAs('books_us', $uploadedFile, $filename);
+            $path_file = Storage::putFileAs('public_html/books_us', $uploadedFile, $filename);
 
 			$file_path_in_storage = $path_file;
     		
@@ -97,7 +97,7 @@ class BookController extends Controller
 
     	
 
-		if($file_path_in_storage && $file_path_in_storage !== null) {
+		if($file_path_in_storage !== 'undefined' && $file_path_in_storage !== null) {
 			$Obj->book_file = $file_path_in_storage;	
 		}
 
