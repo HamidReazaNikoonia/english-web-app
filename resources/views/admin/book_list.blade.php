@@ -194,7 +194,7 @@
                         <td>{{ $book->name }}</td>
                         <td>{{ $book->short_details }}</td>
                         <td>{{ $book->author }}</td>
-                        <td>{{ $book->price }}</td>
+                        <td>{{ $book->price }} Rial</td>
                         <td>
                           <a href="{{ $book->book_file }}" download > Downlod  </a>
                         </td>
@@ -205,9 +205,12 @@
                           </a>
                         </td>
                         <td class="text-center">
-                          <a href="" style="color:red;opacity: 0.7">
-                             <i class="fa fa-trash-alt "></i>
-                          </a>
+                          <form method="POST" action="{{ route('delete_book') }}" >
+                            @csrf
+                              <input type="hidden" name="id" value="{{ $book->id }}">
+                              <input class="btn btn-danger" type="submit" style="color:white;opacity: 0.7" value="Delete">
+                          </form>
+                         
                         </td>
                       </tr>
                     @endforeach

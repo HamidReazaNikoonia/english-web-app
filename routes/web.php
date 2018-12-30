@@ -43,6 +43,8 @@ Route::get('/admin/books/index' ,  'BookController@list')->name('books-list');
 Route::get('/admin/books/store' , 'BookController@store')->name('books-store-form');
 Route::post('/admin/books/store' , 'BookController@save_book')->name('save_book');
 Route::get('/admin/books/edit/{id}' , 'BookController@edit_form')->name('edit_form');
+Route::post('/admin/books/edit' ,  'BookController@edit')->name('edit_book');
+Route::post('/admin/books/delete' ,  'BookController@delete')->name('delete_book');
 
 Route::get('/contact', 'ContactController@index');
 Route::post('/contact', 'ContactController@store');

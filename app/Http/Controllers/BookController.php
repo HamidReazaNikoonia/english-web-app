@@ -100,6 +100,68 @@ class BookController extends Controller
     	return view('admin.book_edit' , compact('book'));
     }
 
+    public function edit(Request $req) {
+    	$id = $req->id;
+    	if(!$id OR empty($id) OR $id == null) {
+    		return false;
+    	}
+
+    	$Obj = Book::find($id);
+
+    	$Obj->name = trim($req->name);
+    	$Obj->short_details = trim($req->short_details);
+    	$Obj->details = trim($req->details);
+    	$Obj->price = $req->price;
+    	$Obj->author = trim($req->author);
+    	$Obj->category = $req->category;
+    	$Obj->details_1 = trim($req->details_1);
+    	$Obj->details_2 = trim($req->details_2);
+    	$Obj->details_3 = trim($req->details_3);
+
+    	if($req->hasFile('book_file')) {
+
+    		$uploadedFile = $req->file('book_file');
+	    	$filename = $uploadedFile->getClientOriginalName();
+	    	$path = $req->file('book_file')->storeAs(
+	    		'books', $filename
+			);
+
+			Storage::put("books/1{$filename}", $uploadedFile);
+
+			$file_path_in_storage = asset('storage/books/'. $filename);
+
+		$Obj->book_file = $file_path_in_storage;
+
+
+    	
+    		
+    	}
+
+
+    	$Obj->save();
+
+    	return redirect()->route('books-list');
+
+
+    }
+
+
+    public function delete(Request $req) {
+    	$id =  $req->id;
+    	if(!$id OR $id == null) {
+    		return " Try Agaian ";
+    	}
+
+    	$book = Book::find($id);
+
+    	if($book !== null) {
+    		$book->delete();
+    		return redirect()->route('books-list');
+    	} else {
+    		return "this Book Not Exist";
+    	}
+    }
+
 
 
 }

@@ -164,9 +164,11 @@
            </div>
           @endif
           
-          <form class="mx-5" enctype="multipart/form-data" action="{{ route('save_book') }}" method="POST">
+          <form class="mx-5" enctype="multipart/form-data" action="{{ route('edit_book') }}" method="POST">
 
               @csrf
+
+              <input type="hidden" name="id" value="{{ $book->id }}">
 
           <div class="form-group">
             <label for="exampleInputEmail1">Name </label>
@@ -244,7 +246,7 @@
             <label for="exampleFormControlFile1">Upload New Book</label>
             <input type="file" name="book_file" class="form-control-file" id="exampleFormControlFile1">
             <small class="form-text text-muted ">if you want add new book insted </small>
-            <a  class="ml-3 pt-5" href="{{ $book->book_file }}" download> Last File Uploaded </a>
+            <a  class="ml-3 pt-0" href="{{ $book->book_file }}" download> Last File Uploaded </a>
           </div>
 
 
