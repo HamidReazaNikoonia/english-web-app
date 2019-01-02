@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
   margin: 0;
+
 }
 
 .section {
@@ -11,8 +12,73 @@ html, body {
 
 #one {
 
-  
-  
+}
+
+
+.p_1 {
+  background-color: white;
+  display: none;
+  position: absolute;
+  left:-200px;
+  top:100px;
+  width: 200px;
+  height:260px;
+  box-shadow:0px 0px 24px gray;
+
+}
+
+
+.p_2 {
+  background-color: white;
+  display: none;
+  position: absolute;
+  left:-200px;
+  bottom:0;
+  height: 200px;
+  width:260px;
+  box-shadow:0px 0px 24px gray;
+
+}
+
+.p_3 {
+  background-color: white;
+  display: none;
+  position: absolute;
+  top:20px;
+  right:-240px;
+  width:180px;
+  height: 240px;
+  box-shadow:0px 0px 24px gray;
+}
+
+#t_1 {
+  opacity: 0;
+}
+
+
+.p_4 {
+  background-color: white;
+  display: none;
+  position: absolute;
+  top:30vh;
+  width: 250px;
+  height: 360px;
+  right: -350px;
+  box-shadow:0px 0px 24px gray;
+}
+
+
+.gray_back {
+  position: fixed;
+  left:50%;
+  top:50vh;
+  transform:translate(-50%,-50%);
+  background-color: #add5c7;
+  top:70vh;
+  width: 95%;
+  height: 20px;
+  display: none;
+  z-index: -999;
 }
 
 
@@ -46,11 +112,12 @@ html, body {
 }
 
   .h1_first {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
     font-weight: bolder;
     position: absolute;
     width: 100%;
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 4px;
   }
 
 

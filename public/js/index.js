@@ -23,7 +23,9 @@ TweenMax.defaultOverwrite = false;
 
   
   function func() {
-    // $('.paper_2').css("position","relative");
+    var ele = $('#t_1');
+    console.dir(ele);
+    TweenMax.to(ele,1,{opacity:1});
   }
   
   function func_1() {
@@ -38,12 +40,20 @@ TweenMax.defaultOverwrite = false;
 
   var tl = new TimelineMax();
 
-  tl.add(TweenMax.fromTo($('.foo'), 14, {height:'100%'} , {height:0,opacity:0.8} ))
+  tl.add(TweenMax.fromTo($('.foo'), 9, {height:'100%'} , {height:0,opacity:0.8} ))
   .add(TweenMax.to($('.paper_2'),3, {scale:1.2,boxShadow:"0px 0px 60px gray"}))
-  .add(TweenMax.to($('.paper_2'),3, {scale:0.8,boxShadow:"0px 0px 60px gray",delay:1}))
-  .add(TweenMax.to($('.paper_2'),3, {scale:1,boxShadow:"0px 0px 60px gray",delay:5}))
-  .add(TweenMax.to($('.paper_2'),3, {scale:0.2,boxShadow:"0px 0px 60px gray",delay:1}))
-  .add(TweenMax.to($('.paper_2'),5, {scale:1.2,boxShadow:"0px 0px 60px gray",delay:1}));
+  .add(TweenMax.to($('.gray_back'),3,{paddingTop:850,paddingBottom:78,display:'block'}))
+  .add([
+      TweenMax.to($('.p_1'),3,{display:'block',x:400}),
+      TweenMax.to($('.p_2'),3,{display:'block',x:170,delay:0.3}),
+      TweenMax.to($('.p_3'),4,{display:'block',right:140}),
+      TweenMax.to($('.p_4'),4,{display:'block',right:-50})
+    ])
+  .add(
+      TweenMax.to($('.p_1'),2,{rotation:40,y:-100,x:-200,delay:2})
+    )
+
+
 
 
 
