@@ -56,6 +56,43 @@ html, body {
 }
 
 
+.text_line_1 {
+  
+  
+  
+  /*height: 0;*/
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-size: 4rem;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px #00000041;
+  z-index: 99999999;
+   display: block;
+  float: left;
+  left: 50%;
+  
+
+
+}
+
+.line_1 {
+  width:90%;
+  position: fixed;
+  z-index: 99;
+  height: 6px;
+  opacity: 0.8;
+  background-color: black;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+
 .p_4 {
   background-color: white;
   display: none;

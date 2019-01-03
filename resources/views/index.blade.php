@@ -21,7 +21,14 @@
         <h1 style="font-family: 'Luckiest Guy', cursive;font-size: 8rem;position: absolute;width: 150%;text-align: center;left:-6vw;" class="pt-4">At English</h1>
       </div>
 
-      <div class="paper_2"></div>
+      <div class="line_1">
+        
+      </div>
+      <h1 class="text_line_1">Edit Your Documents</h1>
+
+      <div class="paper_2">
+        
+      </div>
 
       <div class="gray_back"></div>
 
@@ -101,6 +108,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
 <script src="./js/scroll_magic.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
 
 <script type="text/javascript">
 
