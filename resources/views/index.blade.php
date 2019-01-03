@@ -34,22 +34,24 @@
 
       <div style="font-family: 'Happy Monkey', cursive;" class="p_1">
         <h3 id="t_1" style="font-size: 0.8rem;text-align: center;margin-top: 15px">this is sample text</h3>
-        <h5 class="px-2 pt-3" style="text-align: center;font-size: 0.7rem;color:gray">
+        
+        <h5 id="t_2" class="px-2 pt-3" style="text-align: center;font-size: 0.7rem;color:gray">
                 this is sample text <span class="wrong1">andd</span> this is 
-              </h5>
-              <h5 class="pl-3" style="text-align: left;font-size: 0.7rem;color:gray">
+        </h5>
+
+              <h5 id="t_3" class="pl-3" style="text-align: left;font-size: 0.7rem;color:gray">
                 in this text we have <span class="wrong2">sone</span>.
               </h5>
 
-              <h5 class="px-2 pt-2" style="text-align: center;font-size: 0.7rem;color:gray">
+              <h5 id="t_4" class="px-2 pt-2" style="text-align: center;font-size: 0.7rem;color:gray">
                 wrong word , and elma can <span class="wrong">be </span>
               </h5>
               
-              <h5 class="px-2 pl-3" style="text-align: left;font-size: 0.7rem;color:gray">
+              <h5 id="t_5" class="px-2 pl-3" style="text-align: left;font-size: 0.7rem;color:gray">
                 help <span class="wrong3">us</span> to <span class="wrong4">has</span> nice document.
               </h5>
 
-                            <h5 class="px-2 pt-5 mt-4  pl-4" style="text-align: left;font-size: 0.3rem;color:gray">
+                            <h5 id="t_6" class="px-2 pt-5 mt-4  pl-4" style="text-align: left;font-size: 0.3rem;color:gray">
                 best Regurd
               </h5>
       </div>

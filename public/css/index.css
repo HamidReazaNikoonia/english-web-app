@@ -56,8 +56,8 @@ html, body {
 }
 
 
-.wrong {
-  padding:3px 2px;
+.wrong,.wrong1,.wrong2,.wrong3,.wrong4 {
+  padding:1px 2px;
 
 }
 
