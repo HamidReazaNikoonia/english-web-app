@@ -66,7 +66,13 @@ TweenMax.defaultOverwrite = false;
     ])
   .add(TweenMax.fromTo($('.line_1'),2,{width:0},{width:"90%"}))
   .add(TweenMax.to($('.text_line_1'),2,{backgroundColor:'#00000041',opacity:1,onStart:on_start}))
-  
+  .add([
+      TweenMax.to($('.wrong'),0.4,{backgroundColor:'yellow',opacity:1,color:'red',color:'black',fontWeight:'bolder'}),
+      TweenMax.to($('.wrong1'),0.4,{backgroundColor:'yellow',opacity:1,color:'red',color:'black',fontWeight:'bolder',delay:0.5}),
+      TweenMax.to($('.wrong2'),0.4,{backgroundColor:'yellow',opacity:1,color:'red',color:'black',fontWeight:'bolder',delay:1}),
+      TweenMax.to($('.wrong3'),0.4,{backgroundColor:'yellow',opacity:1,color:'red',color:'black',fontWeight:'bolder',delay:1.5}),
+      TweenMax.to($('.wrong4'),0.4,{backgroundColor:'yellow',opacity:1,color:'red',color:'black',fontWeight:'bolder',delay:0.5})
+    ])
   .add(TweenMax.fromTo($('.line_1'),2,{width:"90%"},{width:"0%"}))
   .add(TweenMax.to($('.text_line_1'),2,{y:-150,delay:2}))
   .add(
