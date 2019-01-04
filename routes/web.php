@@ -46,6 +46,13 @@ Route::get('/admin/books/edit/{id}' , 'BookController@edit_form')->name('edit_fo
 Route::post('/admin/books/edit' ,  'BookController@edit')->name('edit_book');
 Route::post('/admin/books/delete' ,  'BookController@delete')->name('delete_book');
 
+
+// weblog
+
+Route::get('/admin/blog', 'BlogController@post_form')->name('blog_form');
+
+
+
 Route::get('/contact', 'ContactController@index');
 Route::post('/contact', 'ContactController@store');
 
@@ -54,7 +61,10 @@ Route::get('/books' , 'BookController@index');
 Route::post('hamid/upload' ,'UploadController@store')->name('upload');
 
 
-Route::get('/blog', 'BlogController@index');
+
+
+
+
 
 Route::get('/about-me' , 'AboutMeController@index');
 
