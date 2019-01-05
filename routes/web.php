@@ -50,7 +50,7 @@ Route::post('/admin/books/delete' ,  'BookController@delete')->name('delete_book
 // weblog
 
 Route::get('/admin/blog', 'BlogController@post_form')->name('blog_form');
-
+Route::post('/admin/blog/upload-image' , 'UploadController@uploadPostImage')->name('upload_image_post');
 
 
 Route::get('/contact', 'ContactController@index');

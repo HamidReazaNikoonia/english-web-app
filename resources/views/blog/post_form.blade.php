@@ -6,11 +6,28 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <title>SB Admin - Blank Page</title>
 
+
+  <style type="text/css">
+    #upload_ {
+      border-radius: 10px;
+      border:1px solid gray; 
+    }
+
+    #head_image {
+      display: none;
+    }
+
+    #image_submit {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
 
 
       <!-- Bootstrap core CSS-->
@@ -145,6 +162,16 @@
 
           <!-- Page Content -->
           <h1>Add New Post</h1>
+
+          @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
           
           <div class="row">
             <div class="col-12 px-5 pt-5 pb-3 ">
@@ -186,14 +213,19 @@
               </div>
 
 
-                <div class="form-group">
-                  <label>Upload Image</label>
+                <form id="upload_"  class="form-group card" method="POST" enctype="multipart/form-data">
+                  @csrf
+                  <div class="card-body">
+                    <label class="mr-4 mb-3  d-block">Upload Image </label>
                   <input type="file" name="file" id="head_image">
-                </div>
+                  <button class="btn btn-primary" id="input_file_trigger">Pick UP Photo</button>
+                  <input id="image_submit" type="submit" class="btn btn-secondary" value="Send Image">
+                  </div>
+                </form>
 
 
-                <div>
-                  <button class="btn btn-primary w-50" id="submit">Send</button>
+                <div class="pt-5">
+                  <button class="btn btn-primary w-100" id="submit">Send</button>
                 </div>
                 
 
@@ -253,23 +285,117 @@
 
 
     <script type="text/javascript">
+
+      var state_ = {
+            image_upoloded:false
+          }
+
+          window.$states_ = state_;
       
           $('document').ready(function() {
             $("#post_text").jqte();
-          });
+          })
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        }); 
+
+          $('#input_file_trigger').click(function() {
+              // var st = window.$states_;
+              // st.image_upoloded = true;
+              // window.$states_ = st;
+              $('#head_image').trigger('click');
+          })
+
+
+
+          
+
+
+          function loading(state) {
+              
+              var btn = $('#image_submit');
+
+            if(state) {
+                btn.attr('value','waiting ...');
+                btn.css('background-color','blue');
+                return;
+            }
+                btn.attr('value','Send Image');
+                btn.css('background-color','#6c757d');
+                return;
+
+          }
+
+
+          function imageUploadVerification(result) {
+              if(result.length == 0 || result == 'false') {
+                alert('image dosent upload , try agian');
+              } else {
+                alert('your image uploaded');
+              }
+
+          }
+
+
+          var obj = {
+                        title: $('#title').val(),
+                        description: $('#description').val(),
+                        author:$('#author').val(),
+                        category: $('#category').val(),
+                        post_text: $('#post_text').val(),
+                        head_image:window.uploaded_file
+
+                      }
+
+
+
+
+                  $('#upload_').submit(function(event) {
+
+                        // var state__ = window.$states_;
+                      // console.log(state__);
+                      // if(state__.image_upoloded == false) {
+                      //   event.preventDefault();
+                      //   alert('please select image');
+                      //   return false;
+                      // }
+                    
+
+                    event.preventDefault();
+                    var formData = new FormData($("#upload_")[0]);
+                    loading(true);
+          
+                    console.log(formData);
+                    $.ajax({
+                        url: '{{ route("upload_image_post") }}',
+                        type: 'POST',              
+                        data: formData,
+                          processData: false,
+                          contentType: false,
+                          success: function(result)
+                        {
+                            console.log('success');
+                             window.uploaded_file = result;
+                             console.log(result);
+                             loading(false);
+                             imageUploadVerification(window.uploaded_file);
+                        },
+                        error: function(data)
+                        {
+                            console.log(data);
+                            loading(false);
+                        }
+                    });
+
+                  });
 
 
           $('#submit').click(function(event) {
             
-          var obj = {
-            title: $('#title').val(),
-            description: $('#description').val(),
-            author:$('#author').val(),
-            category: $('#category').val(),
-            post_text: $('#post_text').val(),
-            head_image:window.ImageUploaded
-
-          }
+          
 
           if(obj.title.length == 0 || obj.title == " " || obj.title === null) {
             alert("Please Enter Data");

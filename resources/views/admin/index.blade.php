@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Mansoreh - Dashboard</title>
+    <title>ELMA-CENTER</title>
 
     <!-- Bootstrap core CSS-->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">

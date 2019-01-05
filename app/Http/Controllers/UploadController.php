@@ -7,6 +7,26 @@ use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
 {
+
+
+	public function uploadPostImage(Request $req) {
+
+		if($req->hasFile('file')) {
+			$uploadImage = $req->file('file');
+			$filename = time().$uploadImage->getClientOriginalName();
+
+			$path_file = Storage::putFileAs('public_html/blog_images', $uploadImage, $filename);
+
+			$file_path_in_storage = $path_file;
+
+			return $file_path_in_storage;
+		} else {
+			return "false";
+		}
+	}
+
+
+
     public function store(Request $rq) {
 
 
