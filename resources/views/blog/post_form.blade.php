@@ -218,7 +218,7 @@
                   <div class="card-body">
                     <label class="mr-4 mb-3  d-block">Upload Image </label>
                   <input type="file" name="file" id="head_image">
-                  <button class="btn btn-primary" id="input_file_trigger">Pick UP Photo</button>
+                  <div class="btn btn-primary" id="input_file_trigger">Pick UP Photo</div>
                   <input id="image_submit" type="submit" class="btn btn-secondary" value="Send Image">
                   </div>
                 </form>
@@ -286,11 +286,13 @@
 
     <script type="text/javascript">
 
+      window.uploaded_file = "";
+
       var state_ = {
             image_upoloded:false
           }
 
-          window.$states_ = state_;
+          // window.$states_ = state_;
       
           $('document').ready(function() {
             $("#post_text").jqte();
@@ -306,8 +308,9 @@
               // var st = window.$states_;
               // st.image_upoloded = true;
               // window.$states_ = st;
-              $('#head_image').trigger('click');
-          })
+              // $('#head_image').trigger('click');
+              document.getElementById("head_image").click();
+          });
 
 
 
@@ -316,17 +319,36 @@
 
           function loading(state) {
               
-              var btn = $('#image_submit');
+              var btn_ = $('#image_submit');
 
             if(state) {
-                btn.attr('value','waiting ...');
-                btn.css('background-color','blue');
+                btn_.attr('value','waiting ...');
+                btn_.css('background-color','blue');
                 return;
             }
-                btn.attr('value','Send Image');
-                btn.css('background-color','#6c757d');
+
+             btn_.attr('value','Send Image');
+                btn_.css('background-color','#6c757d');
                 return;
 
+          }
+
+
+          function loading_submit(state) {
+            var btn_ = $('#submit');
+
+            if(state) {
+              btn_.text("Please Wait ....");
+                btn_.css('background-color','red');
+                return;
+              
+            }
+
+           
+
+                btn_.text("Send");
+                btn_.css('background-color','#007bff');
+                return;
           }
 
 
@@ -340,15 +362,6 @@
           }
 
 
-          var obj = {
-                        title: $('#title').val(),
-                        description: $('#description').val(),
-                        author:$('#author').val(),
-                        category: $('#category').val(),
-                        post_text: $('#post_text').val(),
-                        head_image:window.uploaded_file
-
-                      }
 
 
 
@@ -394,6 +407,18 @@
 
 
           $('#submit').click(function(event) {
+
+            loading_submit(true);
+
+          var obj = {
+                        title: $('#title').val(),
+                        desciption: $('#description').val(),
+                        author:$('#author').val(),
+                        category: $('#category').val(),
+                        post_text: $('#post_text').val(),
+                        head_image:window.uploaded_file
+
+                      }
             
           
 
@@ -409,6 +434,26 @@
 
 
           console.log(obj);
+
+            $.ajax({
+                        url: '{{ route("add_post") }}',
+                        type: 'POST',              
+                        data: obj,
+                          
+                          
+                          success: function(result)
+                        {
+                            console.log('success');
+                             window.uploaded_file = result;
+                             console.log(result);
+                             loading_submit(false);
+                        },
+                        error: function(data)
+                        {
+                            console.log(data);
+                            loading_submit(false);
+                        }
+                    });
         
           });
       
