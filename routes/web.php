@@ -52,7 +52,9 @@ Route::post('/admin/books/delete' ,  'BookController@delete')->name('delete_book
 Route::get('/admin/blog', 'BlogController@post_form')->name('blog_form');
 Route::post('/admin/blog/upload-image' , 'UploadController@uploadPostImage')->name('upload_image_post');
 Route::post('/admin/blog/new-post', 'BlogController@store')->name('add_post');
-Route::get('/admin/blog/edit-post' , 'BlogController@edit')->name('edit_post');
+Route::get('/admin/blog/list', 'BlogController@index')->name('blog_list');
+Route::get('/admin/blog/edit-post/{id}' , 'BlogController@edit')->name('edit_post');
+Route::post('/admin/blog/edit-post' , 'BlogController@edit_store')->name('edit_store');
 
 Route::get('/blog' , 'BlogController@index');
 

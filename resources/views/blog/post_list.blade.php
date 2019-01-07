@@ -137,13 +137,135 @@
             <li class="breadcrumb-item">
               <a href="index.html">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Blank Page</li>
+            <li class="breadcrumb-item active">All Posts</li>
           </ol>
 
           <!-- Page Content -->
-          <h1>Blank Page</h1>
+          <h1>All Posts</h1>
           <hr>
-          <p>This is a great starting point for new custom pages.</p>
+          
+
+          <div class="row">
+            <div class="col-12">
+                        <div class="card mb-3">
+            <div class="card-header">
+              <div class="d-flex justify-content-between flex-xm-column">
+                <div>
+                    <i class="fas fa-table"></i>
+                    All books
+                </div>
+
+                <div>
+                  <a href="{{ route('books-store-form') }}">
+                    <i class="fas fa-plus-square"></i>
+                    Create New Book
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Title</th>
+                      <th>Author</th>
+                      <th>Desciption</th>
+                      <th>Activate</th>
+                      <th>Image</th>
+                      <th>Date</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Title</th>
+                      <th>Author</th>
+                      <th>Desciption</th>
+                      <th>Activate</th>
+                      <th>Image</th>
+                      <th>Date</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+
+                    @foreach($posts as $post)
+                      <tr>
+                        
+                        <td>{{ $post->title }}</td>
+                        <td>{{ $post->author }}</td>
+                        <td>{{ $post->desciption }}</td>
+
+
+                        <td> 
+                            
+                            @if($post->activate == 1)
+                            
+                              <div style="text-align: center;color: green;font-size: 1.7rem"> + </div>
+
+                            @else
+
+                            <div style="text-align: center;color: gray;font-size: 1.7rem"> - </div>
+                            @endif
+
+                        </td>
+
+
+                        <td>
+                          <?php
+
+                              $image = $post->head_image;
+                              if($image == null OR $image == '' OR $image == " ") {
+
+                            }
+                          ?>
+
+                          @if($post->head_image == null OR $post->head_image == "" OR $post->head_image == " ")
+
+                          <div style="color:tomato"> Nothing </div>
+
+                          @else
+
+
+                          <a href="{{ $post->head_image }}" download > Downlod  </a>
+
+                          
+
+                          @endif
+                        
+
+                        </td>
+
+                        <td>{{ $post->created_at }}</td>
+                        <td class="text-center"> 
+                          <a href="{{ route('edit_post', $post->id) }}" style="color:gray">
+                            <i class="fa fa-edit "></i>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <form method="POST" action="{{ route('delete_book') }}" >
+                            @csrf
+                              <input type="hidden" name="id" value="{{ $post->id }}">
+                              <input class="btn btn-danger" type="submit" style="color:white;opacity: 0.7" value="Delete">
+                          </form>
+                         
+                        </td>
+                      </tr>
+                    @endforeach
+                  
+                   
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">
+              <a href="{{ url('/admin   ') }}">refresh data</a>
+            </div
+            </div>
+          </div>
 
         </div>
         <!-- /.container-fluid -->

@@ -12,7 +12,7 @@ class BlogController extends Controller
 
 	public function index() {
 		$posts = Post::all();
-		return $posts;
+		return view('blog.post_list' , compact('posts'));
 	}
 
 
@@ -46,7 +46,27 @@ class BlogController extends Controller
     }
 
 
-        public function edit(Request $req) {
+    	public function edit($id) {
+
+    		
+    		if($id == 0) {
+    			return "false";
+    		}
+
+
+    		$data = Post::find($id);
+    		$categorys = PostCategory::all();
+
+    			if($data == null OR count($data) == 0)  {
+    				return "post not exist";
+    			}
+
+
+    		return view('blog.post_form_edit' , compact(['data','categorys']));
+    	}
+
+
+        public function edit_store(Request $req) {
 
     	$req->validate([
     		'title' => 'required',
