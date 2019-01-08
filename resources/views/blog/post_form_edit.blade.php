@@ -200,7 +200,9 @@
                 <select class="form-control" id="category" aria-describedby="emailHelp" placeholder="Enter author">
 
                     @foreach($categorys as $category)
-                      <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                      <option 
+                        {{ $data->category == $category->id ? 'selected="selected"' : '' }}
+                       value="{{ $category->id }}">{{ $category->category_name }}</option>
                     @endforeach
 
                 </select>
@@ -210,6 +212,7 @@
               <div class="form-group">
                 <label for="post_text">Your Story</label>
                 <textarea style="min-height: 400px"  class="form-control" id="post_text" aria-describedby="emailHelp" placeholder="......">
+                  {{ $data->post_text }}
                 </textarea>
               </div>
 

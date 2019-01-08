@@ -33,6 +33,7 @@ class BlogController extends Controller
     	$post->title = $req->title;
     	$post->desciption = $req->desciption;
     	$post->category = $req->category;
+    	$post->post_text = $req->post_text;
     	$post->head_image   =  $req->head_image;
     	$post->author   =  $req->author;
     	$post->user_id   =  1;
@@ -44,6 +45,25 @@ class BlogController extends Controller
 
 
     }
+
+
+
+    	public function deletePost(Request $req) {
+    		$id = $req->id;
+    		if( $id == null OR $id == 0) {
+    			return redirect()->route('blog_list')->with("status", "This Post Not Exist");
+    		}
+
+
+    			if(filter_var($id, FILTER_VALIDATE_INT)) {
+    				$post = Post::find($id);
+    				$post->delete();
+    				return redirect()->route('blog_list')->with("status", "Post {$id} NO deleted");
+    			} else {
+    				return redirect()->route('blog_list')->with("status", "This Post Not Exist");
+    			}
+    		
+    	}
 
 
     	public function edit($id) {
@@ -78,6 +98,7 @@ class BlogController extends Controller
     	$post->desciption = $req->desciption;
     	$post->category = $req->category;
     	$post->head_image   =  $req->head_image;
+    	$post->post_text = $req->post_text;
     	$post->author   =  $req->author;
     	$post->user_id   =  1;
     	$post->activate = 1;

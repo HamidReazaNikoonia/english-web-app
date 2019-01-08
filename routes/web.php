@@ -55,6 +55,7 @@ Route::post('/admin/blog/new-post', 'BlogController@store')->name('add_post');
 Route::get('/admin/blog/list', 'BlogController@index')->name('blog_list');
 Route::get('/admin/blog/edit-post/{id}' , 'BlogController@edit')->name('edit_post');
 Route::post('/admin/blog/edit-post' , 'BlogController@edit_store')->name('edit_store');
+Route::post('/admin/blog/delete-post' ,'BlogController@deletePost')->name('delete-post');
 
 Route::get('/blog' , 'BlogController@index');
 

@@ -143,6 +143,15 @@
           <!-- Page Content -->
           <h1>All Posts</h1>
           <hr>
+
+          @if (session('status'))
+          <div class="jumbotron">
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+          </div>
+          @endif
+
           
 
           <div class="row">
@@ -156,9 +165,9 @@
                 </div>
 
                 <div>
-                  <a href="{{ route('books-store-form') }}">
+                  <a href="{{ route('blog_form') }}">
                     <i class="fas fa-plus-square"></i>
-                    Create New Book
+                    Create New Post
                   </a>
                 </div>
               </div>
@@ -246,7 +255,7 @@
                           </a>
                         </td>
                         <td class="text-center">
-                          <form method="POST" action="{{ route('delete_book') }}" >
+                          <form method="POST" action="{{ route('delete-post') }}" >
                             @csrf
                               <input type="hidden" name="id" value="{{ $post->id }}">
                               <input class="btn btn-danger" type="submit" style="color:white;opacity: 0.7" value="Delete">
