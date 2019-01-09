@@ -259,7 +259,13 @@
             }
         }); 
 
-          var type1 = {
+          
+          
+          
+          var submit = $('.submit');
+          submit.click(function(event) {
+
+            var type1 = {
             value:$('input[name=1]').val(),
             id:1
           }
@@ -275,10 +281,7 @@
             value:$('input[name=4]').val(),
             id:4
           }
-          
-          
-          var submit = $('.submit');
-          submit.click(function(event) {
+
             var tpe = $(this).data('id');
             console.log(tpe);
 
@@ -319,6 +322,8 @@
               data:price_value,
               success: function(result) { 
                 console.log(result);
+                alert(result);
+                window.location = "/admin/service-price";
 
               }, 
               error: function(err) {

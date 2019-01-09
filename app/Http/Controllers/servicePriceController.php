@@ -22,23 +22,25 @@ class servicePriceController extends Controller
     		$service_price = servicePrice::find($id);
 
     		if($service_price == null) {
-    			return redirect()->route('set_price_for_service')
-    			->with("status", "Error this row not exist");
+    			return "Error this row not exist";
+    			
     		}
 
 
-    		$price = $req->prrice;
+    		$price = (int)$req->price;
+
     		if(!is_numeric($price)) {
     			return "Fuck";
     		}
-    		return $req->price;
-    		// $service_price->price = $req->price;
+    		
+    		$service_price->price = intval($req->price);
 
-    		// $service_price->save();
+    		$service_price->save();
+
+				return "succsessfully";
 
     	} else {
-    		return redirect()->route('set_price_for_service')
-    			->with("status", "Error id not correct");
+    			return "Error id not correct";
     	}
 
     	

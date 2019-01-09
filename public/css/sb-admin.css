@@ -11,6 +11,7 @@ html {
 
 body {
   height: 100%;
+  font-family: 'Karla', sans-serif;
 }
 
 #wrapper {
@@ -91,6 +92,8 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 
 .navbar-nav .nav-item.active .nav-link {
   color: #fff;
+  font-weight: normal;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .navbar-nav .nav-item.dropdown .dropdown-toggle::after {

@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Karla" rel="stylesheet">
+
     <title>ELMA-CENTER</title>
 
     <!-- Bootstrap core CSS-->
@@ -25,7 +27,7 @@
 
   </head>
 
-  <body id="page-top">
+  <body style="font-family: 'Karla', sans-serif" id="page-top">
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -105,19 +107,24 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Post Setting</h6>
-            <a class="dropdown-item" href="{{ route('blog_form') }}">Add New Post</a>
-            <a class="dropdown-item" href="register.html">Register</a>
-            <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
             <div class="dropdown-divider"></div>
-            <h6 class="dropdown-header">Other Pages:</h6>
-            <a class="dropdown-item" href="404.html">404 Page</a>
-            <a class="dropdown-item" href="blank.html">Blank Page</a>
+            <a class="dropdown-item" href="{{ route('blog_form') }}">Add New Post</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{{ route('blog_list') }}">Show All Posts</a>
+            
+            
+            
           </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('set_price_for_service') }}">
+            <i class="fas fa-fw fa-box"></i>
+            <span>Edit Service Price</span></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
@@ -449,7 +456,64 @@
 
     <!-- Demo scripts for this page-->
     <script src="{{ asset('js/datatables-demo.js') }}"></script>
-    <script src="{{ asset('js/chart-area-demo.js') }}"></script>
+
+      <script type="text/javascript">
+        // Set new default font family and font color to mimic Bootstrap's default styling
+Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#292b2c';
+
+// Area Chart Example
+var ctx = document.getElementById("myAreaChart");
+var myLineChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
+    datasets: [{
+      label: "Sessions",
+      lineTension: 0.3,
+      backgroundColor: "rgba(2,117,216,0.2)",
+      borderColor: "rgba(2,117,216,1)",
+      pointRadius: 7,
+      pointBackgroundColor: "#261544FF",
+      pointBorderColor: "rgba(255,255,255,0.8)",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "rgba(2,117,216,1)",
+      pointHitRadius: 50,
+      pointBorderWidth: 2,
+      data: [10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451],
+    }],
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        time: {
+          unit: 'date'
+        },
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 7
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          min: 0,
+          max: 40000,
+          maxTicksLimit: 5
+        },
+        gridLines: {
+          color: "rgba(0, 0, 0, .125)",
+        }
+      }],
+    },
+    legend: {
+      display: false
+    }
+  }
+});
+
+      </script>
 
   </body>
 
