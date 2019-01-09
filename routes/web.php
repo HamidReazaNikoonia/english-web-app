@@ -47,6 +47,8 @@ Route::post('/admin/books/edit' ,  'BookController@edit')->name('edit_book');
 Route::post('/admin/books/delete' ,  'BookController@delete')->name('delete_book');
 
 
+
+
 // weblog
 
 Route::get('/admin/blog', 'BlogController@post_form')->name('blog_form');
@@ -56,6 +58,12 @@ Route::get('/admin/blog/list', 'BlogController@index')->name('blog_list');
 Route::get('/admin/blog/edit-post/{id}' , 'BlogController@edit')->name('edit_post');
 Route::post('/admin/blog/edit-post' , 'BlogController@edit_store')->name('edit_store');
 Route::post('/admin/blog/delete-post' ,'BlogController@deletePost')->name('delete-post');
+
+
+
+
+Route::get('/admin/service-price', 'servicePriceController@set_price_form')->name('set_price_for_service');
+Route::post('/admin/price_service', 'servicePriceController@edit_price')->name('edit_price');
 
 Route::get('/blog' , 'BlogController@index');
 

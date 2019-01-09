@@ -41,7 +41,7 @@ class BlogController extends Controller
 
     	$post->save();
 
-    	return $post;
+    	return "save";
 
 
     }

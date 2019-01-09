@@ -447,6 +447,8 @@
                              window.uploaded_file = result;
                              console.log(result);
                              loading_submit(false);
+                             alert('your post sended');
+                             window.location = "/admin/blog/list";
                         },
                         error: function(data)
                         {
