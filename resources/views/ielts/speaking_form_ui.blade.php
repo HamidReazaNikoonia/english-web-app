@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Fullscreen Form Interface</title>
+		<title>ELMA-CENTER</title>
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<meta name="description" content="Fullscreen Form Interface: A distraction-free form concept with fancy animations" />
 		<meta name="keywords" content="fullscreen form, css animations, distraction-free, web design" />
@@ -53,10 +53,70 @@ header .content h1 {
   color: white;
   box-shadow: 0px 2px 10px #0000002e;
 }
+
 header .content h3 {
   font-size: 2.5em;
   font-weight: lighter;
 }
+
+.bg-vector {
+	max-width: 50vw;
+	height:auto;
+}
+
+
+
+@media only screen and (max-width: 1050px) {
+	.bg-vector {
+		position: relative;
+		top:100px;
+	}
+}
+
+@media only screen and (max-width: 950px) {
+	header .content h3 {
+  		font-size: 2em;
+	}
+}
+
+@media only screen and (max-width: 850px) {
+
+	header .content h1 {
+		font-size: 3.7em;
+	}
+
+	header .content {
+		left: 45%;
+		transform: translate(-50%, -50%);
+	}
+
+
+	header .content h3 {
+  		font-size: 1.9em;
+	}
+
+	.bg-vector {
+	width: 100%;
+	min-width: 70vw;
+	position: relative;
+	top:90px;
+	border:1px solid red;
+	
+}
+
+
+}
+
+@media only screen and (max-width: 550px) {
+
+	header .content h1 {
+		font-size: 1.7em;
+		
+	}
+}
+
+
+
 .bg {
   display: block;
   position: fixed;
@@ -73,10 +133,8 @@ header .content h3 {
   z-index: -1;
 }
 
-.bg-vector {
-	max-width: 50vw;
-	height:auto;
-}
+
+
 
 
 
@@ -94,7 +152,9 @@ header .content h3 {
   <div class="content">
     <div class="d-flex flex-row">
     		<div style="min-width:40Vw">
-    			<div class="wow bounceInLeft" data-wow-delay="1s" style="position: absolute;top:15vh;left:10vw">
+    			<div class="wow bounceInLeft" data-wow-delay="1s" 
+    			style="position: absolute;top:15vh;left:10vw"
+    			>
     				<h1 class="myi wow bounceInLeft" data-wow-delay="1s">IELTS Speaking</h1>
     				<h3 >simple and beautiful</h3>
     			</div>
@@ -116,9 +176,9 @@ header .content h3 {
 			<div class="d-flex flex-column pt-5" style="height:1200px;padding-top:100px">
 					<h2 class="sec_2  mt-5"">  Just In 
 						<samp
-						style="display:inline-block;text-align:center;color:black;font-size: 110px;background-color:#13193c;border-radius:280px;width:170px;height:170px;padding-top: 20px;box-shadow: 6px 6px 5px gray;color:tomato">2</samp> Step </h2>
+						style="display:inline-block;text-align:center;color:black;font-size: 110px;background-color:#1d34bd;border-radius:280px;width:170px;height:170px;padding-top: 20px;box-shadow: 6px 6px 5px gray;color:white">2</samp> Step </h2>
 				<div class="d-flex flex-row pt-5 mt-5 second-section justify-content-start">
-					 <div class="top ">
+					 <div class="top wow bounceInLeft ">
             			<div class="perspective">
                 		<div class="card">
                     		<div class="thumb" ></div>
@@ -128,7 +188,7 @@ header .content h3 {
             			</div>
         			</div>
 
-        			<div class="top " >
+        			<div class="top wow bounceInRight" >
             			<div class="perspective">
                 		<div class="card">
                     		<div class="thumb" ></div>
