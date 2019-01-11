@@ -143,16 +143,13 @@ a:hover, a:focus {
 
 .card {
 	padding:40px 50px;
-	margin-left: 30px;
+	/* margin-left: 30px; */
 	text-align: left;
 	border-radius: 2rem;
-	max-width: 40%;
 	font-family: Poppins;
 	background: #00B4DB;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
+	background: -webkit-linear-gradient(to left, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .card > h3 	{
@@ -180,16 +177,16 @@ background: linear-gradient(to left, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Fi
 }
 
 .top {
-  display: flex;
+  /*display: flex;
   align-items: center;
-  justify-content: center;
-  
+  justify-content: center;*/
 }
 
 .card {
-  width: 50vw;
+  width: 30vw;
+  margin:0 10vw;
   height: 413px;
-  margin: auto;
+  /* margin: auto; */
   box-shadow: 16px 21px 90px -35px #373f42;
   transform-style: preserve-3d;
   transition: transform .05s linear;
@@ -232,6 +229,30 @@ background: linear-gradient(to left, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Fi
   font-size: 48px;
   font-weight: 600;
   transform: translateZ(35px);
+}
+
+@media screen and (max-width:900px) {
+  .second-section {
+    flex-direction: column;
+  }
+
+  .second-section .top {
+    margin-bottom: 100px;
+  }
+
+  .second-section .card {
+    margin-left: 20vw;
+    margin-right: 20vw;
+    width:60vw;
+    
+  }
+}
+
+@media screen and (max-width:450px) {
+  .card  h2 {
+    font-size: 1.6rem;
+    left:-14%;
+  }
 }
 
 .dribbble {

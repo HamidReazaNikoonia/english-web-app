@@ -99,8 +99,8 @@ header .content h3 {
 	width: 100%;
 	min-width: 70vw;
 	position: relative;
-	top:90px;
-	border:1px solid red;
+	top:60px;
+	
 	
 }
 
@@ -177,7 +177,7 @@ header .content h3 {
 					<h2 class="sec_2  mt-5"">  Just In 
 						<samp
 						style="display:inline-block;text-align:center;color:black;font-size: 110px;background-color:#1d34bd;border-radius:280px;width:170px;height:170px;padding-top: 20px;box-shadow: 6px 6px 5px gray;color:white">2</samp> Step </h2>
-				<div class="d-flex flex-row pt-5 mt-5 second-section justify-content-start">
+				<div class="d-flex pt-5 mt-5 second-section ">
 					 <div class="top wow bounceInLeft ">
             			<div class="perspective">
                 		<div class="card">
