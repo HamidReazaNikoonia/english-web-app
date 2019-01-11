@@ -236,6 +236,13 @@ a:hover, a:focus {
     flex-direction: column;
   }
 
+  .card span {
+    color:white;
+    font-size: 2.4rem;
+    text-align: center;
+    right: 7%;
+  }
+
   .second-section .top {
     margin-bottom: 100px;
   }
@@ -356,6 +363,46 @@ a:hover, a:focus {
   }
 }
 
+
+#nex_sect {
+  
+  margin-top: 100px;
+  position: relative;
+  border:1px dashed red;
+}
+
+#upload_ {
+  background-color: white;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 100px;
+}
+
+#fki {
+  position: absolute;
+  top:50%;
+  width: 100%;
+  left: 50%;
+  border:1px dashed red;
+  padding-top: 100px;
+  transform: translate(-35%,-10%);
+}
+
+.input_file {
+  display: none;
+
+}
+
+.trigger_handler {
+  margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width: 901px) {
+  #nex_sect {
+    margin-top: 1000px;
+  }
+}
 
 
 /*img {

@@ -204,7 +204,7 @@ header .content h3 {
 
 
 
-				<div class="d-flex justify-content-center">
+				<div class="d-flex justify-content-center" id="nex_sect">
 					<form
 					id="upload_"
 					method="POST"
@@ -213,8 +213,16 @@ header .content h3 {
       				
       				>
       				@csrf
-      					<input type="submit" name="">
-      					<input type="file" name="file">
+
+      				<div id="fki">
+      					<h1 class="wow bounceInLeft" data-wow-delay="1s" style="color:black;font-size: 3rem">Upload File</h1>
+      					<div data-wow-delay="1.5s" class="btn btn-primary w-75 trigger_handler wow bounceInRight"> Upload File </div>
+      					<input class="btn btn-primary w-75 wow bounceInLeft" type="submit" name="">
+						
+      					<input data-wow-delay="1.7s" class="input_file" type="file" name="file">
+      					
+      				</div>
+      					
       					
       				</form>
 
@@ -363,6 +371,13 @@ header .content h3 {
 
 		<script>
 			$(document).ready(function() {
+
+
+
+				$('.trigger_handler').click(function() {
+					var but = $('.input_file');
+					but.click();
+				});
 
 				window.uploaded_file = '';
 
