@@ -69,6 +69,11 @@ TweenMax.defaultOverwrite = false;
     $('.wrong1').text("andd");
   }
 
+  function onReverseLableText2() {
+    var textLable = $('.text_line_1');
+      textLable.html("<i class='fa fa-bank'></i>");
+  }
+
 
   //
   
@@ -83,6 +88,10 @@ TweenMax.defaultOverwrite = false;
 
   function reverse_wrong2() {
     $('.wrong2').text("sone");
+  }
+
+  function oncomp1() {
+
   }
 
   //
@@ -148,7 +157,7 @@ TweenMax.defaultOverwrite = false;
       TweenMax.to($('.p_3'),4,{display:'block',right:140}),
       TweenMax.to($('.p_4'),4,{display:'block',right:-50})
     ])
-  .add(TweenMax.fromTo($('.line_1'),2,{width:0},{width:"90%"}))
+  .add(TweenMax.fromTo($('.line_1'),2,{width:0},{display:'block',width:"90%"}))
   .add(TweenMax.to($('.text_line_1'),2,{backgroundColor:'#00000041',opacity:1,onStart:on_start}))
   .add([
       
@@ -164,7 +173,7 @@ TweenMax.defaultOverwrite = false;
       TweenMax.to($('#t_3'),1.2,{x:418,scale:2.5,width:"100%",y:70,delay:2.8})
     ])
   .add([
-    TweenMax.fromTo($('.line_1'),2,{width:"90%"},{width:"0%"}),
+    TweenMax.fromTo($('.line_1'),2,{width:"90%"},{width:0}),
     TweenMax.to($('.text_line_1'),2,{y:190,delay:1.8,rotation:-30,scale:0.5,x:-152,onComplete:LableChage,onReverseComplete:onReverseLableText,backgroundColor:'red'}),
     TweenMax.to($('#t_4'),1.2,{x:420,scale:2.5,width:"100%",y:100,delay:0.2}),
     TweenMax.to($('#t_5'),1.2,{x:420,scale:2.5,width:"100%",y:140,delay:1.5}),
@@ -177,10 +186,27 @@ TweenMax.defaultOverwrite = false;
       TweenMax.to($('.wrong'),0.4,{backgroundColor:'green',opacity:1,color:'white',fontWeight:'bolder',delay:1.5,onStart:statrt_wrong,onReverseComplete:reverse_wrong,onComplete:compleate_wrong}),
       TweenMax.to($('.wrong3'),0.4,{backgroundColor:'green',opacity:1,color:'white',fontWeight:'bolder',delay:2,onStart:statrt_wrong3,onReverseComplete:reverse_wrong3,onComplete:compleate_wrong3}),
       TweenMax.to($('.wrong4'),0.4,{backgroundColor:'green',opacity:1,color:'white',fontWeight:'bolder',delay:2.5,onStart:statrt_wrong4,onReverseComplete:reverse_wrong4,onComplete:compleate_wrong4})
+      
     ])
-  .add(
-      TweenMax.to($('.p_1'),2,{rotation:40,y:-100,x:-200,delay:2})
-    )
+  .add([
+      TweenMax.to([$('.hidden_action > h5'),$('.hidden_action > h3')],2,{display:'none'}),
+      TweenMax.to([$('.hidden_action > h5'),$('.hidden_action > h3')],2,{display:'none'}),
+      TweenMax.to($('.text_line_1'),2,{display:'none'}),
+    ])
+  .add([
+      TweenMax.to($('.p_1'),3,{rotation:40,y:-100,x:-200}),
+      TweenMax.to($('.p_2'),3,{scale:1.7,rotation:20,y:-100,x:-200},"-=1"),
+      TweenMax.to($('.p_3'),3,{scale:1.7,rotation:-30,y:-400,x:-20,delay:0.4},"+=1"),
+      TweenMax.to($('.p_4'),3,{scale:1.4,rotation:40,y:-300,x:400}),
+      TweenMax.to($('.gray_back'),3,{y:-600,padding:0}),
+      TweenMax.to($('.paper_2'),3,{scale:1.3,y:90,position:'fixed'},"-=1"),
+
+    ])
+  .add([
+            TweenMax.to($('._section_text'),3,{display:'block',left:"45%"}),
+      TweenMax.to($('._section_text_subTitle'),2,{display:'block',left:"50%",delay:2}),
+      
+    ])
 
 
 

@@ -292,30 +292,8 @@
                     </tr>
                   
                     @endforEach
-                    <tr>
-                      <td>Finn Camacho</td>
-                      <td>Support Engineer</td>
-                      <td>San Francisco</td>
-                      <td>47</td>
-                      <td>2009/07/07</td>
-                      <td>$87,500</td>
-                    </tr>
-                    <tr>
-                      <td>Serge Baldwin</td>
-                      <td>Data Coordinator</td>
-                      <td>Singapore</td>
-                      <td>64</td>
-                      <td>2012/04/09</td>
-                      <td>$138,575</td>
-                    </tr>
-                    <tr>
-                      <td>Zenaida Frank</td>
-                      <td>Software Engineer</td>
-                      <td>New York</td>
-                      <td>63</td>
-                      <td>2010/01/04</td>
-                      <td>$125,250</td>
-                    </tr>
+                    
+
                     <tr>
                       <td>Zorita Serrano</td>
                       <td>Software Engineer</td>

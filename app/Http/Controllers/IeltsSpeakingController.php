@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Home_work;
-use App\Price;
+use App\servicePrice;
 
 class IeltsSpeakingController extends Controller
 {
@@ -46,8 +46,8 @@ class IeltsSpeakingController extends Controller
       $instanse->kind = 'speaking';
       $instanse->type = 'ielts';
 
-       $price_ = Price::where('kind','speaking')
-           ->where('type','ielts')->first();
+       $price_ = servicePrice::where('service_kind','speaking')
+           ->where('service_type','ielts')->first();
 
 
       $instanse->price = $price_->price;

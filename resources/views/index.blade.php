@@ -5,7 +5,9 @@
 	
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="./css/index.css">
-  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Happy+Monkey|Luckiest+Guy|Quicksand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Happy+Monkey|Luckiest+Guy|Quicksand|Dancing+Script|Frijole" rel="stylesheet">
+
+  
 
 
 	
@@ -32,7 +34,11 @@
 
       <div class="gray_back"></div>
 
-      <div style="font-family: 'Happy Monkey', cursive;" class="p_1">
+
+      <div class="_section_text">Improve your Slef</div>
+      <div class="_section_text_subTitle">Improve your Slef</div>
+
+      <div style="font-family: 'Happy Monkey', cursive;" class="p_1 hidden_action">
         <h3 id="t_1" style="font-size: 0.8rem;text-align: center;margin-top: 15px">this is sample text</h3>
         
         <h5 id="t_2" class="px-2 pt-3" style="text-align: center;font-size: 0.7rem;color:gray">
@@ -56,11 +62,11 @@
               </h5>
       </div>
 
-            <div class="p_2">
+            <div class="p_2 ">
               <h3 style="font-size: 0.8rem;margin-right: -90px;text-align: right;margin-top: -31px;transform:rotate(90deg);">this is sample text</h3>
             </div>
 
-            <div class="p_3">
+            <div class="p_3   ">
               <h3 style="font-size: 0.6rem;text-align: center;margin-top: 15px">this is sample text</h3>
               
               <h5 class="px-2 pt-3" style="text-align: center;font-size: 0.2rem;color:gray">
