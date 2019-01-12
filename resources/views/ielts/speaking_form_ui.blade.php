@@ -217,9 +217,9 @@ header .content h3 {
       				<div id="fki">
       					<h1 class="wow bounceInLeft" data-wow-delay="1s" style="color:black;font-size: 3rem">Upload File</h1>
       					<div data-wow-delay="1.5s" class="btn btn-primary w-75 trigger_handler wow bounceInRight"> Upload File </div>
-      					<input class="btn btn-primary w-75 wow bounceInLeft" type="submit" name="">
+      					<input id="sub_upload" data-wow-delay="1.8s" class="btn btn-primary w-75 wow bounceInLeft" type="submit" name="">
 						
-      					<input data-wow-delay="1.7s" class="input_file" type="file" name="file">
+      					<input  class="input_file" type="file" name="file">
       					
       				</div>
       					
@@ -403,6 +403,7 @@ header .content h3 {
 
 				$('#myform').submit(function(e) {
 					e.preventDefault();
+					loading_(true);
 					var user_name ,
 					user_family ,
 					email,
@@ -418,7 +419,7 @@ header .content h3 {
 					mobile = $("input[name=mobile]").val();
 					// telegram = $("input[name=telegram]").val();
 					telegram = null;
-					send_via = $("input[name=send_via]").val();
+					send_via = $("input[name=send_via]:checked").val();
 					details = $("textarea[name=details]").val();
 					input = window.uploaded_file;
 
@@ -427,40 +428,67 @@ header .content h3 {
 
 					console.log(input);
 
+					function loading_(state) {
+						if(state) {
+							$('.fs-submit').text(" Loading ");
+							return false;
+						}
+
+						$('.fs-submit').text("Send");
+						return false;
+					}
+
 					 $.ajax({
-        url: '{{ url("service/i/speaking") }}',
-        type: 'POST',
+       					 url: '{{ url("service/i/speaking") }}',
+        				type: 'POST',
         
   		             
-        data: {
-        	user_name : user_name,
-        	user_family : user_family,
-        	email  : email,
-        	mobile : mobile,
-        	telegram : telegram,
-        	send_via: send_via,
-        	details: details,
-        	input : input
-        },
-        success: function(result)
-        {
-            console.log('success');
-             alert('done ');
-             window.uploaded_file = '';
-             console.log(result);
-        },
-        error: function(data)
-        {
-            console.log(data);
-        }
-    });
+        				data: {
+				        	user_name : user_name,
+				        	user_family : user_family,
+				        	email  : email,
+				        	mobile : mobile,
+				        	telegram : telegram,
+				        	send_via: send_via,
+				        	details: details,
+				        	input : input
+				        },
+				        success: function(result)
+				        {
+				            console.log('success');
+				             alert('done ');
+				             loading_(false);
+				             window.uploaded_file = '';
+				             console.log(result);
+				        },
+				        error: function(data)
+				        {
+				            console.log(data);
+				            loading_(false);
+				            alert('Try Again');
+				        }
+				    });
 
 
 				});
+
+				function loading(state) {
+					
+					var ele = $('#sub_upload');
+
+					if(state) {
+						ele.prop("value","Loading ...");
+						return false;
+					}
+
+					ele.prop("value","Submit");
+
+				}
 				
 
 				$('#upload_').submit(function(event) {
     			event.preventDefault();
+    			loading(true);
     			var formData = new FormData($("#upload_")[0]);
     			
     			console.log(formData);
@@ -474,6 +502,7 @@ header .content h3 {
         {
             console.log('success');
              window.uploaded_file = result;
+             loading(false);
              removeUploadLayout();
         },
         error: function(data)
