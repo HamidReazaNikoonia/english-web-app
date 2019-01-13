@@ -377,9 +377,61 @@ a:hover, a:focus {
   box-shadow: 1px 0px 55px gray;
   width: 100%;
   height: 370px;
+  background-image: url("../img/bg-pattern.png");
   padding-bottom: 50px;
   margin-bottom: 100px;
 }
+
+
+
+#upload_1  {
+  width: 20rem;
+  height: 5rem;
+  color: #fff;
+  background: -webkit-gradient(to right, #a2ccb6 0%, #fceeb5 50%, #ee786e 100%);
+  background: linear-gradient(to right, #a2ccb6 0%, #fceeb5 50%, #ee786e 100%);
+  background-size: 500%;
+  border-radius: 5rem;
+  border: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 2.3em;
+  text-shadow: 0 3px 3px gray;
+  padding-top: 10px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+#upload_1:hover {
+  animation-name: gradient;
+  -webkit-animation-name: gradient;
+  animation-duration: 3s;
+  -webkit-animation-duration: s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
 
 #fki {
   position: absolute;

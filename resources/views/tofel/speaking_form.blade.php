@@ -216,7 +216,7 @@ header .content h3 {
 
               <div id="fki">
                 <h1 class="wow bounceInLeft" data-wow-delay="1s" style="color:black;font-size: 3rem">Upload File</h1>
-                <div data-wow-delay="1.5s" class="btn btn-primary w-75 trigger_handler wow bounceInRight"> Upload File </div>
+                <div data-wow-delay="1.5s" class=" w-75 trigger_handler" id="upload_1"> Upload File </div>
                 <input id="sub_upload" data-wow-delay="1.8s" class="btn btn-primary w-75 wow bounceInLeft" type="submit" name="">
             
                 <input  class="input_file" type="file" name="file">

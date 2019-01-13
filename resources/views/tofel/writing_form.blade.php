@@ -9,7 +9,7 @@
     <meta name="description" content="Fullscreen Form Interface: A distraction-free form concept with fancy animations" />
     <meta name="keywords" content="fullscreen form, css animations, distraction-free, web design" />
     <meta name="author" content="Codrops" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Fredoka+One" rel="stylesheet">
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.min.css') }}" />
@@ -48,7 +48,7 @@ header .content h1 {
   font-size: 5.7em;
   padding:20px;
   border-radius: 30px;
-  animation: bouncey 3s infinite;
+  animation: bouncey 4s infinite;
   background-color: #e21e3d;
   font-weight: bolder;
   color: white;
@@ -58,13 +58,13 @@ header .content h1 {
 header .content h3 {
   font-size: 2.5em;
   font-weight: lighter;
-  animation: bouncey 3s infinite;
+  animation: bouncey 4s infinite;
 }
 
 .bg-vector {
   max-width: 60vw;
   height:auto;
-  animation: bouncey 3s infinite;
+  animation: bouncey 5s infinite;
   transform: scale(0.5);
   z-index: -9;
 }
@@ -193,6 +193,9 @@ header .content h3 {
 
 
 
+.card {
+  background-image: url({{ asset('img/bg-pattern.jpg')  }}) ;
+  }
 
 
 
@@ -272,7 +275,7 @@ header .content h3 {
 
               <div id="fki">
                 <h1 class="wow bounceInLeft" data-wow-delay="1s" style="color:black;font-size: 3rem">Upload File</h1>
-                <div data-wow-delay="1.5s" class="btn btn-primary w-75 trigger_handler wow bounceInRight"> Upload File </div>
+                <div  id="upload_1" class=" w-75 trigger_handler "> Upload File </div>
                 <input id="sub_upload" data-wow-delay="1.8s" class="btn btn-primary w-75 wow bounceInLeft" type="submit" name="">
             
                 <input  class="input_file" type="file" name="file">
