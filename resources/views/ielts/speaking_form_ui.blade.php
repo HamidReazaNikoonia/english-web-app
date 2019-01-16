@@ -52,16 +52,19 @@ header .content h1 {
   font-weight: bolder;
   color: white;
   box-shadow: 0px 2px 10px #0000002e;
+  animation: bouncey 5s infinite;
 }
 
 header .content h3 {
   font-size: 2.5em;
+  animation: bouncey 5s infinite;
   font-weight: lighter;
 }
 
 .bg-vector {
 	max-width: 50vw;
 	height:auto;
+	animation: bouncey 5s infinite;
 }
 
 
@@ -121,7 +124,7 @@ header .content h3 {
   display: block;
   position: fixed;
   width: 100vw;
-  height: 130vh;
+  
   top: 0;
   left: 0;
   background: url('{{ asset('img/just-waves.png')  }}') center ;
@@ -133,6 +136,12 @@ header .content h3 {
   z-index: -1;
 }
 
+
+.card {
+	background-image: url({{ asset('img/aa.png')  }});
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
 
 
@@ -216,8 +225,8 @@ header .content h3 {
 
       				<div id="fki">
       					<h1 class="wow bounceInLeft" data-wow-delay="1s" style="color:black;font-size: 3rem">Upload File</h1>
-      					<div data-wow-delay="1.5s" class="btn btn-primary w-75 trigger_handler wow bounceInRight"> Upload File </div>
-      					<input id="sub_upload" data-wow-delay="1.8s" class="btn btn-primary w-75 wow bounceInLeft" type="submit" name="">
+                <div  id="upload_1" class=" w-75 trigger_handler "> Upload File </div>
+                <input id="sub_upload" data-wow-delay="1.8s" class="upload_2 w-75 wow bounceInLeft" type="submit" name="">
 						
       					<input  class="input_file" type="file" name="file">
       					
@@ -239,6 +248,112 @@ header .content h3 {
 			</ul>
 		</div>
 			</div>
+
+			       <div class="container-fluid pt-5 mt-5">
+          <div class="row pt-5">
+            <div class="col-12 mt-5">
+              <section class="pricing-section bg-12">
+            <h2 class="pricing-section__title wow bounceInLeft"> Prices Plane </h2>
+            <div class="pricing pricing--palden">
+                <div class="pricing__item wow bounceInLeft" data-wow-delay="0.5s" data-wow-offset="120">
+                    <div class="pricing__deco">
+                        <svg class="pricing__deco-img" version="1.1" id="Layer_1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="100px" viewBox="0 0 300 100" enable-background="new 0 0 300 100" xml:space="preserve">
+                            <path class="deco-layer deco-layer--1" opacity="0.6" fill="#FFFFFF" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+  c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"></path>
+                            <path class="deco-layer deco-layer--2" opacity="0.6" fill="#FFFFFF" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+  c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"></path>
+                            <path class="deco-layer deco-layer--3" opacity="0.7" fill="#FFFFFF" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+  H42.401L43.415,98.342z"></path>
+                            <path class="deco-layer deco-layer--4" fill="#FFFFFF" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+  c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"></path>
+                        </svg>
+                        <div class="pricing__price"><span class="pricing__currency">$</span>29<span class="pricing__period">/ mo</span></div>
+                        <h3 class="pricing__title">Freelance</h3>
+                    </div>
+                    <ul class="pricing__feature-list">
+                        <li class="pricing__feature">Lore ipisum</li>
+                        <li class="pricing__feature">Support at $25/hour</li>
+                        <li class="pricing__feature">Limited cloud access</li>
+                    </ul>
+                    
+                </div>
+                <div class="pricing__item pricing__item--featured wow bounceInUp" data-wow-delay="1s" data-wow-offset="120">
+                    <div class="pricing__deco">
+                        <svg class="pricing__deco-img" version="1.1" id="Layer_1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="100px" viewBox="0 0 300 100" enable-background="new 0 0 300 100" xml:space="preserve">
+                            <path class="deco-layer deco-layer--1" opacity="0.6" fill="#FFFFFF" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+  c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"></path>
+                            <path class="deco-layer deco-layer--2" opacity="0.6" fill="#FFFFFF" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+  c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"></path>
+                            <path class="deco-layer deco-layer--3" opacity="0.7" fill="#FFFFFF" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+  H42.401L43.415,98.342z"></path>
+                            <path class="deco-layer deco-layer--4" fill="#FFFFFF" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+  c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"></path>
+                        </svg>
+                        <div class="pricing__price"><span class="pricing__currency">$</span>59<span class="pricing__period">/ mo</span></div>
+                        <h3 class="pricing__title">Business</h3>
+                    </div>
+                    <ul class="pricing__feature-list">
+                        <li class="pricing__feature">100 word limit</li>
+                        <li class="pricing__feature">Translate all words</li>
+                        <li class="pricing__feature">Full cloud access</li>
+                    </ul>
+                    
+                </div>
+                <div class="pricing__item wow bounceInRight" data-wow-offset="120" data-wow-delay="0.5s">
+                    <div class="pricing__deco">
+                        <svg class="pricing__deco-img" version="1.1" id="Layer_1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="100px" viewBox="0 0 300 100" enable-background="new 0 0 300 100" xml:space="preserve">
+                            <path class="deco-layer deco-layer--1" opacity="0.6" fill="#FFFFFF" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+  c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"></path>
+                            <path class="deco-layer deco-layer--2" opacity="0.6" fill="#FFFFFF" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+  c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"></path>
+                            <path class="deco-layer deco-layer--3" opacity="0.7" fill="#FFFFFF" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+  H42.401L43.415,98.342z"></path>
+                            <path class="deco-layer deco-layer--4" fill="#FFFFFF" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+  c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"></path>
+                        </svg>
+                        <div class="pricing__price"><span class="pricing__currency">$</span>99<span class="pricing__period">/ mo</span></div>
+                        <h3 class="pricing__title">Enterprise</h3>
+                    </div>
+                    <ul class="pricing__feature-list">
+                        <li class="pricing__feature">Translate all words</li>
+                        <li class="pricing__feature">Support after service</li>
+                        <li class="pricing__feature">Full cloud access</li>
+                    </ul>
+                    
+                </div>
+            </div>
+           
+        </section>
+            </div>
+          </div>
+        </div>
+
+
+		<div class="container-fluid mt-5 pt-5">
+			<div class="row">
+				<div class="col-12">
+					<h3 class="about_section-title_container"> 
+						<span class="about_section-title">About </span>
+						<span class="about_section-title">This </span>
+						<span class="about_section-title">Services </span>
+					</h3>
+				</div>
+			</div>	
+		</div>
+		<!-- end of about section -->
+
+		
+			<!-- Footer -->
+		<div class="container-fluid mt-5 pt-5">
+			<div class="row">
+				<div class="col-12">
+					
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer end -->
+
 		</div>
 
 
@@ -359,15 +474,34 @@ header .content h3 {
 		</script>
 
 <script src="{{ asset('js/wow.js') }}"></script>
-<script type="text/javascript">
-	  new WOW().init();
-</script>
-
-
-		<script
+	<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+<script type="text/javascript">
+	  new WOW().init();
+
+	    $(".about_section-title").lettering();
+
+	    $(document).click(function() {
+	    	animation();
+	    })
+
+	    function animation() {
+  var title1 = new TimelineMax();
+  
+  title1.staggerFromTo(".about_section-title span", 1, 
+  {ease: Back.easeOut.config(3.7), opacity: 0, bottom: -100},
+  {ease: Back.easeOut.config(3.7), opacity: 1, bottom: 0}, 0.05);
+  
+}
+</script>
+
+
+	
 
 		<script>
 			$(document).ready(function() {

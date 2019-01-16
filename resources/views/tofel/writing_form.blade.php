@@ -214,7 +214,7 @@ header .content h3 {
     <div class="d-flex flex-row">
         <div style="min-width:40Vw">
           <div class="wow bounceInLeft foo" data-wow-delay="1s" >
-            <h1 class="myi wow bounceInLeft" data-wow-delay="1s">Tofel Writing</h1>
+            <h1 style="z-index: 9999999;" class="myi wow bounceInLeft" data-wow-delay="1s">Tofel Writing</h1>
             <h3 >Simple and Beautiful</h3>
           </div>
         </div>
@@ -276,7 +276,7 @@ header .content h3 {
               <div id="fki">
                 <h1 class="wow bounceInLeft" data-wow-delay="1s" style="color:black;font-size: 3rem">Upload File</h1>
                 <div  id="upload_1" class=" w-75 trigger_handler "> Upload File </div>
-                <input id="sub_upload" data-wow-delay="1.8s" class="btn btn-primary w-75 wow bounceInLeft" type="submit" name="">
+                <input id="sub_upload" data-wow-delay="1.8s" class="upload_2 w-75 wow bounceInLeft" type="submit" name="">
             
                 <input  class="input_file" type="file" name="file">
                 
@@ -298,6 +298,84 @@ header .content h3 {
       </ul>
     </div>
       </div>
+             <div class="container-fluid pt-5 mt-5">
+          <div class="row pt-5">
+            <div class="col-12 mt-5">
+              <section class="pricing-section bg-12">
+            <h2 class="pricing-section__title wow bounceInLeft"> Prices Plane </h2>
+            <div class="pricing pricing--palden">
+                <div class="pricing__item wow bounceInLeft" data-wow-delay="0.5s" data-wow-offset="120">
+                    <div class="pricing__deco">
+                        <svg class="pricing__deco-img" version="1.1" id="Layer_1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="100px" viewBox="0 0 300 100" enable-background="new 0 0 300 100" xml:space="preserve">
+                            <path class="deco-layer deco-layer--1" opacity="0.6" fill="#FFFFFF" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+  c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"></path>
+                            <path class="deco-layer deco-layer--2" opacity="0.6" fill="#FFFFFF" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+  c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"></path>
+                            <path class="deco-layer deco-layer--3" opacity="0.7" fill="#FFFFFF" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+  H42.401L43.415,98.342z"></path>
+                            <path class="deco-layer deco-layer--4" fill="#FFFFFF" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+  c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"></path>
+                        </svg>
+                        <div class="pricing__price"><span class="pricing__currency">$</span>29<span class="pricing__period">/ mo</span></div>
+                        <h3 class="pricing__title">Freelance</h3>
+                    </div>
+                    <ul class="pricing__feature-list">
+                        <li class="pricing__feature">Lore ipisum</li>
+                        <li class="pricing__feature">Support at $25/hour</li>
+                        <li class="pricing__feature">Limited cloud access</li>
+                    </ul>
+                    
+                </div>
+                <div class="pricing__item pricing__item--featured wow bounceInUp" data-wow-delay="1s" data-wow-offset="120">
+                    <div class="pricing__deco">
+                        <svg class="pricing__deco-img" version="1.1" id="Layer_1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="100px" viewBox="0 0 300 100" enable-background="new 0 0 300 100" xml:space="preserve">
+                            <path class="deco-layer deco-layer--1" opacity="0.6" fill="#FFFFFF" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+  c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"></path>
+                            <path class="deco-layer deco-layer--2" opacity="0.6" fill="#FFFFFF" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+  c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"></path>
+                            <path class="deco-layer deco-layer--3" opacity="0.7" fill="#FFFFFF" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+  H42.401L43.415,98.342z"></path>
+                            <path class="deco-layer deco-layer--4" fill="#FFFFFF" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+  c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"></path>
+                        </svg>
+                        <div class="pricing__price"><span class="pricing__currency">$</span>59<span class="pricing__period">/ mo</span></div>
+                        <h3 class="pricing__title">Business</h3>
+                    </div>
+                    <ul class="pricing__feature-list">
+                        <li class="pricing__feature">100 word limit</li>
+                        <li class="pricing__feature">Translate all words</li>
+                        <li class="pricing__feature">Full cloud access</li>
+                    </ul>
+                    
+                </div>
+                <div class="pricing__item wow bounceInRight" data-wow-offset="120" data-wow-delay="0.5s">
+                    <div class="pricing__deco">
+                        <svg class="pricing__deco-img" version="1.1" id="Layer_1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="100px" viewBox="0 0 300 100" enable-background="new 0 0 300 100" xml:space="preserve">
+                            <path class="deco-layer deco-layer--1" opacity="0.6" fill="#FFFFFF" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+  c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"></path>
+                            <path class="deco-layer deco-layer--2" opacity="0.6" fill="#FFFFFF" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+  c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"></path>
+                            <path class="deco-layer deco-layer--3" opacity="0.7" fill="#FFFFFF" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+  H42.401L43.415,98.342z"></path>
+                            <path class="deco-layer deco-layer--4" fill="#FFFFFF" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+  c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"></path>
+                        </svg>
+                        <div class="pricing__price"><span class="pricing__currency">$</span>99<span class="pricing__period">/ mo</span></div>
+                        <h3 class="pricing__title">Enterprise</h3>
+                    </div>
+                    <ul class="pricing__feature-list">
+                        <li class="pricing__feature">Translate all words</li>
+                        <li class="pricing__feature">Support after service</li>
+                        <li class="pricing__feature">Full cloud access</li>
+                    </ul>
+                    
+                </div>
+            </div>
+           
+        </section>
+            </div>
+          </div>
+        </div>
     </div>
 
 
