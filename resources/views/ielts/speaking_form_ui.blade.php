@@ -252,10 +252,13 @@ header .content h3 {
 			       <div class="container-fluid pt-5 mt-5">
           <div class="row pt-5">
             <div class="col-12 mt-5">
-              <section class="pricing-section bg-12">
-            <h2 class="pricing-section__title wow bounceInLeft"> Prices Plane </h2>
-            <div class="pricing pricing--palden">
-                <div class="pricing__item wow bounceInLeft" data-wow-delay="0.5s" data-wow-offset="120">
+              <section class="pricing-section bg-12 mt-5">
+            <h3 class="head-title-contaniner price_section-title_container my-5"> 
+            <span class="head-title price_section-title"> Prices </span>
+             <span class="head-title price_section-title"> Plane </span>
+              </h3>
+            <div class="pricing pricing--palden pt-5 mt-5">
+                <div class="pricing__item wow bounceInLeft" data-wow-delay="0.3s" data-wow-offset="90">
                     <div class="pricing__deco">
                         <svg class="pricing__deco-img" version="1.1" id="Layer_1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="100px" viewBox="0 0 300 100" enable-background="new 0 0 300 100" xml:space="preserve">
                             <path class="deco-layer deco-layer--1" opacity="0.6" fill="#FFFFFF" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
@@ -277,7 +280,7 @@ header .content h3 {
                     </ul>
                     
                 </div>
-                <div class="pricing__item pricing__item--featured wow bounceInUp" data-wow-delay="1s" data-wow-offset="120">
+                <div class="pricing__item pricing__item--featured wow bounceInUp" data-wow-delay="0.9s" data-wow-offset="90">
                     <div class="pricing__deco">
                         <svg class="pricing__deco-img" version="1.1" id="Layer_1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="100px" viewBox="0 0 300 100" enable-background="new 0 0 300 100" xml:space="preserve">
                             <path class="deco-layer deco-layer--1" opacity="0.6" fill="#FFFFFF" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
@@ -299,7 +302,7 @@ header .content h3 {
                     </ul>
                     
                 </div>
-                <div class="pricing__item wow bounceInRight" data-wow-offset="120" data-wow-delay="0.5s">
+                <div class="pricing__item wow bounceInRight" data-wow-offset="90" data-wow-delay="0.3s">
                     <div class="pricing__deco">
                         <svg class="pricing__deco-img" version="1.1" id="Layer_1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="100px" viewBox="0 0 300 100" enable-background="new 0 0 300 100" xml:space="preserve">
                             <path class="deco-layer deco-layer--1" opacity="0.6" fill="#FFFFFF" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
@@ -332,10 +335,10 @@ header .content h3 {
 		<div class="container-fluid mt-5 pt-5">
 			<div class="row">
 				<div class="col-12">
-					<h3 class="about_section-title_container"> 
-						<span class="about_section-title">About </span>
-						<span class="about_section-title">This </span>
-						<span class="about_section-title">Services </span>
+					<h3 class="about_section-title_container head-title-contaniner"> 
+						<span class="about_section-title head-title">About </span>
+						<span class="about_section-title head-title">This </span>
+						<span class="about_section-title head-title">Services </span>
 					</h3>
 				</div>
 			</div>	
@@ -450,6 +453,7 @@ header .content h3 {
 
 		</div><!-- /container -->
 		<script src="{{ asset('js/classie.js') }}"></script>
+
 		<script src="{{ asset('js/selectFx.js') }}"></script>
 		<script src="{{ asset('js/fullscreenForm.js') }}"></script>
 		<script>
@@ -481,24 +485,6 @@ header .content h3 {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-<script type="text/javascript">
-	  new WOW().init();
-
-	    $(".about_section-title").lettering();
-
-	    $(document).click(function() {
-	    	animation();
-	    })
-
-	    function animation() {
-  var title1 = new TimelineMax();
-  
-  title1.staggerFromTo(".about_section-title span", 1, 
-  {ease: Back.easeOut.config(3.7), opacity: 0, bottom: -100},
-  {ease: Back.easeOut.config(3.7), opacity: 1, bottom: 0}, 0.05);
-  
-}
-</script>
 
 
 	
@@ -677,6 +663,35 @@ $(".top").on("mousemove", function (t) {
 		</script>
 
 		<script src="{{ asset('js/dropzone.js') }}"></script>
+		<script src="{{ asset('js/service.js') }}"></script>
+
+			<script type="text/javascript">
+	  
+
+			$(document).ready(function() {
+				init_();
+			});
+	
+
+	  	new WOW().init();
+
+	    
+
+	    // $(document).click(function() {
+	    // 	animation();
+	    // })
+
+// 	    function animation() {
+//   var title1 = new TimelineMax();
+  
+//   title1.staggerFromTo(".about_section-title span", 1, 
+//   {ease: Back.easeOut.config(3.7), opacity: 0, bottom: -100},
+//   {ease: Back.easeOut.config(3.7), opacity: 1, bottom: 0}, 0.05);
+  
+// }
+</script>
+
+
 
 	</body>
 </html>

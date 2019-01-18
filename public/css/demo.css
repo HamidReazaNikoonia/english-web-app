@@ -674,17 +674,20 @@ a:hover, a:focus {
   background-color: #f38747;
 }
 
-.about_section-title_container {
+.head-title-contaniner {
     line-height: 150px;
   letter-spacing: 2px;
+  animation: bouncey 3s infinite;
+  opacity: 0;
   margin: 0;
 }
 
 
-.about_section-title  {
+.head-title  {
 
   transform: translateX(-50%) rotate(-10deg) skew(-10deg);
   font-size: 9.8rem;
+
   font-weight: bolder;
   color: #202442;
   font-family: 'Fredoka One', sans-serif;
@@ -698,6 +701,27 @@ a:hover, a:focus {
   left: 50%;
        
 }
+
+@media only screen and (max-width: 500px) {
+  .head-title {
+    font-size: 4.8rem;
+  }
+  .head-title-contaniner {
+    /*line-height: 80px;*/
+  }
+}
+
+
+
+
+.price_section-title:nth-child(1) {
+  color: #3F4EE7;
+}
+.price_section-title:nth-child(2) {
+  color: #EFD12C;
+}
+
+
 
 .about_section-title:nth-child(1) {
   color: #e55643;
