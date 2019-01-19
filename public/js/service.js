@@ -5,6 +5,7 @@ function init_() {
 
 	$(".about_section-title").lettering();
 	$(".price_section-title").lettering();
+	$(".costomer_section-title").lettering();
 
 	function animation(e) {
   		var title1 = new TimelineMax();
@@ -44,7 +45,7 @@ function init_() {
 	}
 
 	var handler_price_title = function() {
-		console.log('fire');
+		// console.log('fire');
 		  if(elementScrolled('.price_section-title',400,handler_price_title)) {
 		  	var e_about = $('.price_section-title span');
 		  	animation(e_about);
@@ -52,9 +53,40 @@ function init_() {
 		  	$('.price_section-title_container').css('opacity',1);
 		  } 	
 	}
+
+	var handler_costomer_title = function() {
+		console.log('fire');
+		  if(elementScrolled('.costomer_section-title',400,handler_costomer_title)) {
+		  	var e_about = $('.costomer_section-title span');
+		  	animation(e_about);
+		  	$('.costomer_section-title').addClass('animated_');
+		  	$('.costomer_section-title_container').css('opacity',1);
+		  } 	
+	}
 	
 
 	$(window).scroll(handler_);
-	$(window).scroll(handler_price_title)
+	$(window).scroll(handler_price_title);
+	$(window).scroll(handler_costomer_title);
+
+
+
+
+	$('.hideSeekTab').on('click', function() {
+    // if the one you clicked is open,      
+    if ($(this).find('p').hasClass('open')) {
+      // then close it.
+      $('.hideSeekTab .open').slideToggle().removeClass('open');
+      $('.iconBox').removeClass('closed');
+      // otherwise,
+    } else {
+      // close all tabs,
+      $('.hideSeekTab .open').slideToggle().removeClass('open');
+      // and open the one you clicked
+      $(this).find('p').slideToggle().addClass('open');
+      $('.iconBox').removeClass('closed');
+      $(this).find('.iconBox').addClass('closed');
+    }
+  });
 
 }

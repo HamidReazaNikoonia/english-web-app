@@ -182,7 +182,7 @@ header .content h3 {
   height: 130vh;
   top: 0;
   left: 0;
-  background: url('{{ asset('img/just-waves.png')  }}') center ;
+  
   background-size: all;
   -moz-transition: 0.1s;
   -o-transition: 0.1s;

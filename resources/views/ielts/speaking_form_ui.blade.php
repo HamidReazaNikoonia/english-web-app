@@ -124,10 +124,8 @@ header .content h3 {
   display: block;
   position: fixed;
   width: 100vw;
-  
   top: 0;
   left: 0;
-  background: url('{{ asset('img/just-waves.png')  }}') center ;
   background-size: all;
   -moz-transition: 0.1s;
   -o-transition: 0.1s;
@@ -332,6 +330,8 @@ header .content h3 {
         </div>
 
 
+
+		<!-- about section -->
 		<div class="container-fluid mt-5 pt-5">
 			<div class="row">
 				<div class="col-12">
@@ -342,8 +342,67 @@ header .content h3 {
 					</h3>
 				</div>
 			</div>	
+
+
+			<div class="row py-5 my-5 " >
+				<section class="tabBox mt-5">
+  <div class="hideSeekTab">
+    <div class="labelBox">
+      <h3 class="title">What is this Service ?</h3>
+      <div class="iconBox">
+        <span class="line left"></span>
+        <span class="line right"></span>
+      </div>
+    </div>
+    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam nesciunt natus fugiat alias similique voluptate dignissimos commodi necessitatibus adipisci neque consequatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam nesciunt natus fugiat alias similique voluptate dignissimos commodi necessitatibus adipisci neque consequatur.</p>
+  </div>
+
+  <div class="hideSeekTab">
+    <div class="labelBox">
+      <h3 class="title">How can i use it ?</h3>
+      <div class="iconBox">
+        <span class="line left"></span>
+        <span class="line right"></span>
+      </div>
+    </div>
+    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam nesciunt natus fugiat alias similique voluptate dignissimos commodi necessitatibus adipisci neque consequatur.</p>
+  </div>
+
+  <div class="hideSeekTab">
+    <div class="labelBox">
+      <h3 class="title">What is this ?</h3>
+      <div class="iconBox">
+        <span class="line left"></span>
+        <span class="line right"></span>
+      </div>
+    </div>
+    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam nesciunt natus fugiat alias similique voluptate dignissimos commodi necessitatibus adipisci neque consequatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam nesciunt natus fugiat alias similique voluptate dignissimos commodi necessitatibus adipisci neque consequatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam nesciunt natus fugiat alias similique voluptate dignissimos commodi necessitatibus adipisci neque consequatur.</p>
+  </div>
+</section>
+			</div>
 		</div>
 		<!-- end of about section -->
+
+
+		<!-- our costomer   -->
+			<div class="container-fluid mt-5 pt-5">
+			<div class="row">
+				<div class="col-12">
+					<h3 class="costomer_section-title_container head-title-contaniner"> 
+						<span class="costomer_section-title head-title">Our </span>
+						<span class="costomer_section-title head-title">Lovely </span>
+						<span class="costomer_section-title head-title">Costomers </span>
+					</h3>
+				</div>
+			</div>	
+
+			<div class="row py-5 ty-5">
+				<div class="col-12">
+					
+				</div>
+			</div>
+		</div>
+		<!-- our costomer end   -->
 
 		
 			<!-- Footer -->
