@@ -344,7 +344,7 @@ header .content h3 {
 			</div>	
 
 
-			<div class="row py-5 my-5 " >
+			<div class="row py-5 my-5 wow bounceInLeft" >
 				<section class="tabBox mt-5">
   <div class="hideSeekTab">
     <div class="labelBox">
@@ -385,7 +385,7 @@ header .content h3 {
 
 
 		<!-- our costomer   -->
-			<div class="container-fluid mt-5 pt-5">
+			<div class="container-fluid mt-5 pt-5 ">
 			<div class="row">
 				<div class="col-12">
 					<h3 class="costomer_section-title_container head-title-contaniner"> 
@@ -734,20 +734,6 @@ $(".top").on("mousemove", function (t) {
 
 	  	new WOW().init();
 
-	    
-
-	    // $(document).click(function() {
-	    // 	animation();
-	    // })
-
-// 	    function animation() {
-//   var title1 = new TimelineMax();
-  
-//   title1.staggerFromTo(".about_section-title span", 1, 
-//   {ease: Back.easeOut.config(3.7), opacity: 0, bottom: -100},
-//   {ease: Back.easeOut.config(3.7), opacity: 1, bottom: 0}, 0.05);
-  
-// }
 </script>
 
 
