@@ -44,6 +44,33 @@ class IeltsWritingController extends Controller
       $instanse->type = 'ielts';
 
 
+       $price_ = servicePrice::where('service_kind','writing')
+           ->where('service_type','ielts')->first();
+
+
+      $instanse->price = $price_->price;
+
+
+       $random_id = (rand(1, 1000));
+
+
+      $characters = 'ABCDE';
+
+      // generate a pin based on 2 * 7 digits + a random character
+      $pin = mt_rand(1000000, 9999999)
+        . mt_rand(1000000, 9999999)
+        . $characters[rand(0, strlen($characters) - 1)];
+
+      // shuffle the result
+      $string = str_shuffle($pin);
+
+      $invoice_id ="{$random_id} - {$string}";
+
+      $instanse->invoice_id = $invoice_id;
+
+
+
+
       $instanse->save();
       return $instanse;
     }

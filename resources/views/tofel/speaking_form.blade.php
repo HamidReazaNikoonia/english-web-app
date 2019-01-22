@@ -124,7 +124,7 @@ header .content h3 {
   display: block;
   position: fixed;
   width: 100vw;
-  height: 130vh;
+  
   top: 0;
   left: 0;
   
@@ -255,8 +255,11 @@ header .content h3 {
           <div class="row pt-5">
             <div class="col-12 mt-5">
               <section class="pricing-section bg-12">
-            <h2 class="pricing-section__title wow bounceInLeft"> Prices Plane </h2>
-            <div class="pricing pricing--palden">
+            <h3 class="head-title-contaniner price_section-title_container my-5 pb-5"> 
+            <span class="head-title price_section-title"> Prices </span>
+             <span class="head-title price_section-title"> Plane </span>
+              </h3>
+            <div class="pricing pricing--palden pt-5 mt-5">
                 <div class="pricing__item wow bounceInLeft" data-wow-delay="0.5s" data-wow-offset="120">
                     <div class="pricing__deco">
                         <svg class="pricing__deco-img" version="1.1" id="Layer_1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="100px" viewBox="0 0 300 100" enable-background="new 0 0 300 100" xml:space="preserve">
@@ -329,6 +332,80 @@ header .content h3 {
             </div>
           </div>
         </div>
+
+
+        <!-- about section -->
+    <div class="container-fluid mt-5 pt-5">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="about_section-title_container head-title-contaniner"> 
+            <span class="about_section-title head-title">About </span>
+            <span class="about_section-title head-title">This </span>
+            <span class="about_section-title head-title">Services </span>
+          </h3>
+        </div>
+      </div>  
+
+
+      <div class="row py-5 my-5 wow bounceInLeft" >
+        <section class="tabBox mt-5">
+  <div class="hideSeekTab">
+    <div class="labelBox">
+      <h3 class="title">What is this Service ?</h3>
+      <div class="iconBox">
+        <span class="line left"></span>
+        <span class="line right"></span>
+      </div>
+    </div>
+    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam nesciunt natus fugiat alias similique voluptate dignissimos commodi necessitatibus adipisci neque consequatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam nesciunt natus fugiat alias similique voluptate dignissimos commodi necessitatibus adipisci neque consequatur.</p>
+  </div>
+
+  <div class="hideSeekTab">
+    <div class="labelBox">
+      <h3 class="title">How can i use it ?</h3>
+      <div class="iconBox">
+        <span class="line left"></span>
+        <span class="line right"></span>
+      </div>
+    </div>
+    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam nesciunt natus fugiat alias similique voluptate dignissimos commodi necessitatibus adipisci neque consequatur.</p>
+  </div>
+
+  <div class="hideSeekTab">
+    <div class="labelBox">
+      <h3 class="title">What is this ?</h3>
+      <div class="iconBox">
+        <span class="line left"></span>
+        <span class="line right"></span>
+      </div>
+    </div>
+    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam nesciunt natus fugiat alias similique voluptate dignissimos commodi necessitatibus adipisci neque consequatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam nesciunt natus fugiat alias similique voluptate dignissimos commodi necessitatibus adipisci neque consequatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam nesciunt natus fugiat alias similique voluptate dignissimos commodi necessitatibus adipisci neque consequatur.</p>
+  </div>
+</section>
+      </div>
+    </div>
+    <!-- end of about section -->
+
+
+      <!-- our costomer   -->
+      <div class="container-fluid mt-5 pt-5 ">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="costomer_section-title_container head-title-contaniner"> 
+            <span class="costomer_section-title head-title">Our </span>
+            <span class="costomer_section-title head-title">Lovely </span>
+            <span class="costomer_section-title head-title">Costomers </span>
+          </h3>
+        </div>
+      </div>  
+
+      <div class="row py-5 ty-5">
+        <div class="col-12">
+          
+        </div>
+      </div>
+    </div>
+    <!-- our costomer end   -->
     </div>
 
 
@@ -379,32 +456,7 @@ header .content h3 {
               </div>
             </li>
 
-          <!--  <li data-input-trigger>
-              <label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">Choose a color for your website.</label>
-              <select class="cs-select cs-skin-boxes fs-anim-lower">
-                <option value="" disabled selected>Pick a color</option>
-                <option value="#588c75" data-class="color-588c75">#588c75</option>
-                <option value="#b0c47f" data-class="color-b0c47f">#b0c47f</option>
-                <option value="#f3e395" data-class="color-f3e395">#f3e395</option>
-                <option value="#f3ae73" data-class="color-f3ae73">#f3ae73</option>
-                <option value="#da645a" data-class="color-da645a">#da645a</option>
-                <option value="#79a38f" data-class="color-79a38f">#79a38f</option>
-                <option value="#c1d099" data-class="color-c1d099">#c1d099</option>
-                <option value="#f5eaaa" data-class="color-f5eaaa">#f5eaaa</option>
-                <option value="#f5be8f" data-class="color-f5be8f">#f5be8f</option>
-                <option value="#e1837b" data-class="color-e1837b">#e1837b</option>
-                <option value="#9bbaab" data-class="color-9bbaab">#9bbaab</option>
-                <option value="#d1dcb2" data-class="color-d1dcb2">#d1dcb2</option>
-                <option value="#f9eec0" data-class="color-f9eec0">#f9eec0</option>
-                <option value="#f7cda9" data-class="color-f7cda9">#f7cda9</option>
-                <option value="#e8a19b" data-class="color-e8a19b">#e8a19b</option>
-                <option value="#bdd1c8" data-class="color-bdd1c8">#bdd1c8</option>
-                <option value="#e1e7cd" data-class="color-e1e7cd">#e1e7cd</option>
-                <option value="#faf4d4" data-class="color-faf4d4">#faf4d4</option>
-                <option value="#fbdfc9" data-class="color-fbdfc9">#fbdfc9</option>
-                <option value="#f1c1bd" data-class="color-f1c1bd">#f1c1bd</option>
-              </select>
-            </li> -->
+  
             <li> 
 
 
@@ -449,15 +501,18 @@ header .content h3 {
     </script>
 
 <script src="{{ asset('js/wow.js') }}"></script>
-<script type="text/javascript">
-    new WOW().init();
-</script>
+
 
 
     <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+
+
 
     <script>
       $(document).ready(function() {
@@ -633,6 +688,19 @@ $(".top").on("mousemove", function (t) {
     </script>
 
     <script src="{{ asset('js/dropzone.js') }}"></script>
+      <script src="{{ asset('js/service.js') }}"></script>
+
+      <script type="text/javascript">
+    
+
+      $(document).ready(function() {
+        init_();
+      });
+  
+
+      new WOW().init();
+
+</script>
 
   </body>
 </html>
