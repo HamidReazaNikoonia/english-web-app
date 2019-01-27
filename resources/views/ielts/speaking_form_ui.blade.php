@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
@@ -620,8 +621,10 @@ header .content h3 {
 					 $.ajax({
        					 url: '{{ url("service/i/speaking") }}',
         				type: 'POST',
-        
-  		             
+                xhrFields: {
+                  withCredentials: true
+                },
+                
         				data: {
 				        	user_name : user_name,
 				        	user_family : user_family,
