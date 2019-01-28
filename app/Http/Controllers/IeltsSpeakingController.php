@@ -12,6 +12,10 @@ class IeltsSpeakingController extends Controller
 
 
 
+
+
+
+
    public function send_sms($mobile_no,$type) {
 
       $message_ = "test ";
@@ -160,53 +164,11 @@ class IeltsSpeakingController extends Controller
       $instanse->invoice_id = $invoice_id;
 
       $this->send_sms("09387460520","type");
-
-
-
-      // payment 
-      
-      $MerchantID = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'; //Required
-      $Amount = 1000; //Amount will be based on Toman - Required
-      $Description = 'توضیحات تراکنش تستی'; // Required
-      $Email = 'UserEmail@Mail.Com'; // Optional
-      $Mobile = '09123456789'; // Optional
-      $CallbackURL = 'http://127.0.0.1:8000'; // Required
-
-
-
-$client = new SoapClient('https://sandbox.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
-
-
-
-
-
-$result = $client->PaymentRequest(
-[
-'MerchantID' => $MerchantID,
-'Amount' => $Amount,
-'Description' => $Description,
-'Email' => $Email,
-'Mobile' => $Mobile,
-'CallbackURL' => $CallbackURL,
-]
-);
-
-//Redirect to URL You can do it also by creating a form
-if ($result->Status == 100) {
-
-return redirect('https://sandbox.zarinpal.com/pg/StartPay/'.$result->Authority);
-//برای استفاده از زرین گیت باید ادرس به صورت زیر تغییر کند:
-//Header('Location: https://www.zarinpal.com/pg/StartPay/'.$result->Authority.'/ZarinGate');
-} else {
-echo'ERR: '.$result->Status;
-}
-
-
-      
-
-
+  
 
       $instanse->save();
-      return $instanse;
+      return $instanse->id;
+
+
     }
 }

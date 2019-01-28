@@ -638,10 +638,12 @@ header .content h3 {
 				        success: function(result)
 				        {
 				            console.log('success');
-				             alert('done ');
+				             alert('success');
 				             loading_(false);
 				             window.uploaded_file = '';
 				             console.log(result);
+                     var result_id = parseInt(result);
+                     window.location = "/service/pay/"+result_id;
 				        },
 				        error: function(data)
 				        {
