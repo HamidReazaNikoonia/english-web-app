@@ -77,6 +77,8 @@ Route::post('hamid/upload' ,'UploadController@store')->name('upload');
 
 
 
+// payment
+
 Route::get('/service/pay/{id}', 'PaymentController@pay');
 Route::get('/service/payment-result/{id}', 'PaymentController@pay_result');
 

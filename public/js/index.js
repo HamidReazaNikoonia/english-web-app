@@ -143,6 +143,16 @@ TweenMax.defaultOverwrite = false;
   
   // var paper_2 = TweenMax.to($('.paper_2'),3, {scale:1.2,boxShadow:"0px 0px 60px gray",delay:4});
   // 
+  // 
+  
+
+  function addLayer_1() {
+    $('#onLayer_1').css('display','block');
+  }
+
+  function removeLayer_1() {
+    $('#onLayer_1').css('display','none'); 
+  }
   
 
   var tl = new TimelineMax();
@@ -199,11 +209,11 @@ TweenMax.defaultOverwrite = false;
       TweenMax.to($('.p_3'),3,{scale:1.7,rotation:-30,y:-400,x:-20,delay:0.4},"+=1"),
       TweenMax.to($('.p_4'),3,{scale:1.4,rotation:40,y:-300,x:400}),
       TweenMax.to($('.gray_back'),3,{y:-600,padding:0}),
-      TweenMax.to($('.paper_2'),3,{scale:1.3,y:90,position:'fixed'},"-=1"),
+      TweenMax.to($('.paper_2'),3,{scale:1.3,y:90,position:'fixed',onComplete:addLayer_1},"-=1"),
 
     ])
   .add([
-            TweenMax.to($('._section_text'),3,{display:'block',left:"45%"}),
+            TweenMax.to($('._section_text'),3,{display:'block',left:"45%",onReverseComplete:removeLayer_1}),
       TweenMax.to($('._section_text_subTitle'),2,{display:'block',left:"50%",delay:2}),
       
     ])
