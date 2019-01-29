@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/landing', 'LandingController@index')->name('home');
+
 
 
 Route::get('/service/i/writing', 'IeltsWritingController@index');
