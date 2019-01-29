@@ -4,10 +4,28 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>ELMA-CENTER || landing page</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|PT+Sans:700" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/landing/index.css') }}">
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+    <style type="text/css">
+    	#save_button {
+    		position: fixed;
+    		bottom:50px;
+    		left:50px;
+    		width:70px;
+    		height: 70px;
+    		border-radius: 100%;
+    		color: white;
+			text-align: center;
+			cursor: pointer;
+			z-index: 9999;
+			font-size: 2.1rem; 
+    		background-color: blue;
+    	}
+    </style>
 </head>
 <body class="is-boxed has-animations">
     <div class="body-wrap boxed-container">
@@ -72,13 +90,14 @@
         </header>
 
         <main>
+        	<div id="save_button">+</div>
             <section class="hero text-center">
                 <div class="container-sm">
                     <div class="hero-inner">
 						<div class="hero-copy">
 	                        <h1 class="hero-title mt-0 is-revealing"><span>ELMA</span> center</h1>
 	                        <p class="hero-paragraph is-revealing pt-32 pb-16">
-	                        	What is ELMA-CENTER ? elma is prety girl who edit your english document and correction them , you can send your writing and speaking to her and she send back your result in your email , she also suggect some awseome book for improve your english ability 
+	                        	<textarea style="min-height:300px;"  id="sub_title" class="form-control text-center">{{ trim($data->sub_title) }}</textarea>
 	                        </p>
 	                        <p class="hero-cta is-revealing"><a class="button button-primary button-shadow" href="#">Your Services</a></p>
 						</div>
@@ -547,5 +566,46 @@
     </div>
 
     <script src="{{ asset('js/landing/index.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+
+    <script>
+    	$(document).ready(function() {
+
+    		$.ajaxSetup({
+    			headers: {
+        			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    			}
+			});
+
+
+    		var sub_title  = $('#sub_title');
+    		var save_button = $('#save_button');
+
+    		
+
+    		save_button.click(function() {
+
+    			
+
+    			var obj = {
+    				sub_title:sub_title.val()
+    			}
+
+
+    			$.ajax({
+    				url:"{{ route('landing.store') }}",
+    				data:obj,
+    				type:'POST',
+    				success: function(result) {
+    					console.log(result);
+    				},
+    				error: function(err) {
+    					console.log(err);
+    				}
+    			})
+    		});
+
+    	});
+    </script>
 </body>
 </html>

@@ -18,7 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/landing', 'LandingController@index')->name('home');
+Route::get('/landing', 'LandingController@index');
+Route::get('/landing/edit', 'LandingController@edit');
+Route::post('/landing/edit', 'LandingController@store')->name('landing.store');
 
 
 
