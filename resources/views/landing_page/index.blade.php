@@ -78,7 +78,7 @@
 						<div class="hero-copy">
 	                        <h1 class="hero-title mt-0 is-revealing"><span>ELMA</span> center</h1>
 	                        <p class="hero-paragraph is-revealing pt-32 pb-16">
-	                        	What is ELMA-CENTER ? elma is prety girl who edit your english document and correction them , you can send your writing and speaking to her and she send back your result in your email , she also suggect some awseome book for improve your english ability 
+	                        	{{ $data->sub_title }}
 	                        </p>
 	                        <p class="hero-cta is-revealing"><a class="button button-primary button-shadow" href="#">Your Services</a></p>
 						</div>
@@ -231,8 +231,8 @@
 								</svg>
                             </div>
                             <div class="feature-extended-body">
-                                <h3 class="mt-0">Discover</h3>
-                                <p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented with the actual content.</p>
+                                <h3 class="mt-0">{{ $data->text_1_title }}</h3>
+                                <p>{{ $data->text_1_content }}</p>
                             </div>
                         </div>
                         <div class="feature-extended">
@@ -285,9 +285,9 @@
 								</svg>
                             </div>
                             <div class="feature-extended-body">
-                                <h3 class="mt-0">Discover</h3>
-                                <p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented with the actual content.</p>
-                            </div>
+								<h3 class="mt-0">{{ $data->text_2_title }}</h3>
+	                            <p>{{ $data->text_2_content }}</p>
+                             </div>
                         </div>
                         <div class="feature-extended">
                             <div class="feature-extended-image is-revealing">
@@ -345,8 +345,8 @@
 								</svg>
                             </div>
                             <div class="feature-extended-body">
-                                <h3 class="mt-0">Discover</h3>
-                                <p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented with the actual content.</p>
+							<h3 class="mt-0">{{ $data->text_3_title }}</h3>
+                                <p>{{ $data->text_3_content }}</p>
                             </div>
                         </div>
                     </div>

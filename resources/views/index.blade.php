@@ -49,9 +49,9 @@
       </div>
       <h1 class="text_line_1">Edit Your Documents</h1>
 
-      <div class="paper_2">
-        
-      </div>
+      <div class="paper_2"></div>
+      <div class="paper_2_1"></div>
+      <div class="paper_2_2"></div>
 
       <div class="gray_back"></div>
 
@@ -138,7 +138,19 @@
                 this is sample text andd this is 
               </h5>
             </div>
+
+
+
+  <!-- red section -->
+    <div class="red_section"></div>
+
+    
+    
+
+
   </div>
+  <div class="red_section_title">Your Result Ready ...</div>
+  <div class="red_section_sub_title">now you can enjoy and happy for this</div>
   
   
 

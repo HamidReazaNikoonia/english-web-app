@@ -250,8 +250,12 @@
 								</svg>
                             </div>
                             <div class="feature-extended-body">
-                                <h3 class="mt-0">Discover</h3>
-                                <p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented with the actual content.</p>
+                                <h3 class="mt-0 form-group">
+                            <input type="text" class="form-control" id="text_1_title" value="{{$data->text_1_title}}">
+                                </h3>
+                                <p class="form-group">
+                                	<textarea style="min-width: 30vw;min-height: 200px" class="form-control" id="text_1_content">{{ $data->text_1_content }}</textarea>
+                                </p>
                             </div>
                         </div>
                         <div class="feature-extended">
@@ -304,8 +308,12 @@
 								</svg>
                             </div>
                             <div class="feature-extended-body">
-                                <h3 class="mt-0">Discover</h3>
-                                <p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented with the actual content.</p>
+                                <h3 class="mt-0 form-group">
+                            <input type="text" class="form-control" id="text_2_title" value="{{$data->text_2_title}}">
+                                </h3>
+                                <p class="form-group">
+                                	<textarea style="min-width: 30vw;min-height: 200px" class="form-control" id="text_2_content">{{ $data->text_2_content }}</textarea>
+                                </p>
                             </div>
                         </div>
                         <div class="feature-extended">
@@ -364,8 +372,12 @@
 								</svg>
                             </div>
                             <div class="feature-extended-body">
-                                <h3 class="mt-0">Discover</h3>
-                                <p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented with the actual content.</p>
+                                <h3 class="mt-0 form-group">
+                            <input type="text" class="form-control" id="text_3_title" value="{{$data->text_3_title}}">
+                                </h3>
+                                <p class="form-group">
+                                	<textarea style="min-width: 30vw;min-height: 200px" class="form-control" id="text_3_content">{{ $data->text_3_content }}</textarea>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -578,7 +590,23 @@
 			});
 
 
-    		var sub_title  = $('#sub_title');
+    		
+    		var sub_title,
+    			text_1_content,
+    			text_1_title,
+    			text_2_content,
+    			text_2_title,
+    			text_3_content,
+    			text_3_title;
+
+    			sub_title  = $('#sub_title');
+    			text_1_content = $('#text_1_content');
+    			text_2_content = $('#text_2_content');
+    			text_3_content = $('#text_3_content');
+    			text_1_title = $('#text_1_title');
+    			text_2_title = $('#text_2_title');
+    			text_3_title = $('#text_3_title');
+
     		var save_button = $('#save_button');
 
     		
@@ -588,7 +616,13 @@
     			
 
     			var obj = {
-    				sub_title:sub_title.val()
+    				sub_title:sub_title.val(),
+    				text_1_content:text_1_content.val(),
+    				text_2_content:text_2_content.val(),
+    				text_3_content:text_3_content.val(),
+    				text_1_title:text_1_title.val(),
+    				text_2_title:text_2_title.val(),
+    				text_3_title:text_3_title.val()
     			}
 
 
@@ -598,9 +632,11 @@
     				type:'POST',
     				success: function(result) {
     					console.log(result);
+    					alert('saved successfuly');
     				},
     				error: function(err) {
     					console.log(err);
+    					alert('please try again');
     				}
     			})
     		});

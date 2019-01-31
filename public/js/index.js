@@ -217,6 +217,19 @@ TweenMax.defaultOverwrite = false;
       TweenMax.to($('._section_text_subTitle'),2,{display:'block',left:"50%",delay:2}),
       
     ])
+  .add(
+      TweenMax.to($('.red_section'),3,{paddingTop:200,height:690,top:50,onStart:removeLayer_1,onReverseComplete:addLayer_1})
+    )
+  .add([
+      TweenMax.to($('.paper_2'),4,{top:280}),
+      TweenMax.to($('.paper_2'),1,{boxShadow:"1px 1px 20px black"}),
+      TweenMax.from($('.red_section_sub_title'),2,{y:800}),
+      TweenMax.from($('.red_section_title'),2,{y:800}),
+      TweenMax.to($('.paper_2'),5,{rotation:2}),
+      TweenMax.to($('.paper_2_1'),5,{rotation:5,display:'block'}),
+      TweenMax.to($('.paper_2_2'),5,{rotation:-4,display:'block'})
+
+    ])
 
 
 
