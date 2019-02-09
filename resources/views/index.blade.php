@@ -156,6 +156,12 @@
 
 </div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 w-100 h-50"></div>
+  </div>
+</div>
+
 
 
 <script
