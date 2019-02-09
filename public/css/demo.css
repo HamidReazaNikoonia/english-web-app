@@ -240,6 +240,7 @@ a:hover, a:focus {
     color:white;
     font-size: 2.4rem;
     text-align: center;
+    left: 20px !important;
     right: 7%;
   }
 
@@ -690,7 +691,7 @@ a:hover, a:focus {
 
   font-weight: bolder;
   color: #202442;
-  font-family: 'Fredoka One', sans-serif;
+  font-family: 'Poppins', sans-serif;
   
   display: block;
   text-align: center;

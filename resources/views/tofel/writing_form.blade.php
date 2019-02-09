@@ -194,7 +194,9 @@ header .content h3 {
 
 
 .card {
-  background-image: url({{ asset('img/bg-pattern.jpg')  }}) ;
+    background-image: url({{ asset('img/aa.jpg')  }}) ;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
 
@@ -751,13 +753,6 @@ function parallax(){
 
 
 
-
-var o = $(".card");
-$(".top").on("mousemove", function (t) {
-    var e = -($(window).innerWidth() / 2 - t.pageX) / 50,
-        n = ($(window).innerHeight() / 2 - t.pageY) / 90;
-    o.attr("style", "transform: rotateY(" + e + "deg) rotateX(" + n + "deg);-webkit-transform: rotateY(" + e + "deg) rotateX(" + n + "deg);-moz-transform: rotateY(" + e + "deg) rotateX(" + n + "deg)")
-})
 
 
 

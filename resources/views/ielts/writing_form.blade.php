@@ -9,7 +9,7 @@
     <meta name="description" content="Fullscreen Form Interface: A distraction-free form concept with fancy animations" />
     <meta name="keywords" content="fullscreen form, css animations, distraction-free, web design" />
     <meta name="author" content="Codrops" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Fredoka+One" rel="stylesheet">
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.min.css') }}" />
@@ -143,7 +143,7 @@ header .content h3 {
 
 
 .card {
-  background-image: url({{ asset('img/aa.png')  }});
+  background-image: url({{ asset('img/aa.jpg')  }});
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -705,12 +705,7 @@ function parallax(){
 
 
 
-var o = $(".card");
-$(".top").on("mousemove", function (t) {
-    var e = -($(window).innerWidth() / 2 - t.pageX) / 50,
-        n = ($(window).innerHeight() / 2 - t.pageY) / 90;
-    o.attr("style", "transform: rotateY(" + e + "deg) rotateX(" + n + "deg);-webkit-transform: rotateY(" + e + "deg) rotateX(" + n + "deg);-moz-transform: rotateY(" + e + "deg) rotateX(" + n + "deg)")
-})
+
 
 
 

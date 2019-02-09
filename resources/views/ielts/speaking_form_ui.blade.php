@@ -10,7 +10,8 @@
 		<meta name="description" content="Fullscreen Form Interface: A distraction-free form concept with fancy animations" />
 		<meta name="keywords" content="fullscreen form, css animations, distraction-free, web design" />
 		<meta name="author" content="Codrops" />
-		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Poppins|Fredoka+One" rel="stylesheet">
+
 		<link rel="shortcut icon" href="../favicon.ico">
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/animate.min.css') }}" />
@@ -137,7 +138,7 @@ header .content h3 {
 
 
 .card {
-	background-image: url({{ asset('img/aa.png')  }});
+	background-image: url({{ asset('img/aa.jpg')  }});
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -201,7 +202,7 @@ header .content h3 {
                 		<div class="card">
                     		<div class="thumb" ></div>
                     		<h2> Get Your Result </h2>
-                    		<span style="left:40px;"> <i style="color:white;font-size: 5rem">100%</i> Correct</span>
+                    		<span class="percent_class" style="left:40px;"> <i style="color:white;font-size: 5rem">100%</i> Correct</span>
                 		</div>
             			</div>
         			</div>
@@ -223,9 +224,9 @@ header .content h3 {
       				@csrf
 
       				<div id="fki">
-      					<h1 class="wow bounceInLeft" data-wow-delay="1s" style="color:black;font-size: 3rem">Upload File</h1>
+      					<h1 class=""  style="color:black;font-size: 3rem">Upload File</h1>
                 <div  id="upload_1" class=" w-75 trigger_handler "> Upload File </div>
-                <input id="sub_upload" data-wow-delay="1.8s" class="upload_2 w-75 wow bounceInLeft" type="submit" name="">
+                <input id="sub_upload"  class="upload_2 w-75" type="submit" name="">
 						
       					<input  class="input_file" type="file" name="file">
       					
@@ -714,12 +715,7 @@ function parallax(){
 
 
 
-var o = $(".card");
-$(".top").on("mousemove", function (t) {
-    var e = -($(window).innerWidth() / 2 - t.pageX) / 50,
-        n = ($(window).innerHeight() / 2 - t.pageY) / 90;
-    o.attr("style", "transform: rotateY(" + e + "deg) rotateX(" + n + "deg);-webkit-transform: rotateY(" + e + "deg) rotateX(" + n + "deg);-moz-transform: rotateY(" + e + "deg) rotateX(" + n + "deg)")
-})
+
 
 
 

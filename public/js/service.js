@@ -1,6 +1,8 @@
 
 function init_() {
 
+	
+
 
 
 	$(".about_section-title").lettering();
@@ -33,6 +35,18 @@ function init_() {
 
 	// trigger event when scroll in that view port
 	// 
+	// 
+	// 
+	
+
+	// card animation
+
+	var o = $(".card");
+$(".top").on("mousemove", function (t) {
+    var e = -($(window).innerWidth() / 2 - t.pageX) / 40,
+        n = ($(window).innerHeight() + 200 / 2 - t.pageY) / 60;
+    o.attr("style", "transform: rotateY(" + e + "deg) rotateX(" + n + "deg);-webkit-transform: rotateY(" + e + "deg) rotateX(" + n + "deg);-moz-transform: rotateY(" + e + "deg) rotateX(" + n + "deg)")
+});
 	
 	var handler_ = function () {
 		// console.log('fire');
