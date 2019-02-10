@@ -838,3 +838,27 @@ a:hover, a:focus {
   opacity: 1;
   display: block;
 }
+
+
+
+
+
+@media screen  and (max-width: 900px) {
+  .price_section-container {
+    padding-top: 480px;
+  }
+}
+
+@media screen  and (max-width: 725px) {
+  .price_section-container {
+    padding-top: 640px;
+  }
+}
+
+@media screen  and (max-width: 550px) {
+  .price_section-container {
+    padding-top: 620px;
+  }
+}
+
+

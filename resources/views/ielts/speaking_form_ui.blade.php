@@ -249,7 +249,7 @@ header .content h3 {
 		</div>
 			</div>
 
-			       <div class="container-fluid pt-5 mt-5">
+			       <div class="container-fluid price_section-container mt-5">
           <div class="row pt-5">
             <div class="col-12 mt-5">
               <section class="pricing-section bg-12 mt-5">

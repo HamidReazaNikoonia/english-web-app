@@ -276,9 +276,9 @@ header .content h3 {
               @csrf
 
               <div id="fki">
-                <h1 class="wow bounceInLeft" data-wow-delay="1s" style="color:black;font-size: 3rem">Upload File</h1>
+                <h1   style="color:black;font-size: 3rem">Upload File</h1>
                 <div  id="upload_1" class=" w-75 trigger_handler "> Upload File </div>
-                <input id="sub_upload" data-wow-delay="1.8s" class="upload_2 w-75 wow bounceInLeft" type="submit" name="">
+                <input id="sub_upload"  class="upload_2 w-75 " type="submit" name="">
             
                 <input  class="input_file" type="file" name="file">
                 
@@ -301,7 +301,7 @@ header .content h3 {
     </div>
       </div>
 
-             <div class="container-fluid pt-5 mt-5">
+             <div class="container-fluid price_section-container mt-5">
           <div class="row pt-5">
             <div class="col-12 mt-5">
               <section class="pricing-section bg-12">
