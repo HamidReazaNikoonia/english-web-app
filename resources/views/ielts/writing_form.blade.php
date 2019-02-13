@@ -395,7 +395,7 @@ header .content h3 {
           <h3 class="costomer_section-title_container head-title-contaniner"> 
             <span class="costomer_section-title head-title">Our </span>
             <span class="costomer_section-title head-title">Lovely </span>
-            <span class="costomer_section-title head-title">Costomers </span>
+            <span class="costomer_section-title head-title head-title_l">Costomers </span>
           </h3>
         </div>
       </div>  

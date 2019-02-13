@@ -31,7 +31,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
+      <a class="navbar-brand mr-1" href="index.html">ELMA-CENTER</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -121,6 +121,7 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="{{ route('set_price_for_service') }}">
             <i class="fas fa-fw fa-box"></i>
@@ -135,6 +136,23 @@
             <h6 class="dropdown-header">Books Setting:</h6>
             <a class="dropdown-item" href="{{ route('books-list') }}" >Show All Books</a>
             <a class="dropdown-item" href="{{ route('books-store-form') }}" >Add New Book</a>
+            <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">Other Pages:</h6>
+            
+            
+          </div>
+        </li>
+
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            <i class="fas fa-fw fa-edit"></i>
+            <span>Edit Pages</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <h6 class="dropdown-header">Edit Pages:</h6>
+            <a class="dropdown-item" href="{{ route('landing.edit') }}" >Edit Landing Page</a>
+            <a class="dropdown-item" href="{{ route('question_answeare') }}" >Q/A for services</a>
             <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">Other Pages:</h6>

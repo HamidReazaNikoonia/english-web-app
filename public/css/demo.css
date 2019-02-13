@@ -703,14 +703,43 @@ a:hover, a:focus {
        
 }
 
+
+
+
+@media only screen and (max-width: 1000px) {
+  .head-title_l {
+    font-size: 6.9rem;
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  .head-title {
+    font-size: 4.6rem;
+  }
+
+  .head-title_l {
+    font-size: 3.8rem;
+  }
+  .head-title-contaniner {
+    line-height: 90px;
+  }
+}
+
+
 @media only screen and (max-width: 500px) {
   .head-title {
     font-size: 4.8rem;
   }
+
+  .head-title_l {
+    font-size: 3.8rem;
+  }
   .head-title-contaniner {
-    /*line-height: 80px;*/
+    line-height: 90px;
   }
 }
+
 
 
 

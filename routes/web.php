@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/landing', 'LandingController@index');
-Route::get('/landing/edit', 'LandingController@edit');
+Route::get('/landing/edit', 'LandingController@edit')->name('landing.edit');
 Route::post('/landing/edit', 'LandingController@store')->name('landing.store');
 
 
@@ -49,6 +49,8 @@ Route::post('/admin/books/store' , 'BookController@save_book')->name('save_book'
 Route::get('/admin/books/edit/{id}' , 'BookController@edit_form')->name('edit_form');
 Route::post('/admin/books/edit' ,  'BookController@edit')->name('edit_book');
 Route::post('/admin/books/delete' ,  'BookController@delete')->name('delete_book');
+
+Route::get('/admin/question_answeare' , 'question_answeareController@index')->name('question_answeare');
 
 
 
