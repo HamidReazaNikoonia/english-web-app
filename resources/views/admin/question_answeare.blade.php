@@ -156,7 +156,9 @@
 
           <div class="jumbotron">
             <h2 class="pb-5"> IELTS / SPEAKING </h2>
-            <div class="form-group">
+            
+            <div id="is_container_1">
+              <div class="form-group">
               <label for="is_1_title">Question #1</label>
               <input type="text" class="form-control" name="is_1_title" id="is_1_title">
             </div>
@@ -167,12 +169,21 @@
             </div>
             <hr/>
 
+            </div>
+
 
               <div id="butt_is_" class="d-flex w-50 flex-row justify-content-around">
                 <button id="add_is" class="btn btn-secondary mt-5 px-5"> Add + </button>
                 <button id="remove_is" class="btn btn-danger mt-5 px-5"> Remove - </button>
               </div>
 
+            </div>
+
+
+            <div class="row">
+              <div class="col-12">
+                <button id="save" class="btn btn-primary px-5 m-5">Save</button>
+              </div>
             </div>
           </div>
 
@@ -247,11 +258,38 @@
               iw_n:1,
               ts_n:1,
               tw_n:1
+            },
+          val: {
+            is_n_1: {
+              q:'',
+              a:''
+            },
+            is_n_2: {
+              q:'',
+              a:''
+            },
+            is_n_3: {
+              q:'',
+              a:''
+            },
+            is_n_4: {
+              q:'',
+              a:''
+            },
+            is_n_5: {
+              q:'',
+              a:''
+            },
+            is_n_6: {
+              q:'',
+              a:''
             }
+          }
       }
 
       function form_is(n) {
-        return `<div class="form-group">
+        return `<div id="is_container_${n}">
+        <div class="form-group">
               <label for="is_${n}_title">Question #${n}</label>
               <input type="text" class="form-control" name="is_${n}_title" id="is_${n}_title">
             </div>
@@ -259,7 +297,7 @@
         <div class="form-group">
               <label for="is_${n}_body">Answear #${n}</label>
               <textarea class="form-control" id="is_${n}_body" name="is_${n}_body"></textarea>
-            </div><hr/>`;
+            </div><hr/></div>`;
       }
 
 
@@ -275,7 +313,6 @@
           $('#remove_is').css('display','flex');
         }
 
-        console.log(n);
         state.n.is_n = n+1;
 
       }
@@ -283,23 +320,51 @@
 
       function remove_is_form(n) {
         if(n == 1) {
-
+            $('#remove_is').css('display','none');
           return false;
         }
         
-        $('#butt_is_').before(k);
-
-        if(n >= 1 && n < 2) {
-          $('#remove_is').css('display','flex');
+        var ele = `#is_container_${n}`;
+        $(ele).remove();
+        
+        state.n.is_n = n-1;
+        if(state.n.is_n == 1 ) {
+            $('#remove_is').css('display','none');
         }
-
-        console.log(n);
-        state.n.is_n = n+1;
 
       }
 
       $('#add_is').click(function() {
         add_is_form(state.n.is_n);
+
+      });
+
+      $('#remove_is').click(function() {
+        remove_is_form(state.n.is_n);
+
+      });
+
+
+
+
+
+
+
+
+      $('#save').click(function() {
+
+        // var state_value = state.val.is_n;
+        var is_count = state.n.is_n;
+        // console.log(state_value);
+        
+        for(var i = 1; i<= is_count;i++) {
+          var title = $('#is_'+ i +'_title').val();
+          var body = $('#is_'+ i +'_body').val();
+          
+          state.val['is_n_'+i].q = title;
+          state.val['is_n_'+i].a = body;
+          console.log(state.val);
+        }
 
       });
 
