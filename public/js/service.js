@@ -1,7 +1,7 @@
 
 function init_() {
 
-	
+
 
 
 
@@ -84,6 +84,9 @@ $(".top").on("mousemove", function (t) {
 	$(window).scroll(handler_costomer_title);
 
 
+
+
+	
 
 
 	$('.hideSeekTab').on('click', function() {

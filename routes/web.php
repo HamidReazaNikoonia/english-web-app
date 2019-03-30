@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home_');
 
 Auth::routes();
 
@@ -90,6 +90,6 @@ Route::get('/service/payment-result/{id}', 'PaymentController@pay_result');
 
 
 
-Route::get('/about-me' , 'AboutMeController@index');
+Route::get('/about-me' , 'AboutMeController@index')->name('about-me');
 
 
