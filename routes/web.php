@@ -24,7 +24,7 @@ Route::post('/landing/edit', 'LandingController@store')->name('landing.store');
 
 
 
-Route::get('/service/i/writing', 'IeltsWritingController@index');
+Route::get('/service/i/writing', 'IeltsWritingController@index')->name('service_iw');
 Route::post('/service/i/writing','IeltsWritingController@store');
 
 Route::get('/service/i/speaking' , 'IeltsSpeakingController@index');
@@ -71,13 +71,13 @@ Route::post('/admin/blog/delete-post' ,'BlogController@deletePost')->name('delet
 Route::get('/admin/service-price', 'servicePriceController@set_price_form')->name('set_price_for_service');
 Route::post('/admin/price_service', 'servicePriceController@edit_price')->name('edit_price');
 
-Route::get('/blog' , 'BlogController@index');
+Route::get('/blog' , 'BlogController@index')->name('blogs');
 
 
 Route::get('/contact', 'ContactController@index');
 Route::post('/contact', 'ContactController@store');
 
-Route::get('/books' , 'BookController@index');
+Route::get('/books' , 'BookController@index')->name('books');
 
 Route::post('hamid/upload' ,'UploadController@store')->name('upload');
 

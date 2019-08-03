@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ELMA-CENTER || landing page</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|PT+Sans:700" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/landing/index.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" >
+	<link rel="stylesheet" href="{{ asset('css/landing/index.css') }}">
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 </head>
 <body class="is-boxed has-animations">
@@ -41,7 +42,24 @@
 				    </g>
 				</svg>
 			</div>
-            <div class="container">
+            <div class="container d-flex flex-row justify-content-between">
+				<div id="menu" class="d-flex flex-row justify-content-around w-50">
+				 <div>
+				 <a href="{{ route('home') }}" >Home</a>
+				 </div>
+				 <div>
+					 <a href="{{ route('service_iw') }}" >Services</a>
+				 </div>
+				 <div>
+					 <a href="{{ route('books') }}" >Books</a>
+				 </div>
+				 <div>
+					 <a href="{{ route('blogs') }}" >Blogs</a>
+				 </div>
+				 <div>
+					 <a href="{{ route('about-me') }}" >About Me</a>
+				 </div>
+				</div>
                 <div class="site-header-inner">
                     <div class="brand header-brand">
                         <h1 class="m-0">

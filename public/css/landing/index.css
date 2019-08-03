@@ -4,6 +4,22 @@ html {
     -webkit-text-size-adjust: 100%
 }
 
+#menu {
+    font-size: 0.8rem;
+    transition: all 1s ease-out;
+
+}
+
+#menu>div a {
+    color: rgb(170, 168, 168);
+}
+
+#menu > div a:hover {
+    opacity:0.3;
+    color:red;
+    transition: all 1s ease-in;
+}
+
 body {
     margin: 0
 }

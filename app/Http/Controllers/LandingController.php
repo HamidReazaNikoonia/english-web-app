@@ -23,13 +23,13 @@ class LandingController extends Controller
 
     	$data = LandingContent::find(1);
 
-    	$sub_title = $req->sub_title;
+    	$sub_title =      $req->sub_title;
     	$text_1_content = $req->text_1_content;
     	$text_2_content = $req->text_2_content;
     	$text_3_content = $req->text_3_content;
-    	$text_1_title = $req->text_1_title;
-    	$text_2_title = $req->text_2_title;
-    	$text_3_title = $req->text_3_title;
+    	$text_1_title =   $req->text_1_title;
+    	$text_2_title =   $req->text_2_title;
+    	$text_3_title =   $req->text_3_title;
 
     	
 
