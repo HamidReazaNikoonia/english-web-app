@@ -161,7 +161,7 @@ header .content h3 {
     <div class="d-flex flex-row">
         <div style="min-width:40Vw">
           <div class="wow bounceInLeft" data-wow-delay="1s" 
-          style="position: absolute;top:15vh;left:10vw"
+          style="position: absolute;top:0;left:10vw"
           >
             <h1 class="myi wow bounceInLeft" data-wow-delay="1s">Tofel Speaking</h1>
             <h3 >simple and beautiful</h3>
@@ -251,9 +251,9 @@ header .content h3 {
     </div>
       </div>
 
-       <div class="container-fluid price_section-container mt-5">
-          <div class="row pt-5">
-            <div class="col-12 mt-5">
+       <div class="container-fluid price_section-container">
+          <div class="row">
+            <div class="col-12">
               <section class="pricing-section bg-12">
             <h3 class="head-title-contaniner price_section-title_container my-5 pb-5"> 
             <span class="head-title price_section-title"> Prices </span>

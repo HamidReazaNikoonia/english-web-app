@@ -747,6 +747,8 @@ a:hover, a:focus {
 
 .price_section-title:nth-child(1) {
   color: #3F4EE7;
+  top: 20%;
+  padding: 57px;
 }
 .price_section-title:nth-child(2) {
   color: #EFD12C;
@@ -872,7 +874,7 @@ a:hover, a:focus {
 
 @media screen and (min-width: 900px) {
 	.price_section-container {
-		margin-top: 280px;
+		margin-top: 400px;
 	}
 
 }
