@@ -372,6 +372,19 @@ footer.sticky-footer .copyright {
   transition: all 1s ease;
 }
 
+.card {
+    box-shadow: 5px 7px 24px -9px rgba(189, 144, 189, 1);
+    border-radius: 11px;
+    opacity:1;
+    cursor: pointer;
+    padding-bottom:42px;
+    background-image: radial-gradient(circle farthest-corner at 3.8% 18%, rgba(0, 164, 228, 1) 2.3%, rgba(20, 50, 104, 1) 90%);
+}
+
+.card:hover {
+  opacity:0.9;
+}
+
 @keyframes new-result {
   0% {
     background-color: #FEE50A88;

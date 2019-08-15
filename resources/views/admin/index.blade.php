@@ -29,25 +29,17 @@
 
   <body style="font-family: 'Karla', sans-serif" id="page-top">
 
-    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    <nav style="background-color:#2d3b54" class="navbar justify-content-between d-flex flex-row navbar-expand navbar-dark static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">ELMA-CENTER</a>
+      <div class="d-flex flex-row">
+        <a class="navbar-brand mr-1" href="index.html">ELMA-CENTER</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
       </button>
 
-      <!-- Navbar Search -->
-      <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-primary" type="button">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </div>
-      </form>
+      </div>
+     
 
       <!-- Navbar -->
       <ul class="navbar-nav ml-auto ml-md-0">
@@ -177,26 +169,20 @@
           <!-- Icon Cards-->
           <div class="row">
             <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-primary o-hidden h-100">
+              <div class="card text-white o-hidden h-75">
                 <div class="card-body">
                   <div class="card-body-icon">
-                    <i class="fas fa-fw fa-comments"></i>
                   </div>
                   <div class="mr-5">{{ $contact }} New Messages!</div>
                 </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
+                
               </div>
             </div>
             <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-warning o-hidden h-100">
+              <div class="card text-white  o-hidden h-75">
                 <div class="card-body">
                   <div class="card-body-icon">
-                    <i class="fas fa-fw fa-list"></i>
+                    
                   </div>
                   <?php
                     $home_work_count = 0;
@@ -209,44 +195,25 @@
                   ?>
                   <div class="mr-5">{{ $home_work_count }} New Document!</div>
                 </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
+
               </div>
             </div>
             <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-success o-hidden h-100">
+              <div class="card text-white bg-success o-hidden h-75">
                 <div class="card-body">
                   <div class="card-body-icon">
-                    <i class="fas fa-fw fa-shopping-cart"></i>
                   </div>
                   <div class="mr-5">123 New Orders!</div>
                 </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
               </div>
             </div>
             <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-danger o-hidden h-100">
+              <div class="card text-white bg-danger o-hidden h-75">
                 <div class="card-body">
                   <div class="card-body-icon">
-                    <i class="fas fa-fw fa-life-ring"></i>
                   </div>
                   <div class="mr-5">13 New Tickets!</div>
                 </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
               </div>
             </div>
           </div>

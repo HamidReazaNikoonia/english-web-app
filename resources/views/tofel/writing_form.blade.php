@@ -301,9 +301,9 @@ header .content h3 {
     </div>
       </div>
 
-             <div class="container-fluid price_section-container mt-5">
-          <div class="row pt-5">
-            <div class="col-12 mt-5">
+             <div class="container-fluid price_section-container">
+          <div class="row">
+            <div class="col-12">
               <section class="pricing-section bg-12">
             <h3 class="head-title-contaniner price_section-title_container my-5 pb-5"> 
             <span class="head-title price_section-title"> Prices </span>
