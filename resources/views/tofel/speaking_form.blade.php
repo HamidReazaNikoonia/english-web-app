@@ -168,7 +168,7 @@ header .content h3 {
           </div>
         </div>
       
-    <img class="bg-vector wow bounceInRight" src="{{ asset('svg/bg-.svg') }}" />
+    <img class="bg-vector wow bounceInRight" src="{{ asset('svg/bg_speaking.svg') }}" />
     
     </div>
   </div>

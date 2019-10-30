@@ -147,9 +147,9 @@ a:hover, a:focus {
 	text-align: left;
 	border-radius: 2rem;
 	font-family: Poppins;
-	background: #00B4DB;  /* fallback for old browsers */
+	/* background: #00B4DB; */  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to left, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to left, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	/* background: linear-gradient(to left, #0083B0, #00B4DB); */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .card > h3 	{
@@ -166,6 +166,7 @@ a:hover, a:focus {
 }
 
 
+
 .second-section  {
 
 
@@ -180,47 +181,142 @@ a:hover, a:focus {
   /*display: flex;
   align-items: center;
   justify-content: center;*/
+  /* background-image: url(https://www.stickpng.com/assets/images/580b585b2edbce24c47b263e.png); */
+  /* background-size: cover; */
 }
 
 .card {
-  width: 30vw;
-  margin:0 10vw;
+  width: 80vw;
+  margin:0 auto;
   height: 413px;
-  /* margin: auto; */
-  box-shadow: 16px 21px 90px -35px #373f42;
+  margin: auto;
+  /* box-shadow: 16px 21px 90px -35px #373f42; */
   transform-style: preserve-3d;
   transition: transform .05s linear;
 }
 .card .thumb {
-  background-size: cover;
+  background-size: contain;
   height: 100%;
   width: 100%;
   border-radius: 15px;
 }
+
+
 .card .thumb:after {
   background: inherit;
   content: '';
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(https://www.stickpng.com/assets/images/580b585b2edbce24c47b263e.png);
   display: block;
   position: absolute;
-  left: -60px;
-  top: 40px;
+  left: 600px;
+  /* top: 40px; */
   width: 100%;
   height: 108%;
   z-index: -1;
-  filter: blur(55px);
+  /* filter: blur(55px); */
+  transform: scale(2);
 }
+
+
+@media only screen and (max-width:1300px) {
+  .card .thumb:after {
+      left: 400px;
+      /* top: 40px; */
+      width: 100%;
+      height: 108%;
+      z-index: -1;
+      /* filter: blur(55px); */
+      transform: scale(2);
+  }
+}
+
+@media only screen and (max-width:1100px) {
+    .card .thumb:after {
+        left: 200px;
+        /* top: 40px; */
+        width: 100%;
+        height: 108%;
+        z-index: -1;
+        /* filter: blur(55px); */
+        transform: scale(2);
+    }
+}
+
+@media only screen and (max-width:900px) {
+    .card .thumb:after {
+        left: 10px;
+        /* top: 40px; */
+        width: 100%;
+        height: 108%;
+        z-index: -1;
+        /* filter: blur(55px); */
+        transform: scale(2);
+    }
+}
+
+
+.secend_card .thumbr:after {
+  transform: rotate(90) scale(2);
+}
+
 .card h2 {
   position: absolute;
+  color: cornsilk;
+  font-family: 'Acme';
   top: 30px;
   padding-right: 5px;
   padding-left: 15px;
-  left: -60px;
-  text-shadow: 1px 1px 20px gray;
-  font-size: 40px;
-  font-weight: 100;
+  left: 20vw;
+  text-shadow: 24px 9px 45px black;
+  font-size: 7vw;
+  font-weight: 900;
   transform: translateZ(80px);
-  background-color: rgba(255,105,180,0.7);
+  /* background-color: rgba(255,105,180,0.7); */
 }
+
+.card h2:nth-child(2) {
+   top: 150px;
+}
+
+@media only screen and (max-width:1100px) {
+  .card h2 {
+    font-size: 60px;
+    left: 14vw;
+  }
+
+  .card h2:nth-child(2) {
+      top: 190px;
+  }
+
+}
+
+
+@media only screen and (max-width:900px) {
+    .card h2 {
+        font-size: 40px;
+        left: -50px;
+    }
+
+    .card h2:nth-child(2) {
+        top: 120px;
+    }
+
+}
+
+@media only screen and (max-width:600px) {
+    .card h2 {
+        font-size: 35px;
+        left: -50px;
+    }
+
+    .card h2:nth-child(2) {
+        top: 80px;
+    }
+
+}
+
 .card span {
   position: absolute;
   bottom: 40px;
@@ -231,9 +327,15 @@ a:hover, a:focus {
   transform: translateZ(35px);
 }
 
+
+
 @media screen and (max-width:900px) {
   .second-section {
     flex-direction: column;
+  }
+
+  .sec_2 {
+    margin-bottom:90px;
   }
 
   .card span {
@@ -246,6 +348,7 @@ a:hover, a:focus {
 
   .second-section .top {
     margin-bottom: 100px;
+    margin-top: 90px;
   }
 
   .second-section .card {
@@ -281,6 +384,7 @@ a:hover, a:focus {
 	font-family: sans-serif;
 	font-weight: bolder;
 	font-size: 5.5rem;
+	margin-bottom: 50px;
 }
 
 .bolder-title {
@@ -367,21 +471,33 @@ a:hover, a:focus {
 
 #nex_sect {
 
-  margin-top: 300px;
-  position: relative;
-  perspective: 1000px;
-  animation: bouncey 4s infinite;
+margin-top: 300px;
+
+position: relative;
+
+width: 105%;
+
+margin-left: -30px;
+
+perspective: 1000px;
+
+animation: bouncey 4s infinite;
 }
 
 #upload_ {
   background-color: white;
   box-shadow: 1px 0px 55px gray;
-  width: 100%;
+  width: 102%;
   height: 440px;
   background-image: url("../img/bg-pattern.png");
-
   margin-bottom: 100px;
   border-radius: 28px;
+}
+
+@media only screen and (max-width:550px) {
+  #upload_ {
+    height: 67vh;
+  }
 }
 
 
@@ -485,6 +601,12 @@ a:hover, a:focus {
   transform: translate(-35%,-10%);
 }
 
+#fki h1 {
+  color:black;
+  font-size: 3rem;
+  font-family: 'Acme';
+}
+
 .input_file {
   display: none;
 
@@ -495,9 +617,9 @@ a:hover, a:focus {
 }
 
 
-@media only screen and (max-width: 901px) {
+@media only screen and (max-width: 1100px) {
   #nex_sect {
-
+    width: 110%;
 
   }
 }

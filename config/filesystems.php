@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'ftp'),
+    'default' => env('FILESYSTEM_DRIVER', 'local'),
 
     /*
     |--------------------------------------------------------------------------
@@ -68,17 +68,17 @@ return [
 
         'ftp' => [
             'driver'   => 'ftp',
-            'host'     => '148.251.23.60',
-            'username' => 'mypaneli',
-            'password' => '97iwd2xV5L',
-            'port' => '21'
+            'host'     => 'localhost',
+            'username' => 'root',
+            'password' => 'root',
+            'port' => '21',
 
             // Optional FTP Settings...
             // 'port'     => 21,
-            // 'root'     => '',
-            // 'passive'  => true,
-            // 'ssl'      => true,
-            // 'timeout'  => 30,
+            'root'     => '',
+            'passive'  => true,
+            'ssl'      => true,
+            'timeout'  => 30,
         ],
 
     ],

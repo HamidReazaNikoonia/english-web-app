@@ -1,6 +1,14 @@
 
 function init_() {
 
+	   
+				 var wid = $(window).width();
+				 if(wid < 800) {
+					 $('.sec_2').data('wow-offset', '0');
+					 console.log($('.sec_2').data('wow-offset'));
+				 }
+				 
+	       console.log($('.sec_2').data('wow-offset'))
 
 
 
