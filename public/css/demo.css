@@ -602,9 +602,10 @@ animation: bouncey 4s infinite;
 }
 
 #fki h1 {
-  color:black;
-  font-size: 3rem;
-  font-family: 'Acme';
+  color:#7b87c4;
+  text-shadow: 2px 2px 4px rgba(128, 128, 128, 0.5);
+  font-size: 4rem;
+  font-family: 'Fredoka One', sans-serif;
 }
 
 .input_file {
@@ -674,12 +675,18 @@ animation: bouncey 4s infinite;
 .pricing--palden .pricing__item {
   font-family: "Nunito", sans-serif;
   cursor: default;
-  color: #84697c;
+  color: rgba(27, 74, 125, 0.29);
   background: #fff;
   box-shadow: 0 0 10px rgba(46, 59, 125, 0.23);
   border-radius: 20px 20px 10px 10px;
   margin: 1em;
   min-width: 350px;
+  transition: all 0.4s ease-out;
+}
+
+.pricing--palden .pricing__feature:hover {
+  color: rgba(27, 74, 125, 1);
+  transition: all 0.9s ease-in;
 }
 
 @media screen and (min-width: 66.250em) {
@@ -777,9 +784,18 @@ animation: bouncey 4s infinite;
 }
 
 .pricing--palden .pricing__feature {
-  padding: 1em 0;
-  font-family: 'Fredoka One', sans-serif;
-  font-size: 0.9rem;
+  /* padding: 1em 0; */
+  font-family: 'Fredoka One',
+  sans-serif;
+  font-size: 1.3rem;
+  /* font-weight: 100; */
+  padding: 10px;
+  margin: 4px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.14);
+}
+
+.pricing--palden .pricing__feature:last-child {
+    border-bottom: none;
 }
 
 .pricing--palden .pricing__action {

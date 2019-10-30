@@ -276,7 +276,7 @@ header .content h3 {
               @csrf
 
               <div id="fki">
-                <h1>Upload File</h1>
+                <h1 class="wow bounceInUp">Upload File</h1>
                 <div  id="upload_1" class=" w-75 trigger_handler "> Upload File </div>
                 <input id="sub_upload"  class="upload_2 w-75 " type="submit" name="">
             

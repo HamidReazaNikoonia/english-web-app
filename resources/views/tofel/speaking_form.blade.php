@@ -9,7 +9,7 @@
     <meta name="description" content="Fullscreen Form Interface: A distraction-free form concept with fancy animations" />
     <meta name="keywords" content="fullscreen form, css animations, distraction-free, web design" />
     <meta name="author" content="Codrops" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins|Fredoka+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Fredoka+One|Acme" rel="stylesheet">
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.min.css') }}" />
@@ -140,7 +140,7 @@ header .content h3 {
 
 
 .card {
-  background-image: url({{ asset('img/aa.jpg')  }});
+  /* background-image: url({{ asset('img/aa.jpg')  }}); */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -186,22 +186,14 @@ header .content h3 {
             <samp
             style="display:inline-block;text-align:center;color:black;font-size: 110px;background-color:#1d34bd;border-radius:280px;width:170px;height:170px;padding-top: 20px;box-shadow: 6px 6px 5px gray;color:white">2</samp> Step </h2>
         <div class="d-flex pt-5 mt-5 second-section ">
-           <div class="top wow bounceInLeft ">
-                  <div class="perspective">
-                    <div class="card">
-                        <div class="thumb" ></div>
-                        <h2>Send Your Information</h2>
-                        <span style="text-align: center;">Just with &nbsp;&nbsp;&nbsp;2 Clicks</span>
-                    </div>
-                  </div>
-              </div>
+           
 
-              <div class="top wow bounceInRight" >
+              <div class="top wow bounceInRight" data-wow-delay="0.5s" data-wow-offset="250" data-wow-duration="2s">
                   <div class="perspective">
                     <div class="card">
                         <div class="thumb" ></div>
-                        <h2> Get Your Result </h2>
-                        <span style="left:40px;"> <i style="color:white;font-size: 5rem">100%</i> Correct</span>
+                        <h2> Send your informations </h2>
+                        <h2> Upload your content </h2>
                     </div>
                   </div>
               </div>
@@ -223,7 +215,7 @@ header .content h3 {
               @csrf
 
               <div id="fki">
-                <h1   style="color:black;font-size: 3rem">Upload File</h1>
+                <h1 class="wow bounceInUp">Upload File</h1>
                 <div data-wow-delay="1.5s" class=" w-75 trigger_handler" id="upload_1"> Upload File </div>
                 <input id="sub_upload"  class="upload_2 w-75 " type="submit" name="">
             
