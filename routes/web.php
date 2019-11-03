@@ -24,7 +24,7 @@ Route::post('/landing/edit', 'LandingController@store')->name('landing.store');
 
 
 
-Route::get('/service/i/writing', 'IeltsWritingController@index')->name('service_iw');
+Route::get('/service/i/writing', 'IeltsWritingController@index')->name('service_iw')->middleware('auth');;
 Route::post('/service/i/writing','IeltsWritingController@store');
 
 Route::get('/service/i/speaking' , 'IeltsSpeakingController@index');
